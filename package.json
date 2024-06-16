@@ -1,14 +1,14 @@
 {
   "name": "react-viewer-pan-zoom",
   "description": "Pan and zoom elements in React using gestures, mouse, touchpad, keyboard shortcuts and UI buttons.",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "type": "module",
   "author": "michelesandroni",
   "license": "MIT",
   "repository": "michelesandroni/react-viewer-pan-zoom",
-  "main": "./dist/main.js",
-  "exports": "./dist/main.js",
-  "module": "./dist/main.js",
+  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
+  "module": "./dist/index.js",
   "files": [
     "dist"
   ],
