@@ -1,0 +1,40 @@
+/* .app {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  height: 600px;
+} */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.viewer {
+  flex: 1 1 auto;
+}
+
+.viewer-toolbar {
+  flex: 0 0 auto;
+}
+
+.viewer,
+.viewer-toolbar {
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+
+.viewer-toolbar {
+  padding: 1rem 0rem;
+  touch-action: none;
+}
+
+.center {
+  text-align: center;
+}
+
+button {
+  padding: 0.25rem 0.5rem;
+  margin: 0rem 0.5rem;
+}
