@@ -20,7 +20,7 @@ npm install react-viewer-pan-zoom
 
 ## Example
 
-[Example](docs/index.html)
+[Example](https://michelesandroni.github.io/react-viewer-pan-zoom)
 
 The size of the main container must be set via CSS to work correctly. See `example`/`src`/`App.css`.
 
