@@ -1,15 +1,35 @@
+html,
+html body,
+#root {
+  /* Set the height to 100% to create a full-window viewer */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* Disable text selection */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Override 'body' properties when using vite's react template */
+  display: block;
+  min-width: initial;
+  min-height: initial;
+}
+
+/* Variant #1: Full-window viewer */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Variant #2: Sized viewer */
 /* .app {
   display: flex;
   flex-direction: column;
   width: 800px;
   height: 600px;
 } */
-
-.app {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
 
 .viewer {
   flex: 1 1 auto;

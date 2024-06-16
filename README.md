@@ -22,7 +22,11 @@ npm install react-viewer-pan-zoom
 
 [Example](https://michelesandroni.github.io/react-viewer-pan-zoom)
 
-The size of the main container must be set via CSS to work correctly. See `example`/`src`/`App.css`.
+The size of the viewer container (`.app` in the example) must be specified via CSS.
+
+For a full-window viewer assign a value of `100%` to the `body` height.
+
+Two variants (full-window viewer and sized viewer) are shown in `example`/`src`/`App.css`.
 
 ## Settings
 
@@ -40,7 +44,7 @@ Default settings:
 }
 ```
 
-The keyboard shortcuts can be disabled setting them to `null` or `false`.
+Assign a value of `false` to any `keyboardShortcut` to disable it.
 
 ## License
 
