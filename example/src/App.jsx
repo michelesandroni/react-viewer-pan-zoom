@@ -89,7 +89,7 @@ const Toolbar = ({ contents, selected, setSelected }) => {
       if (typeof contents[selected].type === 'string') {
         return `<${contents[selected].type}>` // Built-in HTML elements (like 'img', 'div', etc.)
       } else if (typeof contents[selected].type === 'function') {
-        return `<${contents[selected].type.name}>` // Components
+        return `<${contents[selected].type.displayName || 'Component'}>` // Components: default to 'Component' if no displayName
       }
     }
   }
@@ -97,7 +97,7 @@ const Toolbar = ({ contents, selected, setSelected }) => {
   const getSrc = () => {
     if (contents[selected].props.src) {
       const src = contents[selected].props.src.replace('https://', '')
-      return ` ${src.startsWith('picsum.photos') ? src : src.split('/').pop()}`
+      return ` ${src.startsWith('picsum.photos') ? src : src.split('/').pop()} `
     }
     return ''
   }
@@ -192,7 +192,7 @@ const ExampleInlineSVG = ({ src, style }) => {
       try {
         const response = await fetch(src)
         if (!response.ok) {
-          throw new Error(`Failed to fetch SVG: ${response.status} ${response.statusText}`)
+          throw new Error(`Failed to fetch SVG: ${response.status} ${response.statusText} `)
         }
         const responseText = await response.text()
         const parser = new DOMParser()
@@ -207,13 +207,13 @@ const ExampleInlineSVG = ({ src, style }) => {
         })
 
         // Generate a unique string
-        const uniqueString = `${Math.random().toString(36).substring(2, 9)}`
+        const uniqueString = `${Math.random().toString(36).substring(2, 9)} `
 
         // Uniquify IDs and references
         const uniquifyIDs = (node) => {
           if (node.hasAttribute('id')) {
             const oldID = node.getAttribute('id')
-            const newID = `${oldID}_${uniqueString}`
+            const newID = `${oldID}_${uniqueString} `
             node.setAttribute('id', newID)
             // Update references to the old ID
             svgDocument.querySelectorAll('*').forEach((refNode) => {
@@ -222,7 +222,7 @@ const ExampleInlineSVG = ({ src, style }) => {
                   let attrValue = refNode.getAttribute(attr)
                   if (attrValue.includes(oldID)) {
                     // Replace only whole word matches of oldID to prevent unintended replacements
-                    attrValue = attrValue.replace(new RegExp(`\\b${oldID}\\b`, 'g'), newID)
+                    attrValue = attrValue.replace(new RegExp(`\\b${oldID} \\b`, 'g'), newID)
                     refNode.setAttribute(attr, attrValue)
                   }
                 }
@@ -277,5 +277,10 @@ const ExampleCanvas = ({ style }) => {
 
   return (<canvas width={width} height={height} style={style} ref={handleCanvasDraw}></canvas>)
 }
+
+ExampleHtmlElement.displayName = 'ExampleHtmlElement'
+ExampleInlineSVG.displayName = 'ExampleInlineSVG'
+ExampleCanvas.displayName = 'ExampleCanvas'
+SVG.displayName = 'react-inlinesvg'
 
 export default App
