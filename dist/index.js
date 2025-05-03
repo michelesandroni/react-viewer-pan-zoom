@@ -1,10 +1,10 @@
-import * as Dr from "react";
-import ft, { useState as Ie, useRef as he, useEffect as Ee, useLayoutEffect as bs, forwardRef as _s, useCallback as ge, useContext as jr, useMemo as ut, createContext as ws } from "react";
-import { unstable_batchedUpdates as Es } from "react-dom";
-import './index.css';function Ss(e) {
-  return e && e.__esModule && Object.prototype.hasOwnProperty.call(e, "default") ? e.default : e;
+import * as Rr from "react";
+import lt, { useState as Ae, useRef as he, useEffect as Ee, useLayoutEffect as ds, forwardRef as hs, useCallback as ge, useContext as Or, useMemo as ct, createContext as ps } from "react";
+import { unstable_batchedUpdates as ms } from "react-dom";
+import './index.css';function vs(t) {
+  return t && t.__esModule && Object.prototype.hasOwnProperty.call(t, "default") ? t.default : t;
 }
-var _r = { exports: {} }, it = {};
+var mr = { exports: {} }, nt = {};
 /**
  * @license React
  * react-jsx-runtime.production.min.js
@@ -14,25 +14,21 @@ var _r = { exports: {} }, it = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var fn;
-function Ts() {
-  if (fn)
-    return it;
-  fn = 1;
-  var e = ft, t = Symbol.for("react.element"), r = Symbol.for("react.fragment"), n = Object.prototype.hasOwnProperty, i = e.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, s = { key: !0, ref: !0, __self: !0, __source: !0 };
-  function a(c, h, u) {
-    var l, f = {}, b = null, E = null;
-    u !== void 0 && (b = "" + u), h.key !== void 0 && (b = "" + h.key), h.ref !== void 0 && (E = h.ref);
-    for (l in h)
-      n.call(h, l) && !s.hasOwnProperty(l) && (f[l] = h[l]);
-    if (c && c.defaultProps)
-      for (l in h = c.defaultProps, h)
-        f[l] === void 0 && (f[l] = h[l]);
-    return { $$typeof: t, type: c, key: b, ref: E, props: f, _owner: i.current };
+var sn;
+function gs() {
+  if (sn) return nt;
+  sn = 1;
+  var t = lt, e = Symbol.for("react.element"), r = Symbol.for("react.fragment"), n = Object.prototype.hasOwnProperty, i = t.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, s = { key: !0, ref: !0, __self: !0, __source: !0 };
+  function a(c, d, u) {
+    var l, h = {}, m = null, w = null;
+    u !== void 0 && (m = "" + u), d.key !== void 0 && (m = "" + d.key), d.ref !== void 0 && (w = d.ref);
+    for (l in d) n.call(d, l) && !s.hasOwnProperty(l) && (h[l] = d[l]);
+    if (c && c.defaultProps) for (l in d = c.defaultProps, d) h[l] === void 0 && (h[l] = d[l]);
+    return { $$typeof: e, type: c, key: m, ref: w, props: h, _owner: i.current };
   }
-  return it.Fragment = r, it.jsx = a, it.jsxs = a, it;
+  return nt.Fragment = r, nt.jsx = a, nt.jsxs = a, nt;
 }
-var st = {};
+var it = {};
 /**
  * @license React
  * react-jsx-runtime.development.js
@@ -42,57 +38,57 @@ var st = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var dn;
-function Ps() {
-  return dn || (dn = 1, process.env.NODE_ENV !== "production" && function() {
-    var e = ft, t = Symbol.for("react.element"), r = Symbol.for("react.portal"), n = Symbol.for("react.fragment"), i = Symbol.for("react.strict_mode"), s = Symbol.for("react.profiler"), a = Symbol.for("react.provider"), c = Symbol.for("react.context"), h = Symbol.for("react.forward_ref"), u = Symbol.for("react.suspense"), l = Symbol.for("react.suspense_list"), f = Symbol.for("react.memo"), b = Symbol.for("react.lazy"), E = Symbol.for("react.offscreen"), P = Symbol.iterator, g = "@@iterator";
+var on;
+function ys() {
+  return on || (on = 1, process.env.NODE_ENV !== "production" && function() {
+    var t = lt, e = Symbol.for("react.element"), r = Symbol.for("react.portal"), n = Symbol.for("react.fragment"), i = Symbol.for("react.strict_mode"), s = Symbol.for("react.profiler"), a = Symbol.for("react.provider"), c = Symbol.for("react.context"), d = Symbol.for("react.forward_ref"), u = Symbol.for("react.suspense"), l = Symbol.for("react.suspense_list"), h = Symbol.for("react.memo"), m = Symbol.for("react.lazy"), w = Symbol.for("react.offscreen"), T = Symbol.iterator, y = "@@iterator";
     function R(o) {
       if (o === null || typeof o != "object")
         return null;
-      var m = P && o[P] || o[g];
-      return typeof m == "function" ? m : null;
+      var v = T && o[T] || o[y];
+      return typeof v == "function" ? v : null;
     }
-    var w = e.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-    function C(o) {
+    var E = t.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+    function O(o) {
       {
-        for (var m = arguments.length, S = new Array(m > 1 ? m - 1 : 0), x = 1; x < m; x++)
-          S[x - 1] = arguments[x];
-        O("error", o, S);
+        for (var v = arguments.length, x = new Array(v > 1 ? v - 1 : 0), I = 1; I < v; I++)
+          x[I - 1] = arguments[I];
+        P("error", o, x);
       }
     }
-    function O(o, m, S) {
+    function P(o, v, x) {
       {
-        var x = w.ReactDebugCurrentFrame, B = x.getStackAddendum();
-        B !== "" && (m += "%s", S = S.concat([B]));
-        var Z = S.map(function(W) {
+        var I = E.ReactDebugCurrentFrame, q = I.getStackAddendum();
+        q !== "" && (v += "%s", x = x.concat([q]));
+        var Z = x.map(function(W) {
           return String(W);
         });
-        Z.unshift("Warning: " + m), Function.prototype.apply.call(console[o], console, Z);
+        Z.unshift("Warning: " + v), Function.prototype.apply.call(console[o], console, Z);
       }
     }
-    var I = !1, y = !1, q = !1, te = !1, be = !1, re;
+    var A = !1, _ = !1, Y = !1, te = !1, _e = !1, re;
     re = Symbol.for("react.module.reference");
     function me(o) {
-      return !!(typeof o == "string" || typeof o == "function" || o === n || o === s || be || o === i || o === u || o === l || te || o === E || I || y || q || typeof o == "object" && o !== null && (o.$$typeof === b || o.$$typeof === f || o.$$typeof === a || o.$$typeof === c || o.$$typeof === h || // This needs to include all possible module reference object
+      return !!(typeof o == "string" || typeof o == "function" || o === n || o === s || _e || o === i || o === u || o === l || te || o === w || A || _ || Y || typeof o == "object" && o !== null && (o.$$typeof === m || o.$$typeof === h || o.$$typeof === a || o.$$typeof === c || o.$$typeof === d || // This needs to include all possible module reference object
       // types supported by any Flight configuration anywhere since
       // we don't know which Flight build this will end up being used
       // with.
       o.$$typeof === re || o.getModuleId !== void 0));
     }
-    function G(o, m, S) {
-      var x = o.displayName;
-      if (x)
-        return x;
-      var B = m.displayName || m.name || "";
-      return B !== "" ? S + "(" + B + ")" : S;
+    function H(o, v, x) {
+      var I = o.displayName;
+      if (I)
+        return I;
+      var q = v.displayName || v.name || "";
+      return q !== "" ? x + "(" + q + ")" : x;
     }
     function ue(o) {
       return o.displayName || "Context";
     }
-    function Y(o) {
+    function G(o) {
       if (o == null)
         return null;
-      if (typeof o.tag == "number" && C("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."), typeof o == "function")
+      if (typeof o.tag == "number" && O("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."), typeof o == "function")
         return o.displayName || o.name || null;
       if (typeof o == "string")
         return o;
@@ -113,20 +109,20 @@ function Ps() {
       if (typeof o == "object")
         switch (o.$$typeof) {
           case c:
-            var m = o;
-            return ue(m) + ".Consumer";
+            var v = o;
+            return ue(v) + ".Consumer";
           case a:
-            var S = o;
-            return ue(S._context) + ".Provider";
+            var x = o;
+            return ue(x._context) + ".Provider";
+          case d:
+            return H(o, o.render, "ForwardRef");
           case h:
-            return G(o, o.render, "ForwardRef");
-          case f:
-            var x = o.displayName || null;
-            return x !== null ? x : Y(o.type) || "Memo";
-          case b: {
-            var B = o, Z = B._payload, W = B._init;
+            var I = o.displayName || null;
+            return I !== null ? I : G(o.type) || "Memo";
+          case m: {
+            var q = o, Z = q._payload, W = q._init;
             try {
-              return Y(W(Z));
+              return G(W(Z));
             } catch {
               return null;
             }
@@ -134,18 +130,18 @@ function Ps() {
         }
       return null;
     }
-    var se = Object.assign, _e = 0, ne, ve, fe, ke, v, T, j;
-    function M() {
+    var se = Object.assign, be = 0, ne, ve, fe, ke, g, S, M;
+    function D() {
     }
-    M.__reactDisabledLog = !0;
+    D.__reactDisabledLog = !0;
     function k() {
       {
-        if (_e === 0) {
-          ne = console.log, ve = console.info, fe = console.warn, ke = console.error, v = console.group, T = console.groupCollapsed, j = console.groupEnd;
+        if (be === 0) {
+          ne = console.log, ve = console.info, fe = console.warn, ke = console.error, g = console.group, S = console.groupCollapsed, M = console.groupEnd;
           var o = {
             configurable: !0,
             enumerable: !0,
-            value: M,
+            value: D,
             writable: !0
           };
           Object.defineProperties(console, {
@@ -158,12 +154,12 @@ function Ps() {
             groupEnd: o
           });
         }
-        _e++;
+        be++;
       }
     }
     function N() {
       {
-        if (_e--, _e === 0) {
+        if (be--, be === 0) {
           var o = {
             configurable: !0,
             enumerable: !0,
@@ -183,54 +179,54 @@ function Ps() {
               value: ke
             }),
             group: se({}, o, {
-              value: v
+              value: g
             }),
             groupCollapsed: se({}, o, {
-              value: T
+              value: S
             }),
             groupEnd: se({}, o, {
-              value: j
+              value: M
             })
           });
         }
-        _e < 0 && C("disabledDepth fell below zero. This is a bug in React. Please file an issue.");
+        be < 0 && O("disabledDepth fell below zero. This is a bug in React. Please file an issue.");
       }
     }
-    var D = w.ReactCurrentDispatcher, $;
-    function F(o, m, S) {
+    var j = E.ReactCurrentDispatcher, $;
+    function F(o, v, x) {
       {
         if ($ === void 0)
           try {
             throw Error();
-          } catch (B) {
-            var x = B.stack.trim().match(/\n( *(at )?)/);
-            $ = x && x[1] || "";
+          } catch (q) {
+            var I = q.stack.trim().match(/\n( *(at )?)/);
+            $ = I && I[1] || "";
           }
         return `
 ` + $ + o;
       }
     }
-    var z = !1, d;
+    var z = !1, f;
     {
-      var A = typeof WeakMap == "function" ? WeakMap : Map;
-      d = new A();
+      var C = typeof WeakMap == "function" ? WeakMap : Map;
+      f = new C();
     }
-    function p(o, m) {
+    function p(o, v) {
       if (!o || z)
         return "";
       {
-        var S = d.get(o);
-        if (S !== void 0)
-          return S;
+        var x = f.get(o);
+        if (x !== void 0)
+          return x;
       }
-      var x;
+      var I;
       z = !0;
-      var B = Error.prepareStackTrace;
+      var q = Error.prepareStackTrace;
       Error.prepareStackTrace = void 0;
       var Z;
-      Z = D.current, D.current = null, k();
+      Z = j.current, j.current = null, k();
       try {
-        if (m) {
+        if (v) {
           var W = function() {
             throw Error();
           };
@@ -242,14 +238,14 @@ function Ps() {
             try {
               Reflect.construct(W, []);
             } catch (de) {
-              x = de;
+              I = de;
             }
             Reflect.construct(o, [], W);
           } else {
             try {
               W.call();
             } catch (de) {
-              x = de;
+              I = de;
             }
             o.call(W.prototype);
           }
@@ -257,14 +253,14 @@ function Ps() {
           try {
             throw Error();
           } catch (de) {
-            x = de;
+            I = de;
           }
           o();
         }
       } catch (de) {
-        if (de && x && typeof de.stack == "string") {
+        if (de && I && typeof de.stack == "string") {
           for (var L = de.stack.split(`
-`), le = x.stack.split(`
+`), le = I.stack.split(`
 `), ie = L.length - 1, oe = le.length - 1; ie >= 1 && oe >= 0 && L[ie] !== le[oe]; )
             oe--;
           for (; ie >= 1 && oe >= 0; ie--, oe--)
@@ -274,26 +270,26 @@ function Ps() {
                   if (ie--, oe--, oe < 0 || L[ie] !== le[oe]) {
                     var we = `
 ` + L[ie].replace(" at new ", " at ");
-                    return o.displayName && we.includes("<anonymous>") && (we = we.replace("<anonymous>", o.displayName)), typeof o == "function" && d.set(o, we), we;
+                    return o.displayName && we.includes("<anonymous>") && (we = we.replace("<anonymous>", o.displayName)), typeof o == "function" && f.set(o, we), we;
                   }
                 while (ie >= 1 && oe >= 0);
               break;
             }
         }
       } finally {
-        z = !1, D.current = Z, N(), Error.prepareStackTrace = B;
+        z = !1, j.current = Z, N(), Error.prepareStackTrace = q;
       }
       var Ke = o ? o.displayName || o.name : "", Ue = Ke ? F(Ke) : "";
-      return typeof o == "function" && d.set(o, Ue), Ue;
+      return typeof o == "function" && f.set(o, Ue), Ue;
     }
-    function Q(o, m, S) {
+    function X(o, v, x) {
       return p(o, !1);
     }
     function ce(o) {
-      var m = o.prototype;
-      return !!(m && m.isReactComponent);
+      var v = o.prototype;
+      return !!(v && v.isReactComponent);
     }
-    function X(o, m, S) {
+    function Q(o, v, x) {
       if (o == null)
         return "";
       if (typeof o == "function")
@@ -308,130 +304,126 @@ function Ps() {
       }
       if (typeof o == "object")
         switch (o.$$typeof) {
+          case d:
+            return X(o.render);
           case h:
-            return Q(o.render);
-          case f:
-            return X(o.type, m, S);
-          case b: {
-            var x = o, B = x._payload, Z = x._init;
+            return Q(o.type, v, x);
+          case m: {
+            var I = o, q = I._payload, Z = I._init;
             try {
-              return X(Z(B), m, S);
+              return Q(Z(q), v, x);
             } catch {
             }
           }
         }
       return "";
     }
-    var je = Object.prototype.hasOwnProperty, rt = {}, kt = w.ReactDebugCurrentFrame;
-    function Me(o) {
+    var Me = Object.prototype.hasOwnProperty, rt = {}, It = E.ReactDebugCurrentFrame;
+    function De(o) {
       if (o) {
-        var m = o._owner, S = X(o.type, o._source, m ? m.type : null);
-        kt.setExtraStackFrame(S);
+        var v = o._owner, x = Q(o.type, o._source, v ? v.type : null);
+        It.setExtraStackFrame(x);
       } else
-        kt.setExtraStackFrame(null);
+        It.setExtraStackFrame(null);
     }
-    function Xi(o, m, S, x, B) {
+    function Yi(o, v, x, I, q) {
       {
-        var Z = Function.call.bind(je);
+        var Z = Function.call.bind(Me);
         for (var W in o)
           if (Z(o, W)) {
             var L = void 0;
             try {
               if (typeof o[W] != "function") {
-                var le = Error((x || "React class") + ": " + S + " type `" + W + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof o[W] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
+                var le = Error((I || "React class") + ": " + x + " type `" + W + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof o[W] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
                 throw le.name = "Invariant Violation", le;
               }
-              L = o[W](m, W, x, S, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
+              L = o[W](v, W, I, x, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
             } catch (ie) {
               L = ie;
             }
-            L && !(L instanceof Error) && (Me(B), C("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", x || "React class", S, W, typeof L), Me(null)), L instanceof Error && !(L.message in rt) && (rt[L.message] = !0, Me(B), C("Failed %s type: %s", S, L.message), Me(null));
+            L && !(L instanceof Error) && (De(q), O("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", I || "React class", x, W, typeof L), De(null)), L instanceof Error && !(L.message in rt) && (rt[L.message] = !0, De(q), O("Failed %s type: %s", x, L.message), De(null));
           }
       }
     }
-    var Zi = Array.isArray;
-    function tr(o) {
-      return Zi(o);
+    var qi = Array.isArray;
+    function Qt(o) {
+      return qi(o);
     }
-    function Ji(o) {
+    function Bi(o) {
       {
-        var m = typeof Symbol == "function" && Symbol.toStringTag, S = m && o[Symbol.toStringTag] || o.constructor.name || "Object";
-        return S;
+        var v = typeof Symbol == "function" && Symbol.toStringTag, x = v && o[Symbol.toStringTag] || o.constructor.name || "Object";
+        return x;
       }
     }
-    function es(o) {
+    function Ki(o) {
       try {
-        return Jr(o), !1;
+        return Br(o), !1;
       } catch {
         return !0;
       }
     }
-    function Jr(o) {
+    function Br(o) {
       return "" + o;
     }
-    function en(o) {
-      if (es(o))
-        return C("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.", Ji(o)), Jr(o);
+    function Kr(o) {
+      if (Ki(o))
+        return O("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.", Bi(o)), Br(o);
     }
-    var nt = w.ReactCurrentOwner, ts = {
+    var Hr = E.ReactCurrentOwner, Hi = {
       key: !0,
       ref: !0,
       __self: !0,
       __source: !0
-    }, tn, rn, rr;
-    rr = {};
-    function rs(o) {
-      if (je.call(o, "ref")) {
-        var m = Object.getOwnPropertyDescriptor(o, "ref").get;
-        if (m && m.isReactWarning)
+    }, Gr, Xr;
+    function Gi(o) {
+      if (Me.call(o, "ref")) {
+        var v = Object.getOwnPropertyDescriptor(o, "ref").get;
+        if (v && v.isReactWarning)
           return !1;
       }
       return o.ref !== void 0;
     }
-    function ns(o) {
-      if (je.call(o, "key")) {
-        var m = Object.getOwnPropertyDescriptor(o, "key").get;
-        if (m && m.isReactWarning)
+    function Xi(o) {
+      if (Me.call(o, "key")) {
+        var v = Object.getOwnPropertyDescriptor(o, "key").get;
+        if (v && v.isReactWarning)
           return !1;
       }
       return o.key !== void 0;
     }
-    function is(o, m) {
-      if (typeof o.ref == "string" && nt.current && m && nt.current.stateNode !== m) {
-        var S = Y(nt.current.type);
-        rr[S] || (C('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', Y(nt.current.type), o.ref), rr[S] = !0);
-      }
+    function Qi(o, v) {
+      typeof o.ref == "string" && Hr.current;
     }
-    function ss(o, m) {
+    function Zi(o, v) {
       {
-        var S = function() {
-          tn || (tn = !0, C("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", m));
+        var x = function() {
+          Gr || (Gr = !0, O("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", v));
         };
-        S.isReactWarning = !0, Object.defineProperty(o, "key", {
-          get: S,
+        x.isReactWarning = !0, Object.defineProperty(o, "key", {
+          get: x,
           configurable: !0
         });
       }
     }
-    function os(o, m) {
+    function Ji(o, v) {
       {
-        var S = function() {
-          rn || (rn = !0, C("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", m));
+        var x = function() {
+          Xr || (Xr = !0, O("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", v));
         };
-        S.isReactWarning = !0, Object.defineProperty(o, "ref", {
-          get: S,
+        x.isReactWarning = !0, Object.defineProperty(o, "ref", {
+          get: x,
           configurable: !0
         });
       }
     }
-    var as = function(o, m, S, x, B, Z, W) {
+    var es = function(o, v, x, I, q, Z, W) {
       var L = {
         // This tag allows us to uniquely identify this as a React Element
-        $$typeof: t,
+        $$typeof: e,
         // Built-in properties that belong on the element
         type: o,
-        key: m,
-        ref: S,
+        key: v,
+        ref: x,
         props: W,
         // Record the component responsible for creating this element.
         _owner: Z
@@ -445,20 +437,20 @@ function Ps() {
         configurable: !1,
         enumerable: !1,
         writable: !1,
-        value: x
+        value: I
       }), Object.defineProperty(L, "_source", {
         configurable: !1,
         enumerable: !1,
         writable: !1,
-        value: B
+        value: q
       }), Object.freeze && (Object.freeze(L.props), Object.freeze(L)), L;
     };
-    function cs(o, m, S, x, B) {
+    function ts(o, v, x, I, q) {
       {
         var Z, W = {}, L = null, le = null;
-        S !== void 0 && (en(S), L = "" + S), ns(m) && (en(m.key), L = "" + m.key), rs(m) && (le = m.ref, is(m, B));
-        for (Z in m)
-          je.call(m, Z) && !ts.hasOwnProperty(Z) && (W[Z] = m[Z]);
+        x !== void 0 && (Kr(x), L = "" + x), Xi(v) && (Kr(v.key), L = "" + v.key), Gi(v) && (le = v.ref, Qi(v, q));
+        for (Z in v)
+          Me.call(v, Z) && !Hi.hasOwnProperty(Z) && (W[Z] = v[Z]);
         if (o && o.defaultProps) {
           var ie = o.defaultProps;
           for (Z in ie)
@@ -466,28 +458,28 @@ function Ps() {
         }
         if (L || le) {
           var oe = typeof o == "function" ? o.displayName || o.name || "Unknown" : o;
-          L && ss(W, oe), le && os(W, oe);
+          L && Zi(W, oe), le && Ji(W, oe);
         }
-        return as(o, L, le, B, x, nt.current, W);
+        return es(o, L, le, q, I, Hr.current, W);
       }
     }
-    var nr = w.ReactCurrentOwner, nn = w.ReactDebugCurrentFrame;
+    var Zt = E.ReactCurrentOwner, Qr = E.ReactDebugCurrentFrame;
     function Be(o) {
       if (o) {
-        var m = o._owner, S = X(o.type, o._source, m ? m.type : null);
-        nn.setExtraStackFrame(S);
+        var v = o._owner, x = Q(o.type, o._source, v ? v.type : null);
+        Qr.setExtraStackFrame(x);
       } else
-        nn.setExtraStackFrame(null);
+        Qr.setExtraStackFrame(null);
     }
-    var ir;
-    ir = !1;
-    function sr(o) {
-      return typeof o == "object" && o !== null && o.$$typeof === t;
+    var Jt;
+    Jt = !1;
+    function er(o) {
+      return typeof o == "object" && o !== null && o.$$typeof === e;
     }
-    function sn() {
+    function Zr() {
       {
-        if (nr.current) {
-          var o = Y(nr.current.type);
+        if (Zt.current) {
+          var o = G(Zt.current.type);
           if (o)
             return `
 
@@ -496,316 +488,316 @@ Check the render method of \`` + o + "`.";
         return "";
       }
     }
-    function us(o) {
+    function rs(o) {
       return "";
     }
-    var on = {};
-    function ls(o) {
+    var Jr = {};
+    function ns(o) {
       {
-        var m = sn();
-        if (!m) {
-          var S = typeof o == "string" ? o : o.displayName || o.name;
-          S && (m = `
+        var v = Zr();
+        if (!v) {
+          var x = typeof o == "string" ? o : o.displayName || o.name;
+          x && (v = `
 
-Check the top-level render call using <` + S + ">.");
+Check the top-level render call using <` + x + ">.");
         }
-        return m;
+        return v;
       }
     }
-    function an(o, m) {
+    function en(o, v) {
       {
         if (!o._store || o._store.validated || o.key != null)
           return;
         o._store.validated = !0;
-        var S = ls(m);
-        if (on[S])
+        var x = ns(v);
+        if (Jr[x])
           return;
-        on[S] = !0;
-        var x = "";
-        o && o._owner && o._owner !== nr.current && (x = " It was passed a child from " + Y(o._owner.type) + "."), Be(o), C('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', S, x), Be(null);
+        Jr[x] = !0;
+        var I = "";
+        o && o._owner && o._owner !== Zt.current && (I = " It was passed a child from " + G(o._owner.type) + "."), Be(o), O('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', x, I), Be(null);
       }
     }
-    function cn(o, m) {
+    function tn(o, v) {
       {
         if (typeof o != "object")
           return;
-        if (tr(o))
-          for (var S = 0; S < o.length; S++) {
-            var x = o[S];
-            sr(x) && an(x, m);
+        if (Qt(o))
+          for (var x = 0; x < o.length; x++) {
+            var I = o[x];
+            er(I) && en(I, v);
           }
-        else if (sr(o))
+        else if (er(o))
           o._store && (o._store.validated = !0);
         else if (o) {
-          var B = R(o);
-          if (typeof B == "function" && B !== o.entries)
-            for (var Z = B.call(o), W; !(W = Z.next()).done; )
-              sr(W.value) && an(W.value, m);
+          var q = R(o);
+          if (typeof q == "function" && q !== o.entries)
+            for (var Z = q.call(o), W; !(W = Z.next()).done; )
+              er(W.value) && en(W.value, v);
         }
       }
     }
-    function fs(o) {
+    function is(o) {
       {
-        var m = o.type;
-        if (m == null || typeof m == "string")
+        var v = o.type;
+        if (v == null || typeof v == "string")
           return;
-        var S;
-        if (typeof m == "function")
-          S = m.propTypes;
-        else if (typeof m == "object" && (m.$$typeof === h || // Note: Memo only checks outer props here.
+        var x;
+        if (typeof v == "function")
+          x = v.propTypes;
+        else if (typeof v == "object" && (v.$$typeof === d || // Note: Memo only checks outer props here.
         // Inner props are checked in the reconciler.
-        m.$$typeof === f))
-          S = m.propTypes;
+        v.$$typeof === h))
+          x = v.propTypes;
         else
           return;
-        if (S) {
-          var x = Y(m);
-          Xi(S, o.props, "prop", x, o);
-        } else if (m.PropTypes !== void 0 && !ir) {
-          ir = !0;
-          var B = Y(m);
-          C("Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?", B || "Unknown");
+        if (x) {
+          var I = G(v);
+          Yi(x, o.props, "prop", I, o);
+        } else if (v.PropTypes !== void 0 && !Jt) {
+          Jt = !0;
+          var q = G(v);
+          O("Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?", q || "Unknown");
         }
-        typeof m.getDefaultProps == "function" && !m.getDefaultProps.isReactClassApproved && C("getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.");
+        typeof v.getDefaultProps == "function" && !v.getDefaultProps.isReactClassApproved && O("getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.");
       }
     }
-    function ds(o) {
+    function ss(o) {
       {
-        for (var m = Object.keys(o.props), S = 0; S < m.length; S++) {
-          var x = m[S];
-          if (x !== "children" && x !== "key") {
-            Be(o), C("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", x), Be(null);
+        for (var v = Object.keys(o.props), x = 0; x < v.length; x++) {
+          var I = v[x];
+          if (I !== "children" && I !== "key") {
+            Be(o), O("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", I), Be(null);
             break;
           }
         }
-        o.ref !== null && (Be(o), C("Invalid attribute `ref` supplied to `React.Fragment`."), Be(null));
+        o.ref !== null && (Be(o), O("Invalid attribute `ref` supplied to `React.Fragment`."), Be(null));
       }
     }
-    var un = {};
-    function ln(o, m, S, x, B, Z) {
+    var rn = {};
+    function nn(o, v, x, I, q, Z) {
       {
         var W = me(o);
         if (!W) {
           var L = "";
           (o === void 0 || typeof o == "object" && o !== null && Object.keys(o).length === 0) && (L += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.");
-          var le = us();
-          le ? L += le : L += sn();
+          var le = rs();
+          le ? L += le : L += Zr();
           var ie;
-          o === null ? ie = "null" : tr(o) ? ie = "array" : o !== void 0 && o.$$typeof === t ? (ie = "<" + (Y(o.type) || "Unknown") + " />", L = " Did you accidentally export a JSX literal instead of a component?") : ie = typeof o, C("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", ie, L);
+          o === null ? ie = "null" : Qt(o) ? ie = "array" : o !== void 0 && o.$$typeof === e ? (ie = "<" + (G(o.type) || "Unknown") + " />", L = " Did you accidentally export a JSX literal instead of a component?") : ie = typeof o, O("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", ie, L);
         }
-        var oe = cs(o, m, S, B, Z);
+        var oe = ts(o, v, x, q, Z);
         if (oe == null)
           return oe;
         if (W) {
-          var we = m.children;
+          var we = v.children;
           if (we !== void 0)
-            if (x)
-              if (tr(we)) {
+            if (I)
+              if (Qt(we)) {
                 for (var Ke = 0; Ke < we.length; Ke++)
-                  cn(we[Ke], o);
+                  tn(we[Ke], o);
                 Object.freeze && Object.freeze(we);
               } else
-                C("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
+                O("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
             else
-              cn(we, o);
+              tn(we, o);
         }
-        if (je.call(m, "key")) {
-          var Ue = Y(o), de = Object.keys(m).filter(function(ys) {
-            return ys !== "key";
-          }), or = de.length > 0 ? "{key: someKey, " + de.join(": ..., ") + ": ...}" : "{key: someKey}";
-          if (!un[Ue + or]) {
-            var gs = de.length > 0 ? "{" + de.join(": ..., ") + ": ...}" : "{}";
-            C(`A props object containing a "key" prop is being spread into JSX:
+        if (Me.call(v, "key")) {
+          var Ue = G(o), de = Object.keys(v).filter(function(fs) {
+            return fs !== "key";
+          }), tr = de.length > 0 ? "{key: someKey, " + de.join(": ..., ") + ": ...}" : "{key: someKey}";
+          if (!rn[Ue + tr]) {
+            var ls = de.length > 0 ? "{" + de.join(": ..., ") + ": ...}" : "{}";
+            O(`A props object containing a "key" prop is being spread into JSX:
   let props = %s;
   <%s {...props} />
 React keys must be passed directly to JSX without using spread:
   let props = %s;
-  <%s key={someKey} {...props} />`, or, Ue, gs, Ue), un[Ue + or] = !0;
+  <%s key={someKey} {...props} />`, tr, Ue, ls, Ue), rn[Ue + tr] = !0;
           }
         }
-        return o === n ? ds(oe) : fs(oe), oe;
+        return o === n ? ss(oe) : is(oe), oe;
       }
     }
-    function hs(o, m, S) {
-      return ln(o, m, S, !0);
+    function os(o, v, x) {
+      return nn(o, v, x, !0);
     }
-    function ps(o, m, S) {
-      return ln(o, m, S, !1);
+    function as(o, v, x) {
+      return nn(o, v, x, !1);
     }
-    var ms = ps, vs = hs;
-    st.Fragment = n, st.jsx = ms, st.jsxs = vs;
-  }()), st;
+    var cs = as, us = os;
+    it.Fragment = n, it.jsx = cs, it.jsxs = us;
+  }()), it;
 }
-process.env.NODE_ENV === "production" ? _r.exports = Ts() : _r.exports = Ps();
-var Fe = _r.exports, Os = Object.defineProperty, Rs = (e, t) => {
-  for (var r in t)
-    Os(e, r, { get: t[r], enumerable: !0 });
-}, Ce = {};
-Rs(Ce, {
-  assign: () => Is,
-  colors: () => ze,
-  createStringInterpolator: () => Ur,
-  skipAnimation: () => hi,
-  to: () => di,
-  willAdvance: () => Wr
-});
-var Vr = Ct(), V = (e) => Rt(e, Vr), $r = Ct();
-V.write = (e) => Rt(e, $r);
-var Bt = Ct();
-V.onStart = (e) => Rt(e, Bt);
-var Fr = Ct();
-V.onFrame = (e) => Rt(e, Fr);
-var Nr = Ct();
-V.onFinish = (e) => Rt(e, Nr);
-var Xe = [];
-V.setTimeout = (e, t) => {
-  const r = V.now() + t, n = () => {
-    const s = Xe.findIndex((a) => a.cancel == n);
-    ~s && Xe.splice(s, 1), Le -= ~s ? 1 : 0;
-  }, i = { time: r, handler: e, cancel: n };
-  return Xe.splice(ai(r), 0, i), Le += 1, ci(), i;
+process.env.NODE_ENV === "production" ? mr.exports = gs() : mr.exports = ys();
+var Fe = mr.exports, Cr = Rt(), V = (t) => xt(t, Cr), Ar = Rt();
+V.write = (t) => xt(t, Ar);
+var Ut = Rt();
+V.onStart = (t) => xt(t, Ut);
+var Ir = Rt();
+V.onFrame = (t) => xt(t, Ir);
+var kr = Rt();
+V.onFinish = (t) => xt(t, kr);
+var Qe = [];
+V.setTimeout = (t, e) => {
+  const r = V.now() + e, n = () => {
+    const s = Qe.findIndex((a) => a.cancel == n);
+    ~s && Qe.splice(s, 1), Le -= ~s ? 1 : 0;
+  }, i = { time: r, handler: t, cancel: n };
+  return Qe.splice(Zn(r), 0, i), Le += 1, Jn(), i;
 };
-var ai = (e) => ~(~Xe.findIndex((t) => t.time > e) || ~Xe.length);
-V.cancel = (e) => {
-  Bt.delete(e), Fr.delete(e), Nr.delete(e), Vr.delete(e), $r.delete(e);
+var Zn = (t) => ~(~Qe.findIndex((e) => e.time > t) || ~Qe.length);
+V.cancel = (t) => {
+  Ut.delete(t), Ir.delete(t), kr.delete(t), Cr.delete(t), Ar.delete(t);
 };
-V.sync = (e) => {
-  wr = !0, V.batchedUpdates(e), wr = !1;
+V.sync = (t) => {
+  vr = !0, V.batchedUpdates(t), vr = !1;
 };
-V.throttle = (e) => {
-  let t;
+V.throttle = (t) => {
+  let e;
   function r() {
     try {
-      e(...t);
+      t(...e);
     } finally {
-      t = null;
+      e = null;
     }
   }
   function n(...i) {
-    t = i, V.onStart(r);
+    e = i, V.onStart(r);
   }
-  return n.handler = e, n.cancel = () => {
-    Bt.delete(r), t = null;
+  return n.handler = t, n.cancel = () => {
+    Ut.delete(r), e = null;
   }, n;
 };
-var Lr = typeof window < "u" ? window.requestAnimationFrame : (
+var Dr = typeof window < "u" ? window.requestAnimationFrame : (
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   () => {
   }
 );
-V.use = (e) => Lr = e;
+V.use = (t) => Dr = t;
 V.now = typeof performance < "u" ? () => performance.now() : Date.now;
-V.batchedUpdates = (e) => e();
+V.batchedUpdates = (t) => t();
 V.catch = console.error;
 V.frameLoop = "always";
 V.advance = () => {
   V.frameLoop !== "demand" ? console.warn(
     "Cannot call the manual advancement of rafz whilst frameLoop is not set as demand"
-  ) : li();
+  ) : ti();
 };
-var Ne = -1, Le = 0, wr = !1;
-function Rt(e, t) {
-  wr ? (t.delete(e), e(0)) : (t.add(e), ci());
+var Ne = -1, Le = 0, vr = !1;
+function xt(t, e) {
+  vr ? (e.delete(t), t(0)) : (e.add(t), Jn());
 }
-function ci() {
-  Ne < 0 && (Ne = 0, V.frameLoop !== "demand" && Lr(ui));
+function Jn() {
+  Ne < 0 && (Ne = 0, V.frameLoop !== "demand" && Dr(ei));
 }
-function Cs() {
+function _s() {
   Ne = -1;
 }
-function ui() {
-  ~Ne && (Lr(ui), V.batchedUpdates(li));
+function ei() {
+  ~Ne && (Dr(ei), V.batchedUpdates(ti));
 }
-function li() {
-  const e = Ne;
+function ti() {
+  const t = Ne;
   Ne = V.now();
-  const t = ai(Ne);
-  if (t && (fi(Xe.splice(0, t), (r) => r.handler()), Le -= t), !Le) {
-    Cs();
+  const e = Zn(Ne);
+  if (e && (ri(Qe.splice(0, e), (r) => r.handler()), Le -= e), !Le) {
+    _s();
     return;
   }
-  Bt.flush(), Vr.flush(e ? Math.min(64, Ne - e) : 16.667), Fr.flush(), $r.flush(), Nr.flush();
+  Ut.flush(), Cr.flush(t ? Math.min(64, Ne - t) : 16.667), Ir.flush(), Ar.flush(), kr.flush();
 }
-function Ct() {
-  let e = /* @__PURE__ */ new Set(), t = e;
+function Rt() {
+  let t = /* @__PURE__ */ new Set(), e = t;
   return {
     add(r) {
-      Le += t == e && !e.has(r) ? 1 : 0, e.add(r);
+      Le += e == t && !t.has(r) ? 1 : 0, t.add(r);
     },
     delete(r) {
-      return Le -= t == e && e.has(r) ? 1 : 0, e.delete(r);
+      return Le -= e == t && t.has(r) ? 1 : 0, t.delete(r);
     },
     flush(r) {
-      t.size && (e = /* @__PURE__ */ new Set(), Le -= t.size, fi(t, (n) => n(r) && e.add(n)), Le += e.size, t = e);
+      e.size && (t = /* @__PURE__ */ new Set(), Le -= e.size, ri(e, (n) => n(r) && t.add(n)), Le += t.size, e = t);
     }
   };
 }
-function fi(e, t) {
-  e.forEach((r) => {
+function ri(t, e) {
+  t.forEach((r) => {
     try {
-      t(r);
+      e(r);
     } catch (n) {
       V.catch(n);
     }
   });
 }
-function Er() {
+var bs = Object.defineProperty, ws = (t, e) => {
+  for (var r in e)
+    bs(t, r, { get: e[r], enumerable: !0 });
+}, Oe = {};
+ws(Oe, {
+  assign: () => Ss,
+  colors: () => ze,
+  createStringInterpolator: () => Mr,
+  skipAnimation: () => ii,
+  to: () => ni,
+  willAdvance: () => Vr
+});
+function gr() {
 }
-var As = (e, t, r) => Object.defineProperty(e, t, { value: r, writable: !0, configurable: !0 }), _ = {
+var Es = (t, e, r) => Object.defineProperty(t, e, { value: r, writable: !0, configurable: !0 }), b = {
   arr: Array.isArray,
-  obj: (e) => !!e && e.constructor.name === "Object",
-  fun: (e) => typeof e == "function",
-  str: (e) => typeof e == "string",
-  num: (e) => typeof e == "number",
-  und: (e) => e === void 0
+  obj: (t) => !!t && t.constructor.name === "Object",
+  fun: (t) => typeof t == "function",
+  str: (t) => typeof t == "string",
+  num: (t) => typeof t == "number",
+  und: (t) => t === void 0
 };
-function De(e, t) {
-  if (_.arr(e)) {
-    if (!_.arr(t) || e.length !== t.length)
+function je(t, e) {
+  if (b.arr(t)) {
+    if (!b.arr(e) || t.length !== e.length)
       return !1;
-    for (let r = 0; r < e.length; r++)
-      if (e[r] !== t[r])
+    for (let r = 0; r < t.length; r++)
+      if (t[r] !== e[r])
         return !1;
     return !0;
   }
-  return e === t;
+  return t === e;
 }
-var U = (e, t) => e.forEach(t);
-function xe(e, t, r) {
-  if (_.arr(e)) {
-    for (let n = 0; n < e.length; n++)
-      t.call(r, e[n], `${n}`);
+var U = (t, e) => t.forEach(e);
+function Ie(t, e, r) {
+  if (b.arr(t)) {
+    for (let n = 0; n < t.length; n++)
+      e.call(r, t[n], `${n}`);
     return;
   }
-  for (const n in e)
-    e.hasOwnProperty(n) && t.call(r, e[n], n);
+  for (const n in t)
+    t.hasOwnProperty(n) && e.call(r, t[n], n);
 }
-var ye = (e) => _.und(e) ? [] : _.arr(e) ? e : [e];
-function dt(e, t) {
-  if (e.size) {
-    const r = Array.from(e);
-    e.clear(), U(r, t);
+var ye = (t) => b.und(t) ? [] : b.arr(t) ? t : [t];
+function ft(t, e) {
+  if (t.size) {
+    const r = Array.from(t);
+    t.clear(), U(r, e);
   }
 }
-var lt = (e, ...t) => dt(e, (r) => r(...t)), zr = () => typeof window > "u" || !window.navigator || /ServerSideRendering|^Deno\//.test(window.navigator.userAgent), Ur, di, ze = null, hi = !1, Wr = Er, Is = (e) => {
-  e.to && (di = e.to), e.now && (V.now = e.now), e.colors !== void 0 && (ze = e.colors), e.skipAnimation != null && (hi = e.skipAnimation), e.createStringInterpolator && (Ur = e.createStringInterpolator), e.requestAnimationFrame && V.use(e.requestAnimationFrame), e.batchedUpdates && (V.batchedUpdates = e.batchedUpdates), e.willAdvance && (Wr = e.willAdvance), e.frameLoop && (V.frameLoop = e.frameLoop);
-}, ht = /* @__PURE__ */ new Set(), Pe = [], ar = [], Lt = 0, Kt = {
+var ut = (t, ...e) => ft(t, (r) => r(...e)), jr = () => typeof window > "u" || !window.navigator || /ServerSideRendering|^Deno\//.test(window.navigator.userAgent), Mr, ni, ze = null, ii = !1, Vr = gr, Ss = (t) => {
+  t.to && (ni = t.to), t.now && (V.now = t.now), t.colors !== void 0 && (ze = t.colors), t.skipAnimation != null && (ii = t.skipAnimation), t.createStringInterpolator && (Mr = t.createStringInterpolator), t.requestAnimationFrame && V.use(t.requestAnimationFrame), t.batchedUpdates && (V.batchedUpdates = t.batchedUpdates), t.willAdvance && (Vr = t.willAdvance), t.frameLoop && (V.frameLoop = t.frameLoop);
+}, dt = /* @__PURE__ */ new Set(), Pe = [], rr = [], $t = 0, Wt = {
   get idle() {
-    return !ht.size && !Pe.length;
+    return !dt.size && !Pe.length;
   },
   /** Advance the given animation on every frame until idle. */
-  start(e) {
-    Lt > e.priority ? (ht.add(e), V.onStart(xs)) : (pi(e), V(Sr));
+  start(t) {
+    $t > t.priority ? (dt.add(t), V.onStart(Ts)) : (si(t), V(yr));
   },
   /** Advance all animations by the given time. */
-  advance: Sr,
+  advance: yr,
   /** Call this when an animation's priority changes. */
-  sort(e) {
-    if (Lt)
-      V.onFrame(() => Kt.sort(e));
+  sort(t) {
+    if ($t)
+      V.onFrame(() => Wt.sort(t));
     else {
-      const t = Pe.indexOf(e);
-      ~t && (Pe.splice(t, 1), mi(e));
+      const e = Pe.indexOf(t);
+      ~e && (Pe.splice(e, 1), oi(t));
     }
   },
   /**
@@ -814,35 +806,35 @@ var lt = (e, ...t) => dt(e, (r) => r(...t)), zr = () => typeof window > "u" || !
    * ☠️ Never call this from within the frameloop.
    */
   clear() {
-    Pe = [], ht.clear();
+    Pe = [], dt.clear();
   }
 };
-function xs() {
-  ht.forEach(pi), ht.clear(), V(Sr);
+function Ts() {
+  dt.forEach(si), dt.clear(), V(yr);
 }
-function pi(e) {
-  Pe.includes(e) || mi(e);
+function si(t) {
+  Pe.includes(t) || oi(t);
 }
-function mi(e) {
+function oi(t) {
   Pe.splice(
-    ks(Pe, (t) => t.priority > e.priority),
+    Ps(Pe, (e) => e.priority > t.priority),
     0,
-    e
+    t
   );
 }
-function Sr(e) {
-  const t = ar;
+function yr(t) {
+  const e = rr;
   for (let r = 0; r < Pe.length; r++) {
     const n = Pe[r];
-    Lt = n.priority, n.idle || (Wr(n), n.advance(e), n.idle || t.push(n));
+    $t = n.priority, n.idle || (Vr(n), n.advance(t), n.idle || e.push(n));
   }
-  return Lt = 0, ar = Pe, ar.length = 0, Pe = t, Pe.length > 0;
+  return $t = 0, rr = Pe, rr.length = 0, Pe = e, Pe.length > 0;
 }
-function ks(e, t) {
-  const r = e.findIndex(t);
-  return r < 0 ? e.length : r;
+function Ps(t, e) {
+  const r = t.findIndex(e);
+  return r < 0 ? t.length : r;
 }
-var Ms = (e, t, r) => Math.min(Math.max(r, e), t), Ds = {
+var xs = {
   transparent: 0,
   aliceblue: 4042850303,
   antiquewhite: 4209760255,
@@ -993,333 +985,298 @@ var Ms = (e, t, r) => Math.min(Math.max(r, e), t), Ds = {
   whitesmoke: 4126537215,
   yellow: 4294902015,
   yellowgreen: 2597139199
-}, Re = "[-+]?\\d*\\.?\\d+", zt = Re + "%";
-function Ht(...e) {
-  return "\\(\\s*(" + e.join(")\\s*,\\s*(") + ")\\s*\\)";
+}, Re = "[-+]?\\d*\\.?\\d+", Ft = Re + "%";
+function Yt(...t) {
+  return "\\(\\s*(" + t.join(")\\s*,\\s*(") + ")\\s*\\)";
 }
-var js = new RegExp("rgb" + Ht(Re, Re, Re)), Vs = new RegExp("rgba" + Ht(Re, Re, Re, Re)), $s = new RegExp("hsl" + Ht(Re, zt, zt)), Fs = new RegExp(
-  "hsla" + Ht(Re, zt, zt, Re)
-), Ns = /^#([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/, Ls = /^#([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/, zs = /^#([0-9a-fA-F]{6})$/, Us = /^#([0-9a-fA-F]{8})$/;
-function Ws(e) {
-  let t;
-  return typeof e == "number" ? e >>> 0 === e && e >= 0 && e <= 4294967295 ? e : null : (t = zs.exec(e)) ? parseInt(t[1] + "ff", 16) >>> 0 : ze && ze[e] !== void 0 ? ze[e] : (t = js.exec(e)) ? (He(t[1]) << 24 | // r
-  He(t[2]) << 16 | // g
-  He(t[3]) << 8 | // b
+var Rs = new RegExp("rgb" + Yt(Re, Re, Re)), Os = new RegExp("rgba" + Yt(Re, Re, Re, Re)), Cs = new RegExp("hsl" + Yt(Re, Ft, Ft)), As = new RegExp(
+  "hsla" + Yt(Re, Ft, Ft, Re)
+), Is = /^#([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/, ks = /^#([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/, Ds = /^#([0-9a-fA-F]{6})$/, js = /^#([0-9a-fA-F]{8})$/;
+function Ms(t) {
+  let e;
+  return typeof t == "number" ? t >>> 0 === t && t >= 0 && t <= 4294967295 ? t : null : (e = Ds.exec(t)) ? parseInt(e[1] + "ff", 16) >>> 0 : ze && ze[t] !== void 0 ? ze[t] : (e = Rs.exec(t)) ? (He(e[1]) << 24 | // r
+  He(e[2]) << 16 | // g
+  He(e[3]) << 8 | // b
   255) >>> // a
-  0 : (t = Vs.exec(e)) ? (He(t[1]) << 24 | // r
-  He(t[2]) << 16 | // g
-  He(t[3]) << 8 | // b
-  mn(t[4])) >>> // a
-  0 : (t = Ns.exec(e)) ? parseInt(
-    t[1] + t[1] + // r
-    t[2] + t[2] + // g
-    t[3] + t[3] + // b
+  0 : (e = Os.exec(t)) ? (He(e[1]) << 24 | // r
+  He(e[2]) << 16 | // g
+  He(e[3]) << 8 | // b
+  un(e[4])) >>> // a
+  0 : (e = Is.exec(t)) ? parseInt(
+    e[1] + e[1] + // r
+    e[2] + e[2] + // g
+    e[3] + e[3] + // b
     "ff",
     // a
     16
-  ) >>> 0 : (t = Us.exec(e)) ? parseInt(t[1], 16) >>> 0 : (t = Ls.exec(e)) ? parseInt(
-    t[1] + t[1] + // r
-    t[2] + t[2] + // g
-    t[3] + t[3] + // b
-    t[4] + t[4],
+  ) >>> 0 : (e = js.exec(t)) ? parseInt(e[1], 16) >>> 0 : (e = ks.exec(t)) ? parseInt(
+    e[1] + e[1] + // r
+    e[2] + e[2] + // g
+    e[3] + e[3] + // b
+    e[4] + e[4],
     // a
     16
-  ) >>> 0 : (t = $s.exec(e)) ? (hn(
-    pn(t[1]),
+  ) >>> 0 : (e = Cs.exec(t)) ? (an(
+    cn(e[1]),
     // h
-    Mt(t[2]),
+    kt(e[2]),
     // s
-    Mt(t[3])
+    kt(e[3])
     // l
   ) | 255) >>> // a
-  0 : (t = Fs.exec(e)) ? (hn(
-    pn(t[1]),
+  0 : (e = As.exec(t)) ? (an(
+    cn(e[1]),
     // h
-    Mt(t[2]),
+    kt(e[2]),
     // s
-    Mt(t[3])
+    kt(e[3])
     // l
-  ) | mn(t[4])) >>> // a
+  ) | un(e[4])) >>> // a
   0 : null;
 }
-function cr(e, t, r) {
-  return r < 0 && (r += 1), r > 1 && (r -= 1), r < 1 / 6 ? e + (t - e) * 6 * r : r < 1 / 2 ? t : r < 2 / 3 ? e + (t - e) * (2 / 3 - r) * 6 : e;
+function nr(t, e, r) {
+  return r < 0 && (r += 1), r > 1 && (r -= 1), r < 1 / 6 ? t + (e - t) * 6 * r : r < 1 / 2 ? e : r < 2 / 3 ? t + (e - t) * (2 / 3 - r) * 6 : t;
 }
-function hn(e, t, r) {
-  const n = r < 0.5 ? r * (1 + t) : r + t - r * t, i = 2 * r - n, s = cr(i, n, e + 1 / 3), a = cr(i, n, e), c = cr(i, n, e - 1 / 3);
+function an(t, e, r) {
+  const n = r < 0.5 ? r * (1 + e) : r + e - r * e, i = 2 * r - n, s = nr(i, n, t + 1 / 3), a = nr(i, n, t), c = nr(i, n, t - 1 / 3);
   return Math.round(s * 255) << 24 | Math.round(a * 255) << 16 | Math.round(c * 255) << 8;
 }
-function He(e) {
-  const t = parseInt(e, 10);
-  return t < 0 ? 0 : t > 255 ? 255 : t;
+function He(t) {
+  const e = parseInt(t, 10);
+  return e < 0 ? 0 : e > 255 ? 255 : e;
 }
-function pn(e) {
-  return (parseFloat(e) % 360 + 360) % 360 / 360;
+function cn(t) {
+  return (parseFloat(t) % 360 + 360) % 360 / 360;
 }
-function mn(e) {
-  const t = parseFloat(e);
-  return t < 0 ? 0 : t > 1 ? 255 : Math.round(t * 255);
+function un(t) {
+  const e = parseFloat(t);
+  return e < 0 ? 0 : e > 1 ? 255 : Math.round(e * 255);
 }
-function Mt(e) {
-  const t = parseFloat(e);
-  return t < 0 ? 0 : t > 100 ? 1 : t / 100;
+function kt(t) {
+  const e = parseFloat(t);
+  return e < 0 ? 0 : e > 100 ? 1 : e / 100;
 }
-function vn(e) {
-  let t = Ws(e);
-  if (t === null)
-    return e;
-  t = t || 0;
-  const r = (t & 4278190080) >>> 24, n = (t & 16711680) >>> 16, i = (t & 65280) >>> 8, s = (t & 255) / 255;
+function ln(t) {
+  let e = Ms(t);
+  if (e === null)
+    return t;
+  e = e || 0;
+  const r = (e & 4278190080) >>> 24, n = (e & 16711680) >>> 16, i = (e & 65280) >>> 8, s = (e & 255) / 255;
   return `rgba(${r}, ${n}, ${i}, ${s})`;
 }
-var gt = (e, t, r) => {
-  if (_.fun(e))
-    return e;
-  if (_.arr(e))
-    return gt({
-      range: e,
-      output: t,
+var vt = (t, e, r) => {
+  if (b.fun(t))
+    return t;
+  if (b.arr(t))
+    return vt({
+      range: t,
+      output: e,
       extrapolate: r
     });
-  if (_.str(e.output[0]))
-    return Ur(e);
-  const n = e, i = n.output, s = n.range || [0, 1], a = n.extrapolateLeft || n.extrapolate || "extend", c = n.extrapolateRight || n.extrapolate || "extend", h = n.easing || ((u) => u);
+  if (b.str(t.output[0]))
+    return Mr(t);
+  const n = t, i = n.output, s = n.range || [0, 1], a = n.extrapolateLeft || n.extrapolate || "extend", c = n.extrapolateRight || n.extrapolate || "extend", d = n.easing || ((u) => u);
   return (u) => {
-    const l = qs(u, s);
-    return Ys(
+    const l = $s(u, s);
+    return Vs(
       u,
       s[l],
       s[l + 1],
       i[l],
       i[l + 1],
-      h,
+      d,
       a,
       c,
       n.map
     );
   };
 };
-function Ys(e, t, r, n, i, s, a, c, h) {
-  let u = h ? h(e) : e;
-  if (u < t) {
+function Vs(t, e, r, n, i, s, a, c, d) {
+  let u = d ? d(t) : t;
+  if (u < e) {
     if (a === "identity")
       return u;
-    a === "clamp" && (u = t);
+    a === "clamp" && (u = e);
   }
   if (u > r) {
     if (c === "identity")
       return u;
     c === "clamp" && (u = r);
   }
-  return n === i ? n : t === r ? e <= t ? n : i : (t === -1 / 0 ? u = -u : r === 1 / 0 ? u = u - t : u = (u - t) / (r - t), u = s(u), n === -1 / 0 ? u = -u : i === 1 / 0 ? u = u + n : u = u * (i - n) + n, u);
+  return n === i ? n : e === r ? t <= e ? n : i : (e === -1 / 0 ? u = -u : r === 1 / 0 ? u = u - e : u = (u - e) / (r - e), u = s(u), n === -1 / 0 ? u = -u : i === 1 / 0 ? u = u + n : u = u * (i - n) + n, u);
 }
-function qs(e, t) {
-  for (var r = 1; r < t.length - 1 && !(t[r] >= e); ++r)
+function $s(t, e) {
+  for (var r = 1; r < e.length - 1 && !(e[r] >= t); ++r)
     ;
   return r - 1;
 }
-var Bs = (e, t = "end") => (r) => {
-  r = t === "end" ? Math.min(r, 0.999) : Math.max(r, 1e-3);
-  const n = r * e, i = t === "end" ? Math.floor(n) : Math.ceil(n);
-  return Ms(0, 1, i / e);
-}, Ut = 1.70158, Dt = Ut * 1.525, gn = Ut + 1, yn = 2 * Math.PI / 3, bn = 2 * Math.PI / 4.5, jt = (e) => e < 1 / 2.75 ? 7.5625 * e * e : e < 2 / 2.75 ? 7.5625 * (e -= 1.5 / 2.75) * e + 0.75 : e < 2.5 / 2.75 ? 7.5625 * (e -= 2.25 / 2.75) * e + 0.9375 : 7.5625 * (e -= 2.625 / 2.75) * e + 0.984375, Ks = {
-  linear: (e) => e,
-  easeInQuad: (e) => e * e,
-  easeOutQuad: (e) => 1 - (1 - e) * (1 - e),
-  easeInOutQuad: (e) => e < 0.5 ? 2 * e * e : 1 - Math.pow(-2 * e + 2, 2) / 2,
-  easeInCubic: (e) => e * e * e,
-  easeOutCubic: (e) => 1 - Math.pow(1 - e, 3),
-  easeInOutCubic: (e) => e < 0.5 ? 4 * e * e * e : 1 - Math.pow(-2 * e + 2, 3) / 2,
-  easeInQuart: (e) => e * e * e * e,
-  easeOutQuart: (e) => 1 - Math.pow(1 - e, 4),
-  easeInOutQuart: (e) => e < 0.5 ? 8 * e * e * e * e : 1 - Math.pow(-2 * e + 2, 4) / 2,
-  easeInQuint: (e) => e * e * e * e * e,
-  easeOutQuint: (e) => 1 - Math.pow(1 - e, 5),
-  easeInOutQuint: (e) => e < 0.5 ? 16 * e * e * e * e * e : 1 - Math.pow(-2 * e + 2, 5) / 2,
-  easeInSine: (e) => 1 - Math.cos(e * Math.PI / 2),
-  easeOutSine: (e) => Math.sin(e * Math.PI / 2),
-  easeInOutSine: (e) => -(Math.cos(Math.PI * e) - 1) / 2,
-  easeInExpo: (e) => e === 0 ? 0 : Math.pow(2, 10 * e - 10),
-  easeOutExpo: (e) => e === 1 ? 1 : 1 - Math.pow(2, -10 * e),
-  easeInOutExpo: (e) => e === 0 ? 0 : e === 1 ? 1 : e < 0.5 ? Math.pow(2, 20 * e - 10) / 2 : (2 - Math.pow(2, -20 * e + 10)) / 2,
-  easeInCirc: (e) => 1 - Math.sqrt(1 - Math.pow(e, 2)),
-  easeOutCirc: (e) => Math.sqrt(1 - Math.pow(e - 1, 2)),
-  easeInOutCirc: (e) => e < 0.5 ? (1 - Math.sqrt(1 - Math.pow(2 * e, 2))) / 2 : (Math.sqrt(1 - Math.pow(-2 * e + 2, 2)) + 1) / 2,
-  easeInBack: (e) => gn * e * e * e - Ut * e * e,
-  easeOutBack: (e) => 1 + gn * Math.pow(e - 1, 3) + Ut * Math.pow(e - 1, 2),
-  easeInOutBack: (e) => e < 0.5 ? Math.pow(2 * e, 2) * ((Dt + 1) * 2 * e - Dt) / 2 : (Math.pow(2 * e - 2, 2) * ((Dt + 1) * (e * 2 - 2) + Dt) + 2) / 2,
-  easeInElastic: (e) => e === 0 ? 0 : e === 1 ? 1 : -Math.pow(2, 10 * e - 10) * Math.sin((e * 10 - 10.75) * yn),
-  easeOutElastic: (e) => e === 0 ? 0 : e === 1 ? 1 : Math.pow(2, -10 * e) * Math.sin((e * 10 - 0.75) * yn) + 1,
-  easeInOutElastic: (e) => e === 0 ? 0 : e === 1 ? 1 : e < 0.5 ? -(Math.pow(2, 20 * e - 10) * Math.sin((20 * e - 11.125) * bn)) / 2 : Math.pow(2, -20 * e + 10) * Math.sin((20 * e - 11.125) * bn) / 2 + 1,
-  easeInBounce: (e) => 1 - jt(1 - e),
-  easeOutBounce: jt,
-  easeInOutBounce: (e) => e < 0.5 ? (1 - jt(1 - 2 * e)) / 2 : (1 + jt(2 * e - 1)) / 2,
-  steps: Bs
-}, yt = Symbol.for("FluidValue.get"), Je = Symbol.for("FluidValue.observers"), Se = (e) => !!(e && e[yt]), pe = (e) => e && e[yt] ? e[yt]() : e, _n = (e) => e[Je] || null;
-function Hs(e, t) {
-  e.eventObserved ? e.eventObserved(t) : e(t);
+var Fs = {
+  linear: (t) => t
+}, gt = Symbol.for("FluidValue.get"), Je = Symbol.for("FluidValue.observers"), Se = (t) => !!(t && t[gt]), pe = (t) => t && t[gt] ? t[gt]() : t, fn = (t) => t[Je] || null;
+function Ns(t, e) {
+  t.eventObserved ? t.eventObserved(e) : t(e);
 }
-function bt(e, t) {
-  const r = e[Je];
+function yt(t, e) {
+  const r = t[Je];
   r && r.forEach((n) => {
-    Hs(n, t);
+    Ns(n, e);
   });
 }
-var vi = class {
-  constructor(e) {
-    if (!e && !(e = this.get))
+var ai = class {
+  constructor(t) {
+    if (!t && !(t = this.get))
       throw Error("Unknown getter");
-    Gs(this, e);
+    Ls(this, t);
   }
-}, Gs = (e, t) => gi(e, yt, t);
-function tt(e, t) {
-  if (e[yt]) {
-    let r = e[Je];
-    r || gi(e, Je, r = /* @__PURE__ */ new Set()), r.has(t) || (r.add(t), e.observerAdded && e.observerAdded(r.size, t));
+}, Ls = (t, e) => ci(t, gt, e);
+function tt(t, e) {
+  if (t[gt]) {
+    let r = t[Je];
+    r || ci(t, Je, r = /* @__PURE__ */ new Set()), r.has(e) || (r.add(e), t.observerAdded && t.observerAdded(r.size, e));
   }
-  return t;
+  return e;
 }
-function _t(e, t) {
-  const r = e[Je];
-  if (r && r.has(t)) {
+function _t(t, e) {
+  const r = t[Je];
+  if (r && r.has(e)) {
     const n = r.size - 1;
-    n ? r.delete(t) : e[Je] = null, e.observerRemoved && e.observerRemoved(n, t);
+    n ? r.delete(e) : t[Je] = null, t.observerRemoved && t.observerRemoved(n, e);
   }
 }
-var gi = (e, t, r) => Object.defineProperty(e, t, {
+var ci = (t, e, r) => Object.defineProperty(t, e, {
   value: r,
   writable: !0,
   configurable: !0
-}), $t = /[+\-]?(?:0|[1-9]\d*)(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, Qs = /(#(?:[0-9a-f]{2}){2,4}|(#[0-9a-f]{3})|(rgb|hsl)a?\((-?\d+%?[,\s]+){2,3}\s*[\d\.]+%?\))/gi, wn = new RegExp(`(${$t.source})(%|[a-z]+)`, "i"), Xs = /rgba\(([0-9\.-]+), ([0-9\.-]+), ([0-9\.-]+), ([0-9\.-]+)\)/gi, Gt = /var\((--[a-zA-Z0-9-_]+),? ?([a-zA-Z0-9 ()%#.,-]+)?\)/, yi = (e) => {
-  const [t, r] = Zs(e);
-  if (!t || zr())
-    return e;
-  const n = window.getComputedStyle(document.documentElement).getPropertyValue(t);
+}), jt = /[+\-]?(?:0|[1-9]\d*)(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, zs = /(#(?:[0-9a-f]{2}){2,4}|(#[0-9a-f]{3})|(rgb|hsl)a?\((-?\d+%?[,\s]+){2,3}\s*[\d\.]+%?\))/gi, dn = new RegExp(`(${jt.source})(%|[a-z]+)`, "i"), Us = /rgba\(([0-9\.-]+), ([0-9\.-]+), ([0-9\.-]+), ([0-9\.-]+)\)/gi, qt = /var\((--[a-zA-Z0-9-_]+),? ?([a-zA-Z0-9 ()%#.,-]+)?\)/, ui = (t) => {
+  const [e, r] = Ws(t);
+  if (!e || jr())
+    return t;
+  const n = window.getComputedStyle(document.documentElement).getPropertyValue(e);
   if (n)
     return n.trim();
   if (r && r.startsWith("--")) {
     const i = window.getComputedStyle(document.documentElement).getPropertyValue(r);
-    return i || e;
+    return i || t;
   } else {
-    if (r && Gt.test(r))
-      return yi(r);
+    if (r && qt.test(r))
+      return ui(r);
     if (r)
       return r;
   }
-  return e;
-}, Zs = (e) => {
-  const t = Gt.exec(e);
-  if (!t)
+  return t;
+}, Ws = (t) => {
+  const e = qt.exec(t);
+  if (!e)
     return [,];
-  const [, r, n] = t;
+  const [, r, n] = e;
   return [r, n];
-}, ur, Js = (e, t, r, n, i) => `rgba(${Math.round(t)}, ${Math.round(r)}, ${Math.round(n)}, ${i})`, bi = (e) => {
-  ur || (ur = ze ? (
+}, ir, Ys = (t, e, r, n, i) => `rgba(${Math.round(e)}, ${Math.round(r)}, ${Math.round(n)}, ${i})`, li = (t) => {
+  ir || (ir = ze ? (
     // match color names, ignore partial matches
     new RegExp(`(${Object.keys(ze).join("|")})(?!\\w)`, "g")
   ) : (
     // never match
     /^\b$/
   ));
-  const t = e.output.map((s) => pe(s).replace(Gt, yi).replace(Qs, vn).replace(ur, vn)), r = t.map((s) => s.match($t).map(Number)), i = r[0].map(
+  const e = t.output.map((s) => pe(s).replace(qt, ui).replace(zs, ln).replace(ir, ln)), r = e.map((s) => s.match(jt).map(Number)), i = r[0].map(
     (s, a) => r.map((c) => {
       if (!(a in c))
         throw Error('The arity of each "output" value must be equal');
       return c[a];
     })
   ).map(
-    (s) => gt({ ...e, output: s })
+    (s) => vt({ ...t, output: s })
   );
   return (s) => {
-    var h;
-    const a = !wn.test(t[0]) && ((h = t.find((u) => wn.test(u))) == null ? void 0 : h.replace($t, ""));
+    var d;
+    const a = !dn.test(e[0]) && ((d = e.find((u) => dn.test(u))) == null ? void 0 : d.replace(jt, ""));
     let c = 0;
-    return t[0].replace(
-      $t,
+    return e[0].replace(
+      jt,
       () => `${i[c++](s)}${a || ""}`
-    ).replace(Xs, Js);
+    ).replace(Us, Ys);
   };
-}, Yr = "react-spring: ", _i = (e) => {
-  const t = e;
+}, $r = "react-spring: ", fi = (t) => {
+  const e = t;
   let r = !1;
-  if (typeof t != "function")
-    throw new TypeError(`${Yr}once requires a function parameter`);
+  if (typeof e != "function")
+    throw new TypeError(`${$r}once requires a function parameter`);
   return (...n) => {
-    r || (t(...n), r = !0);
+    r || (e(...n), r = !0);
   };
-}, eo = _i(console.warn);
-function to() {
-  eo(
-    `${Yr}The "interpolate" function is deprecated in v9 (use "to" instead)`
+}, qs = fi(console.warn);
+function Bs() {
+  qs(
+    `${$r}The "interpolate" function is deprecated in v9 (use "to" instead)`
   );
 }
-var ro = _i(console.warn);
-function no() {
-  ro(
-    `${Yr}Directly calling start instead of using the api object is deprecated in v9 (use ".start" instead), this will be removed in later 0.X.0 versions`
+var Ks = fi(console.warn);
+function Hs() {
+  Ks(
+    `${$r}Directly calling start instead of using the api object is deprecated in v9 (use ".start" instead), this will be removed in later 0.X.0 versions`
   );
 }
-function Qt(e) {
-  return _.str(e) && (e[0] == "#" || /\d/.test(e) || // Do not identify a CSS variable as an AnimatedString if its SSR
-  !zr() && Gt.test(e) || e in (ze || {}));
+function Bt(t) {
+  return b.str(t) && (t[0] == "#" || /\d/.test(t) || // Do not identify a CSS variable as an AnimatedString if its SSR
+  !jr() && qt.test(t) || t in (ze || {}));
 }
-var qr = zr() ? Ee : bs, io = () => {
-  const e = he(!1);
-  return qr(() => (e.current = !0, () => {
-    e.current = !1;
-  }), []), e;
+var Fr = jr() ? Ee : ds, Gs = () => {
+  const t = he(!1);
+  return Fr(() => (t.current = !0, () => {
+    t.current = !1;
+  }), []), t;
 };
-function wi() {
-  const e = Ie()[1], t = io();
+function di() {
+  const t = Ae()[1], e = Gs();
   return () => {
-    t.current && e(Math.random());
+    e.current && t(Math.random());
   };
 }
-function so(e, t) {
-  const [r] = Ie(
+function Xs(t, e) {
+  const [r] = Ae(
     () => ({
-      inputs: t,
-      result: e()
+      inputs: e,
+      result: t()
     })
   ), n = he(), i = n.current;
   let s = i;
-  return s ? t && s.inputs && oo(t, s.inputs) || (s = {
-    inputs: t,
-    result: e()
+  return s ? e && s.inputs && Qs(e, s.inputs) || (s = {
+    inputs: e,
+    result: t()
   }) : s = r, Ee(() => {
     n.current = s, i == r && (r.inputs = r.result = void 0);
   }, [s]), s.result;
 }
-function oo(e, t) {
-  if (e.length !== t.length)
+function Qs(t, e) {
+  if (t.length !== e.length)
     return !1;
-  for (let r = 0; r < e.length; r++)
-    if (e[r] !== t[r])
+  for (let r = 0; r < t.length; r++)
+    if (t[r] !== e[r])
       return !1;
   return !0;
 }
-var Ei = (e) => Ee(e, ao), ao = [];
-function En(e) {
-  const t = he();
+var hi = (t) => Ee(t, Zs), Zs = [];
+function hn(t) {
+  const e = he();
   return Ee(() => {
-    t.current = e;
-  }), t.current;
+    e.current = t;
+  }), e.current;
 }
-var wt = Symbol.for("Animated:node"), co = (e) => !!e && e[wt] === e, Ae = (e) => e && e[wt], Br = (e, t) => As(e, wt, t), Xt = (e) => e && e[wt] && e[wt].getPayload(), Si = class {
+var bt = Symbol.for("Animated:node"), Js = (t) => !!t && t[bt] === t, Ce = (t) => t && t[bt], Nr = (t, e) => Es(t, bt, e), Kt = (t) => t && t[bt] && t[bt].getPayload(), pi = class {
   constructor() {
-    Br(this, this);
+    Nr(this, this);
   }
   /** Get every `AnimatedValue` used by this node. */
   getPayload() {
     return this.payload || [];
   }
-}, At = class extends Si {
-  constructor(e) {
-    super(), this._value = e, this.done = !0, this.durationProgress = 0, _.num(this._value) && (this.lastPosition = this._value);
+}, Ot = class extends pi {
+  constructor(t) {
+    super(), this._value = t, this.done = !0, this.durationProgress = 0, b.num(this._value) && (this.lastPosition = this._value);
   }
   /** @internal */
-  static create(e) {
-    return new At(e);
+  static create(t) {
+    return new Ot(t);
   }
   getPayload() {
     return [this];
@@ -1327,177 +1284,177 @@ var wt = Symbol.for("Animated:node"), co = (e) => !!e && e[wt] === e, Ae = (e) =
   getValue() {
     return this._value;
   }
-  setValue(e, t) {
-    return _.num(e) && (this.lastPosition = e, t && (e = Math.round(e / t) * t, this.done && (this.lastPosition = e))), this._value === e ? !1 : (this._value = e, !0);
+  setValue(t, e) {
+    return b.num(t) && (this.lastPosition = t, e && (t = Math.round(t / e) * e, this.done && (this.lastPosition = t))), this._value === t ? !1 : (this._value = t, !0);
   }
   reset() {
-    const { done: e } = this;
-    this.done = !1, _.num(this._value) && (this.elapsedTime = 0, this.durationProgress = 0, this.lastPosition = this._value, e && (this.lastVelocity = null), this.v0 = null);
+    const { done: t } = this;
+    this.done = !1, b.num(this._value) && (this.elapsedTime = 0, this.durationProgress = 0, this.lastPosition = this._value, t && (this.lastVelocity = null), this.v0 = null);
   }
-}, Et = class extends At {
-  constructor(e) {
-    super(0), this._string = null, this._toString = gt({
-      output: [e, e]
+}, wt = class extends Ot {
+  constructor(t) {
+    super(0), this._string = null, this._toString = vt({
+      output: [t, t]
     });
   }
   /** @internal */
-  static create(e) {
-    return new Et(e);
+  static create(t) {
+    return new wt(t);
   }
   getValue() {
-    const e = this._string;
-    return e ?? (this._string = this._toString(this._value));
+    const t = this._string;
+    return t ?? (this._string = this._toString(this._value));
   }
-  setValue(e) {
-    if (_.str(e)) {
-      if (e == this._string)
+  setValue(t) {
+    if (b.str(t)) {
+      if (t == this._string)
         return !1;
-      this._string = e, this._value = 1;
-    } else if (super.setValue(e))
+      this._string = t, this._value = 1;
+    } else if (super.setValue(t))
       this._string = null;
     else
       return !1;
     return !0;
   }
-  reset(e) {
-    e && (this._toString = gt({
-      output: [this.getValue(), e]
+  reset(t) {
+    t && (this._toString = vt({
+      output: [this.getValue(), t]
     })), this._value = 0, super.reset();
   }
-}, Wt = { dependencies: null }, Zt = class extends Si {
-  constructor(e) {
-    super(), this.source = e, this.setValue(e);
+}, Nt = { dependencies: null }, Ht = class extends pi {
+  constructor(t) {
+    super(), this.source = t, this.setValue(t);
   }
-  getValue(e) {
-    const t = {};
-    return xe(this.source, (r, n) => {
-      co(r) ? t[n] = r.getValue(e) : Se(r) ? t[n] = pe(r) : e || (t[n] = r);
-    }), t;
+  getValue(t) {
+    const e = {};
+    return Ie(this.source, (r, n) => {
+      Js(r) ? e[n] = r.getValue(t) : Se(r) ? e[n] = pe(r) : t || (e[n] = r);
+    }), e;
   }
   /** Replace the raw object data */
-  setValue(e) {
-    this.source = e, this.payload = this._makePayload(e);
+  setValue(t) {
+    this.source = t, this.payload = this._makePayload(t);
   }
   reset() {
-    this.payload && U(this.payload, (e) => e.reset());
+    this.payload && U(this.payload, (t) => t.reset());
   }
   /** Create a payload set. */
-  _makePayload(e) {
-    if (e) {
-      const t = /* @__PURE__ */ new Set();
-      return xe(e, this._addToPayload, t), Array.from(t);
+  _makePayload(t) {
+    if (t) {
+      const e = /* @__PURE__ */ new Set();
+      return Ie(t, this._addToPayload, e), Array.from(e);
     }
   }
   /** Add to a payload set. */
-  _addToPayload(e) {
-    Wt.dependencies && Se(e) && Wt.dependencies.add(e);
-    const t = Xt(e);
-    t && U(t, (r) => this.add(r));
+  _addToPayload(t) {
+    Nt.dependencies && Se(t) && Nt.dependencies.add(t);
+    const e = Kt(t);
+    e && U(e, (r) => this.add(r));
   }
-}, Ti = class extends Zt {
-  constructor(e) {
-    super(e);
+}, mi = class extends Ht {
+  constructor(t) {
+    super(t);
   }
   /** @internal */
-  static create(e) {
-    return new Ti(e);
+  static create(t) {
+    return new mi(t);
   }
   getValue() {
-    return this.source.map((e) => e.getValue());
+    return this.source.map((t) => t.getValue());
   }
-  setValue(e) {
-    const t = this.getPayload();
-    return e.length == t.length ? t.map((r, n) => r.setValue(e[n])).some(Boolean) : (super.setValue(e.map(uo)), !0);
+  setValue(t) {
+    const e = this.getPayload();
+    return t.length == e.length ? e.map((r, n) => r.setValue(t[n])).some(Boolean) : (super.setValue(t.map(eo)), !0);
   }
 };
-function uo(e) {
-  return (Qt(e) ? Et : At).create(e);
+function eo(t) {
+  return (Bt(t) ? wt : Ot).create(t);
 }
-function Tr(e) {
-  const t = Ae(e);
-  return t ? t.constructor : _.arr(e) ? Ti : Qt(e) ? Et : At;
+function _r(t) {
+  const e = Ce(t);
+  return e ? e.constructor : b.arr(t) ? mi : Bt(t) ? wt : Ot;
 }
-var Sn = (e, t) => {
+var pn = (t, e) => {
   const r = (
     // Function components must use "forwardRef" to avoid being
     // re-rendered on every animation frame.
-    !_.fun(e) || e.prototype && e.prototype.isReactComponent
+    !b.fun(t) || t.prototype && t.prototype.isReactComponent
   );
-  return _s((n, i) => {
+  return hs((n, i) => {
     const s = he(null), a = r && // eslint-disable-next-line react-hooks/rules-of-hooks
     ge(
-      (P) => {
-        s.current = ho(i, P);
+      (T) => {
+        s.current = no(i, T);
       },
       [i]
-    ), [c, h] = fo(n, t), u = wi(), l = () => {
-      const P = s.current;
-      if (r && !P)
+    ), [c, d] = ro(n, e), u = di(), l = () => {
+      const T = s.current;
+      if (r && !T)
         return;
-      (P ? t.applyAnimatedValues(P, c.getValue(!0)) : !1) === !1 && u();
-    }, f = new lo(l, h), b = he();
-    qr(() => (b.current = f, U(h, (P) => tt(P, f)), () => {
-      b.current && (U(
-        b.current.deps,
-        (P) => _t(P, b.current)
-      ), V.cancel(b.current.update));
-    })), Ee(l, []), Ei(() => () => {
-      const P = b.current;
-      U(P.deps, (g) => _t(g, P));
+      (T ? e.applyAnimatedValues(T, c.getValue(!0)) : !1) === !1 && u();
+    }, h = new to(l, d), m = he();
+    Fr(() => (m.current = h, U(d, (T) => tt(T, h)), () => {
+      m.current && (U(
+        m.current.deps,
+        (T) => _t(T, m.current)
+      ), V.cancel(m.current.update));
+    })), Ee(l, []), hi(() => () => {
+      const T = m.current;
+      U(T.deps, (y) => _t(y, T));
     });
-    const E = t.getComponentProps(c.getValue());
-    return /* @__PURE__ */ Dr.createElement(e, { ...E, ref: a });
+    const w = e.getComponentProps(c.getValue());
+    return /* @__PURE__ */ Rr.createElement(t, { ...w, ref: a });
   });
-}, lo = class {
-  constructor(e, t) {
-    this.update = e, this.deps = t;
+}, to = class {
+  constructor(t, e) {
+    this.update = t, this.deps = e;
   }
-  eventObserved(e) {
-    e.type == "change" && V.write(this.update);
+  eventObserved(t) {
+    t.type == "change" && V.write(this.update);
   }
 };
-function fo(e, t) {
+function ro(t, e) {
   const r = /* @__PURE__ */ new Set();
-  return Wt.dependencies = r, e.style && (e = {
-    ...e,
-    style: t.createAnimatedStyle(e.style)
-  }), e = new Zt(e), Wt.dependencies = null, [e, r];
+  return Nt.dependencies = r, t.style && (t = {
+    ...t,
+    style: e.createAnimatedStyle(t.style)
+  }), t = new Ht(t), Nt.dependencies = null, [t, r];
 }
-function ho(e, t) {
-  return e && (_.fun(e) ? e(t) : e.current = t), t;
+function no(t, e) {
+  return t && (b.fun(t) ? t(e) : t.current = e), e;
 }
-var Tn = Symbol.for("AnimatedComponent"), po = (e, {
-  applyAnimatedValues: t = () => !1,
-  createAnimatedStyle: r = (i) => new Zt(i),
+var mn = Symbol.for("AnimatedComponent"), io = (t, {
+  applyAnimatedValues: e = () => !1,
+  createAnimatedStyle: r = (i) => new Ht(i),
   getComponentProps: n = (i) => i
 } = {}) => {
   const i = {
-    applyAnimatedValues: t,
+    applyAnimatedValues: e,
     createAnimatedStyle: r,
     getComponentProps: n
   }, s = (a) => {
-    const c = Pn(a) || "Anonymous";
-    return _.str(a) ? a = s[a] || (s[a] = Sn(a, i)) : a = a[Tn] || (a[Tn] = Sn(a, i)), a.displayName = `Animated(${c})`, a;
+    const c = vn(a) || "Anonymous";
+    return b.str(a) ? a = s[a] || (s[a] = pn(a, i)) : a = a[mn] || (a[mn] = pn(a, i)), a.displayName = `Animated(${c})`, a;
   };
-  return xe(e, (a, c) => {
-    _.arr(e) && (c = Pn(a)), s[c] = s(a);
+  return Ie(t, (a, c) => {
+    b.arr(t) && (c = vn(a)), s[c] = s(a);
   }), {
     animated: s
   };
-}, Pn = (e) => _.str(e) ? e : e && _.str(e.displayName) ? e.displayName : _.fun(e) && e.name || null;
-function We(e, ...t) {
-  return _.fun(e) ? e(...t) : e;
+}, vn = (t) => b.str(t) ? t : t && b.str(t.displayName) ? t.displayName : b.fun(t) && t.name || null;
+function We(t, ...e) {
+  return b.fun(t) ? t(...e) : t;
 }
-var pt = (e, t) => e === !0 || !!(t && e && (_.fun(e) ? e(t) : ye(e).includes(t))), Pi = (e, t) => _.obj(e) ? t && e[t] : e, Oi = (e, t) => e.default === !0 ? e[t] : e.default ? e.default[t] : void 0, mo = (e) => e, Kr = (e, t = mo) => {
-  let r = vo;
-  e.default && e.default !== !0 && (e = e.default, r = Object.keys(e));
+var ht = (t, e) => t === !0 || !!(e && t && (b.fun(t) ? t(e) : ye(t).includes(e))), vi = (t, e) => b.obj(t) ? e && t[e] : t, gi = (t, e) => t.default === !0 ? t[e] : t.default ? t.default[e] : void 0, so = (t) => t, Lr = (t, e = so) => {
+  let r = oo;
+  t.default && t.default !== !0 && (t = t.default, r = Object.keys(t));
   const n = {};
   for (const i of r) {
-    const s = t(e[i], i);
-    _.und(s) || (n[i] = s);
+    const s = e(t[i], i);
+    b.und(s) || (n[i] = s);
   }
   return n;
-}, vo = [
+}, oo = [
   "config",
   "onProps",
   "onStart",
@@ -1505,7 +1462,7 @@ var pt = (e, t) => e === !0 || !!(t && e && (_.fun(e) ? e(t) : ye(e).includes(t)
   "onPause",
   "onResume",
   "onRest"
-], go = {
+], ao = {
   config: 1,
   from: 1,
   to: 1,
@@ -1541,232 +1498,227 @@ var pt = (e, t) => e === !0 || !!(t && e && (_.fun(e) ? e(t) : ye(e).includes(t)
   callId: 1,
   parentId: 1
 };
-function yo(e) {
-  const t = {};
+function co(t) {
+  const e = {};
   let r = 0;
-  if (xe(e, (n, i) => {
-    go[i] || (t[i] = n, r++);
+  if (Ie(t, (n, i) => {
+    ao[i] || (e[i] = n, r++);
   }), r)
-    return t;
+    return e;
 }
-function Ri(e) {
-  const t = yo(e);
-  if (t) {
-    const r = { to: t };
-    return xe(e, (n, i) => i in t || (r[i] = n)), r;
+function yi(t) {
+  const e = co(t);
+  if (e) {
+    const r = { to: e };
+    return Ie(t, (n, i) => i in e || (r[i] = n)), r;
   }
-  return { ...e };
+  return { ...t };
 }
-function St(e) {
-  return e = pe(e), _.arr(e) ? e.map(St) : Qt(e) ? Ce.createStringInterpolator({
+function Et(t) {
+  return t = pe(t), b.arr(t) ? t.map(Et) : Bt(t) ? Oe.createStringInterpolator({
     range: [0, 1],
-    output: [e, e]
-  })(1) : e;
+    output: [t, t]
+  })(1) : t;
 }
-function bo(e) {
-  for (const t in e)
+function uo(t) {
+  for (const e in t)
     return !0;
   return !1;
 }
-function Pr(e) {
-  return _.fun(e) || _.arr(e) && _.obj(e[0]);
+function br(t) {
+  return b.fun(t) || b.arr(t) && b.obj(t[0]);
 }
-function _o(e, t) {
+function lo(t, e) {
   var r;
-  (r = e.ref) == null || r.delete(e), t == null || t.delete(e);
+  (r = t.ref) == null || r.delete(t), e == null || e.delete(t);
 }
-function wo(e, t) {
+function fo(t, e) {
   var r;
-  t && e.ref !== t && ((r = e.ref) == null || r.delete(e), t.add(e), e.ref = t);
+  e && t.ref !== e && ((r = t.ref) == null || r.delete(t), e.add(t), t.ref = e);
 }
-var Eo = {
-  default: { tension: 170, friction: 26 },
-  gentle: { tension: 120, friction: 14 },
-  wobbly: { tension: 180, friction: 12 },
-  stiff: { tension: 210, friction: 20 },
-  slow: { tension: 280, friction: 60 },
-  molasses: { tension: 280, friction: 120 }
-}, Or = {
-  ...Eo.default,
+var ho = {
+  default: { tension: 170, friction: 26 }
+}, wr = {
+  ...ho.default,
   mass: 1,
   damping: 1,
-  easing: Ks.linear,
+  easing: Fs.linear,
   clamp: !1
-}, So = class {
+}, po = class {
   constructor() {
-    this.velocity = 0, Object.assign(this, Or);
+    this.velocity = 0, Object.assign(this, wr);
   }
 };
-function To(e, t, r) {
-  r && (r = { ...r }, On(r, t), t = { ...r, ...t }), On(e, t), Object.assign(e, t);
-  for (const a in Or)
-    e[a] == null && (e[a] = Or[a]);
-  let { frequency: n, damping: i } = e;
-  const { mass: s } = e;
-  return _.und(n) || (n < 0.01 && (n = 0.01), i < 0 && (i = 0), e.tension = Math.pow(2 * Math.PI / n, 2) * s, e.friction = 4 * Math.PI * i * s / n), e;
+function mo(t, e, r) {
+  r && (r = { ...r }, gn(r, e), e = { ...r, ...e }), gn(t, e), Object.assign(t, e);
+  for (const a in wr)
+    t[a] == null && (t[a] = wr[a]);
+  let { frequency: n, damping: i } = t;
+  const { mass: s } = t;
+  return b.und(n) || (n < 0.01 && (n = 0.01), i < 0 && (i = 0), t.tension = Math.pow(2 * Math.PI / n, 2) * s, t.friction = 4 * Math.PI * i * s / n), t;
 }
-function On(e, t) {
-  if (!_.und(t.decay))
-    e.duration = void 0;
+function gn(t, e) {
+  if (!b.und(e.decay))
+    t.duration = void 0;
   else {
-    const r = !_.und(t.tension) || !_.und(t.friction);
-    (r || !_.und(t.frequency) || !_.und(t.damping) || !_.und(t.mass)) && (e.duration = void 0, e.decay = void 0), r && (e.frequency = void 0);
+    const r = !b.und(e.tension) || !b.und(e.friction);
+    (r || !b.und(e.frequency) || !b.und(e.damping) || !b.und(e.mass)) && (t.duration = void 0, t.decay = void 0), r && (t.frequency = void 0);
   }
 }
-var Rn = [], Po = class {
+var yn = [], vo = class {
   constructor() {
-    this.changed = !1, this.values = Rn, this.toValues = null, this.fromValues = Rn, this.config = new So(), this.immediate = !1;
+    this.changed = !1, this.values = yn, this.toValues = null, this.fromValues = yn, this.config = new po(), this.immediate = !1;
   }
 };
-function Ci(e, { key: t, props: r, defaultProps: n, state: i, actions: s }) {
+function _i(t, { key: e, props: r, defaultProps: n, state: i, actions: s }) {
   return new Promise((a, c) => {
-    let h, u, l = pt(r.cancel ?? (n == null ? void 0 : n.cancel), t);
+    let d, u, l = ht(r.cancel ?? (n == null ? void 0 : n.cancel), e);
     if (l)
-      E();
+      w();
     else {
-      _.und(r.pause) || (i.paused = pt(r.pause, t));
-      let P = n == null ? void 0 : n.pause;
-      P !== !0 && (P = i.paused || pt(P, t)), h = We(r.delay || 0, t), P ? (i.resumeQueue.add(b), s.pause()) : (s.resume(), b());
+      b.und(r.pause) || (i.paused = ht(r.pause, e));
+      let T = n == null ? void 0 : n.pause;
+      T !== !0 && (T = i.paused || ht(T, e)), d = We(r.delay || 0, e), T ? (i.resumeQueue.add(m), s.pause()) : (s.resume(), m());
     }
-    function f() {
-      i.resumeQueue.add(b), i.timeouts.delete(u), u.cancel(), h = u.time - V.now();
+    function h() {
+      i.resumeQueue.add(m), i.timeouts.delete(u), u.cancel(), d = u.time - V.now();
     }
-    function b() {
-      h > 0 && !Ce.skipAnimation ? (i.delayed = !0, u = V.setTimeout(E, h), i.pauseQueue.add(f), i.timeouts.add(u)) : E();
+    function m() {
+      d > 0 && !Oe.skipAnimation ? (i.delayed = !0, u = V.setTimeout(w, d), i.pauseQueue.add(h), i.timeouts.add(u)) : w();
     }
-    function E() {
-      i.delayed && (i.delayed = !1), i.pauseQueue.delete(f), i.timeouts.delete(u), e <= (i.cancelId || 0) && (l = !0);
+    function w() {
+      i.delayed && (i.delayed = !1), i.pauseQueue.delete(h), i.timeouts.delete(u), t <= (i.cancelId || 0) && (l = !0);
       try {
-        s.start({ ...r, callId: e, cancel: l }, a);
-      } catch (P) {
-        c(P);
+        s.start({ ...r, callId: t, cancel: l }, a);
+      } catch (T) {
+        c(T);
       }
     }
   });
 }
-var Hr = (e, t) => t.length == 1 ? t[0] : t.some((r) => r.cancelled) ? Ze(e.get()) : t.every((r) => r.noop) ? Ai(e.get()) : Oe(
-  e.get(),
-  t.every((r) => r.finished)
-), Ai = (e) => ({
-  value: e,
+var zr = (t, e) => e.length == 1 ? e[0] : e.some((r) => r.cancelled) ? Ze(t.get()) : e.every((r) => r.noop) ? bi(t.get()) : xe(
+  t.get(),
+  e.every((r) => r.finished)
+), bi = (t) => ({
+  value: t,
   noop: !0,
   finished: !0,
   cancelled: !1
-}), Oe = (e, t, r = !1) => ({
-  value: e,
-  finished: t,
+}), xe = (t, e, r = !1) => ({
+  value: t,
+  finished: e,
   cancelled: r
-}), Ze = (e) => ({
-  value: e,
+}), Ze = (t) => ({
+  value: t,
   cancelled: !0,
   finished: !1
 });
-function Ii(e, t, r, n) {
-  const { callId: i, parentId: s, onRest: a } = t, { asyncTo: c, promise: h } = r;
-  return !s && e === c && !t.reset ? h : r.promise = (async () => {
-    r.asyncId = i, r.asyncTo = e;
-    const u = Kr(
-      t,
-      (R, w) => (
+function wi(t, e, r, n) {
+  const { callId: i, parentId: s, onRest: a } = e, { asyncTo: c, promise: d } = r;
+  return !s && t === c && !e.reset ? d : r.promise = (async () => {
+    r.asyncId = i, r.asyncTo = t;
+    const u = Lr(
+      e,
+      (R, E) => (
         // The `onRest` prop is only called when the `runAsync` promise is resolved.
-        w === "onRest" ? void 0 : R
+        E === "onRest" ? void 0 : R
       )
     );
-    let l, f;
-    const b = new Promise(
-      (R, w) => (l = R, f = w)
-    ), E = (R) => {
-      const w = (
+    let l, h;
+    const m = new Promise(
+      (R, E) => (l = R, h = E)
+    ), w = (R) => {
+      const E = (
         // The `cancel` prop or `stop` method was used.
         i <= (r.cancelId || 0) && Ze(n) || // The async `to` prop was replaced.
-        i !== r.asyncId && Oe(n, !1)
+        i !== r.asyncId && xe(n, !1)
       );
-      if (w)
-        throw R.result = w, f(R), R;
-    }, P = (R, w) => {
-      const C = new Cn(), O = new An();
+      if (E)
+        throw R.result = E, h(R), R;
+    }, T = (R, E) => {
+      const O = new _n(), P = new bn();
       return (async () => {
-        if (Ce.skipAnimation)
-          throw Tt(r), O.result = Oe(n, !1), f(O), O;
-        E(C);
-        const I = _.obj(R) ? { ...R } : { ...w, to: R };
-        I.parentId = i, xe(u, (q, te) => {
-          _.und(I[te]) && (I[te] = q);
+        if (Oe.skipAnimation)
+          throw St(r), P.result = xe(n, !1), h(P), P;
+        w(O);
+        const A = b.obj(R) ? { ...R } : { ...E, to: R };
+        A.parentId = i, Ie(u, (Y, te) => {
+          b.und(A[te]) && (A[te] = Y);
         });
-        const y = await n.start(I);
-        return E(C), r.paused && await new Promise((q) => {
-          r.resumeQueue.add(q);
-        }), y;
+        const _ = await n.start(A);
+        return w(O), r.paused && await new Promise((Y) => {
+          r.resumeQueue.add(Y);
+        }), _;
       })();
     };
-    let g;
-    if (Ce.skipAnimation)
-      return Tt(r), Oe(n, !1);
+    let y;
+    if (Oe.skipAnimation)
+      return St(r), xe(n, !1);
     try {
       let R;
-      _.arr(e) ? R = (async (w) => {
-        for (const C of w)
-          await P(C);
-      })(e) : R = Promise.resolve(e(P, n.stop.bind(n))), await Promise.all([R.then(l), b]), g = Oe(n.get(), !0, !1);
+      b.arr(t) ? R = (async (E) => {
+        for (const O of E)
+          await T(O);
+      })(t) : R = Promise.resolve(t(T, n.stop.bind(n))), await Promise.all([R.then(l), m]), y = xe(n.get(), !0, !1);
     } catch (R) {
-      if (R instanceof Cn)
-        g = R.result;
-      else if (R instanceof An)
-        g = R.result;
+      if (R instanceof _n)
+        y = R.result;
+      else if (R instanceof bn)
+        y = R.result;
       else
         throw R;
     } finally {
-      i == r.asyncId && (r.asyncId = s, r.asyncTo = s ? c : void 0, r.promise = s ? h : void 0);
+      i == r.asyncId && (r.asyncId = s, r.asyncTo = s ? c : void 0, r.promise = s ? d : void 0);
     }
-    return _.fun(a) && V.batchedUpdates(() => {
-      a(g, n, n.item);
-    }), g;
+    return b.fun(a) && V.batchedUpdates(() => {
+      a(y, n, n.item);
+    }), y;
   })();
 }
-function Tt(e, t) {
-  dt(e.timeouts, (r) => r.cancel()), e.pauseQueue.clear(), e.resumeQueue.clear(), e.asyncId = e.asyncTo = e.promise = void 0, t && (e.cancelId = t);
+function St(t, e) {
+  ft(t.timeouts, (r) => r.cancel()), t.pauseQueue.clear(), t.resumeQueue.clear(), t.asyncId = t.asyncTo = t.promise = void 0, e && (t.cancelId = e);
 }
-var Cn = class extends Error {
+var _n = class extends Error {
   constructor() {
     super(
       "An async animation has been interrupted. You see this error because you forgot to use `await` or `.catch(...)` on its returned promise."
     );
   }
-}, An = class extends Error {
+}, bn = class extends Error {
   constructor() {
     super("SkipAnimationSignal");
   }
-}, Rr = (e) => e instanceof Gr, Oo = 1, Gr = class extends vi {
+}, Er = (t) => t instanceof Ur, go = 1, Ur = class extends ai {
   constructor() {
-    super(...arguments), this.id = Oo++, this._priority = 0;
+    super(...arguments), this.id = go++, this._priority = 0;
   }
   get priority() {
     return this._priority;
   }
-  set priority(e) {
-    this._priority != e && (this._priority = e, this._onPriorityChange(e));
+  set priority(t) {
+    this._priority != t && (this._priority = t, this._onPriorityChange(t));
   }
   /** Get the current value */
   get() {
-    const e = Ae(this);
-    return e && e.getValue();
+    const t = Ce(this);
+    return t && t.getValue();
   }
   /** Create a spring that maps our value to another value */
-  to(...e) {
-    return Ce.to(this, e);
+  to(...t) {
+    return Oe.to(this, t);
   }
   /** @deprecated Use the `to` method instead. */
-  interpolate(...e) {
-    return to(), Ce.to(this, e);
+  interpolate(...t) {
+    return Bs(), Oe.to(this, t);
   }
   toJSON() {
     return this.get();
   }
-  observerAdded(e) {
-    e == 1 && this._attach();
+  observerAdded(t) {
+    t == 1 && this._attach();
   }
-  observerRemoved(e) {
-    e == 0 && this._detach();
+  observerRemoved(t) {
+    t == 0 && this._detach();
   }
   /** Called when the first child is added. */
   _attach() {
@@ -1775,51 +1727,51 @@ var Cn = class extends Error {
   _detach() {
   }
   /** Tell our children about our new value */
-  _onChange(e, t = !1) {
-    bt(this, {
+  _onChange(t, e = !1) {
+    yt(this, {
       type: "change",
       parent: this,
-      value: e,
-      idle: t
+      value: t,
+      idle: e
     });
   }
   /** Tell our children about our new priority */
-  _onPriorityChange(e) {
-    this.idle || Kt.sort(this), bt(this, {
+  _onPriorityChange(t) {
+    this.idle || Wt.sort(this), yt(this, {
       type: "priority",
       parent: this,
-      priority: e
+      priority: t
     });
   }
-}, Ye = Symbol.for("SpringPhase"), xi = 1, Cr = 2, Ar = 4, lr = (e) => (e[Ye] & xi) > 0, Ve = (e) => (e[Ye] & Cr) > 0, ot = (e) => (e[Ye] & Ar) > 0, In = (e, t) => t ? e[Ye] |= Cr | xi : e[Ye] &= ~Cr, xn = (e, t) => t ? e[Ye] |= Ar : e[Ye] &= ~Ar, Ro = class extends Gr {
-  constructor(e, t) {
-    if (super(), this.animation = new Po(), this.defaultProps = {}, this._state = {
+}, Ye = Symbol.for("SpringPhase"), Ei = 1, Si = 2, Ti = 4, sr = (t) => (t[Ye] & Ei) > 0, Ve = (t) => (t[Ye] & Si) > 0, st = (t) => (t[Ye] & Ti) > 0, wn = (t, e) => e ? t[Ye] |= Si | Ei : t[Ye] &= -3, En = (t, e) => e ? t[Ye] |= Ti : t[Ye] &= -5, yo = class extends Ur {
+  constructor(t, e) {
+    if (super(), this.animation = new vo(), this.defaultProps = {}, this._state = {
       paused: !1,
       delayed: !1,
       pauseQueue: /* @__PURE__ */ new Set(),
       resumeQueue: /* @__PURE__ */ new Set(),
       timeouts: /* @__PURE__ */ new Set()
-    }, this._pendingCalls = /* @__PURE__ */ new Set(), this._lastCallId = 0, this._lastToId = 0, this._memoizedDuration = 0, !_.und(e) || !_.und(t)) {
-      const r = _.obj(e) ? { ...e } : { ...t, from: e };
-      _.und(r.default) && (r.default = !0), this.start(r);
+    }, this._pendingCalls = /* @__PURE__ */ new Set(), this._lastCallId = 0, this._lastToId = 0, this._memoizedDuration = 0, !b.und(t) || !b.und(e)) {
+      const r = b.obj(t) ? { ...t } : { ...e, from: t };
+      b.und(r.default) && (r.default = !0), this.start(r);
     }
   }
   /** Equals true when not advancing on each frame. */
   get idle() {
-    return !(Ve(this) || this._state.asyncTo) || ot(this);
+    return !(Ve(this) || this._state.asyncTo) || st(this);
   }
   get goal() {
     return pe(this.animation.to);
   }
   get velocity() {
-    const e = Ae(this);
-    return e instanceof At ? e.lastVelocity || 0 : e.getPayload().map((t) => t.lastVelocity || 0);
+    const t = Ce(this);
+    return t instanceof Ot ? t.lastVelocity || 0 : t.getPayload().map((e) => e.lastVelocity || 0);
   }
   /**
    * When true, this value has been animated at least once.
    */
   get hasAnimated() {
-    return lr(this);
+    return sr(this);
   }
   /**
    * When true, this value has an unfinished animation,
@@ -1832,7 +1784,7 @@ var Cn = class extends Error {
    * When true, all current and future animations are paused.
    */
   get isPaused() {
-    return ot(this);
+    return st(this);
   }
   /**
    *
@@ -1842,62 +1794,61 @@ var Cn = class extends Error {
     return this._state.delayed;
   }
   /** Advance the current animation by a number of milliseconds */
-  advance(e) {
-    let t = !0, r = !1;
+  advance(t) {
+    let e = !0, r = !1;
     const n = this.animation;
     let { toValues: i } = n;
-    const { config: s } = n, a = Xt(n.to);
+    const { config: s } = n, a = Kt(n.to);
     !a && Se(n.to) && (i = ye(pe(n.to))), n.values.forEach((u, l) => {
       if (u.done)
         return;
-      const f = (
+      const h = (
         // Animated strings always go from 0 to 1.
-        u.constructor == Et ? 1 : a ? a[l].lastPosition : i[l]
+        u.constructor == wt ? 1 : a ? a[l].lastPosition : i[l]
       );
-      let b = n.immediate, E = f;
-      if (!b) {
-        if (E = u.lastPosition, s.tension <= 0) {
+      let m = n.immediate, w = h;
+      if (!m) {
+        if (w = u.lastPosition, s.tension <= 0) {
           u.done = !0;
           return;
         }
-        let P = u.elapsedTime += e;
-        const g = n.fromValues[l], R = u.v0 != null ? u.v0 : u.v0 = _.arr(s.velocity) ? s.velocity[l] : s.velocity;
-        let w;
-        const C = s.precision || (g == f ? 5e-3 : Math.min(1, Math.abs(f - g) * 1e-3));
-        if (_.und(s.duration))
+        let T = u.elapsedTime += t;
+        const y = n.fromValues[l], R = u.v0 != null ? u.v0 : u.v0 = b.arr(s.velocity) ? s.velocity[l] : s.velocity;
+        let E;
+        const O = s.precision || (y == h ? 5e-3 : Math.min(1, Math.abs(h - y) * 1e-3));
+        if (b.und(s.duration))
           if (s.decay) {
-            const O = s.decay === !0 ? 0.998 : s.decay, I = Math.exp(-(1 - O) * P);
-            E = g + R / (1 - O) * (1 - I), b = Math.abs(u.lastPosition - E) <= C, w = R * I;
+            const P = s.decay === !0 ? 0.998 : s.decay, A = Math.exp(-(1 - P) * T);
+            w = y + R / (1 - P) * (1 - A), m = Math.abs(u.lastPosition - w) <= O, E = R * A;
           } else {
-            w = u.lastVelocity == null ? R : u.lastVelocity;
-            const O = s.restVelocity || C / 10, I = s.clamp ? 0 : s.bounce, y = !_.und(I), q = g == f ? u.v0 > 0 : g < f;
-            let te, be = !1;
-            const re = 1, me = Math.ceil(e / re);
-            for (let G = 0; G < me && (te = Math.abs(w) > O, !(!te && (b = Math.abs(f - E) <= C, b))); ++G) {
-              y && (be = E == f || E > f == q, be && (w = -w * I, E = f));
-              const ue = -s.tension * 1e-6 * (E - f), Y = -s.friction * 1e-3 * w, se = (ue + Y) / s.mass;
-              w = w + se * re, E = E + w * re;
+            E = u.lastVelocity == null ? R : u.lastVelocity;
+            const P = s.restVelocity || O / 10, A = s.clamp ? 0 : s.bounce, _ = !b.und(A), Y = y == h ? u.v0 > 0 : y < h;
+            let te, _e = !1;
+            const re = 1, me = Math.ceil(t / re);
+            for (let H = 0; H < me && (te = Math.abs(E) > P, !(!te && (m = Math.abs(h - w) <= O, m))); ++H) {
+              _ && (_e = w == h || w > h == Y, _e && (E = -E * A, w = h));
+              const ue = -s.tension * 1e-6 * (w - h), G = -s.friction * 1e-3 * E, se = (ue + G) / s.mass;
+              E = E + se * re, w = w + E * re;
             }
           }
         else {
-          let O = 1;
-          s.duration > 0 && (this._memoizedDuration !== s.duration && (this._memoizedDuration = s.duration, u.durationProgress > 0 && (u.elapsedTime = s.duration * u.durationProgress, P = u.elapsedTime += e)), O = (s.progress || 0) + P / this._memoizedDuration, O = O > 1 ? 1 : O < 0 ? 0 : O, u.durationProgress = O), E = g + s.easing(O) * (f - g), w = (E - u.lastPosition) / e, b = O == 1;
+          let P = 1;
+          s.duration > 0 && (this._memoizedDuration !== s.duration && (this._memoizedDuration = s.duration, u.durationProgress > 0 && (u.elapsedTime = s.duration * u.durationProgress, T = u.elapsedTime += t)), P = (s.progress || 0) + T / this._memoizedDuration, P = P > 1 ? 1 : P < 0 ? 0 : P, u.durationProgress = P), w = y + s.easing(P) * (h - y), E = (w - u.lastPosition) / t, m = P == 1;
         }
-        u.lastVelocity = w, Number.isNaN(E) && (console.warn("Got NaN while animating:", this), b = !0);
+        u.lastVelocity = E, Number.isNaN(w) && (console.warn("Got NaN while animating:", this), m = !0);
       }
-      a && !a[l].done && (b = !1), b ? u.done = !0 : t = !1, u.setValue(E, s.round) && (r = !0);
+      a && !a[l].done && (m = !1), m ? u.done = !0 : e = !1, u.setValue(w, s.round) && (r = !0);
     });
-    const c = Ae(this), h = c.getValue();
-    if (t) {
+    const c = Ce(this), d = c.getValue();
+    if (e) {
       const u = pe(n.to);
-      (h !== u || r) && !s.decay ? (c.setValue(u), this._onChange(u)) : r && s.decay && this._onChange(h), this._stop();
-    } else
-      r && this._onChange(h);
+      (d !== u || r) && !s.decay ? (c.setValue(u), this._onChange(u)) : r && s.decay && this._onChange(d), this._stop();
+    } else r && this._onChange(d);
   }
   /** Set the current value, while stopping the current animation */
-  set(e) {
+  set(t) {
     return V.batchedUpdates(() => {
-      this._stop(), this._focus(e), this._set(e);
+      this._stop(), this._focus(t), this._set(t);
     }), this;
   }
   /**
@@ -1914,39 +1865,39 @@ var Cn = class extends Error {
   /** Skip to the end of the current animation. */
   finish() {
     if (Ve(this)) {
-      const { to: e, config: t } = this.animation;
+      const { to: t, config: e } = this.animation;
       V.batchedUpdates(() => {
-        this._onStart(), t.decay || this._set(e, !1), this._stop();
+        this._onStart(), e.decay || this._set(t, !1), this._stop();
       });
     }
     return this;
   }
   /** Push props into the pending queue. */
-  update(e) {
-    return (this.queue || (this.queue = [])).push(e), this;
+  update(t) {
+    return (this.queue || (this.queue = [])).push(t), this;
   }
-  start(e, t) {
+  start(t, e) {
     let r;
-    return _.und(e) ? (r = this.queue || [], this.queue = []) : r = [_.obj(e) ? e : { ...t, to: e }], Promise.all(
+    return b.und(t) ? (r = this.queue || [], this.queue = []) : r = [b.obj(t) ? t : { ...e, to: t }], Promise.all(
       r.map((n) => this._update(n))
-    ).then((n) => Hr(this, n));
+    ).then((n) => zr(this, n));
   }
   /**
    * Stop the current animation, and cancel any delayed updates.
    *
    * Pass `true` to call `onRest` with `cancelled: true`.
    */
-  stop(e) {
-    const { to: t } = this.animation;
-    return this._focus(this.get()), Tt(this._state, e && this._lastCallId), V.batchedUpdates(() => this._stop(t, e)), this;
+  stop(t) {
+    const { to: e } = this.animation;
+    return this._focus(this.get()), St(this._state, t && this._lastCallId), V.batchedUpdates(() => this._stop(e, t)), this;
   }
   /** Restart the animation. */
   reset() {
     this._update({ reset: !0 });
   }
   /** @internal */
-  eventObserved(e) {
-    e.type == "change" ? this._start() : e.type == "priority" && (this.priority = e.priority + 1);
+  eventObserved(t) {
+    t.type == "change" ? this._start() : t.type == "priority" && (this.priority = t.priority + 1);
   }
   /**
    * Parse the `to` and `from` range from the given `props` object.
@@ -1954,56 +1905,56 @@ var Cn = class extends Error {
    * This also ensures the initial value is available to animated components
    * during the render phase.
    */
-  _prepareNode(e) {
-    const t = this.key || "";
-    let { to: r, from: n } = e;
-    r = _.obj(r) ? r[t] : r, (r == null || Pr(r)) && (r = void 0), n = _.obj(n) ? n[t] : n, n == null && (n = void 0);
+  _prepareNode(t) {
+    const e = this.key || "";
+    let { to: r, from: n } = t;
+    r = b.obj(r) ? r[e] : r, (r == null || br(r)) && (r = void 0), n = b.obj(n) ? n[e] : n, n == null && (n = void 0);
     const i = { to: r, from: n };
-    return lr(this) || (e.reverse && ([r, n] = [n, r]), n = pe(n), _.und(n) ? Ae(this) || this._set(r) : this._set(n)), i;
+    return sr(this) || (t.reverse && ([r, n] = [n, r]), n = pe(n), b.und(n) ? Ce(this) || this._set(r) : this._set(n)), i;
   }
   /** Every update is processed by this method before merging. */
-  _update({ ...e }, t) {
+  _update({ ...t }, e) {
     const { key: r, defaultProps: n } = this;
-    e.default && Object.assign(
+    t.default && Object.assign(
       n,
-      Kr(
-        e,
-        (a, c) => /^on/.test(c) ? Pi(a, r) : a
+      Lr(
+        t,
+        (a, c) => /^on/.test(c) ? vi(a, r) : a
       )
-    ), Mn(this, e, "onProps"), ct(this, "onProps", e, this);
-    const i = this._prepareNode(e);
+    ), Tn(this, t, "onProps"), at(this, "onProps", t, this);
+    const i = this._prepareNode(t);
     if (Object.isFrozen(this))
       throw Error(
         "Cannot animate a `SpringValue` object that is frozen. Did you forget to pass your component to `animated(...)` before animating its props?"
       );
     const s = this._state;
-    return Ci(++this._lastCallId, {
+    return _i(++this._lastCallId, {
       key: r,
-      props: e,
+      props: t,
       defaultProps: n,
       state: s,
       actions: {
         pause: () => {
-          ot(this) || (xn(this, !0), lt(s.pauseQueue), ct(
+          st(this) || (En(this, !0), ut(s.pauseQueue), at(
             this,
             "onPause",
-            Oe(this, at(this, this.animation.to)),
+            xe(this, ot(this, this.animation.to)),
             this
           ));
         },
         resume: () => {
-          ot(this) && (xn(this, !1), Ve(this) && this._resume(), lt(s.resumeQueue), ct(
+          st(this) && (En(this, !1), Ve(this) && this._resume(), ut(s.resumeQueue), at(
             this,
             "onResume",
-            Oe(this, at(this, this.animation.to)),
+            xe(this, ot(this, this.animation.to)),
             this
           ));
         },
         start: this._merge.bind(this, i)
       }
     }).then((a) => {
-      if (e.loop && a.finished && !(t && a.noop)) {
-        const c = ki(e);
+      if (t.loop && a.finished && !(e && a.noop)) {
+        const c = Pi(t);
         if (c)
           return this._update(c, !0);
       }
@@ -2011,149 +1962,149 @@ var Cn = class extends Error {
     });
   }
   /** Merge props into the current animation */
-  _merge(e, t, r) {
-    if (t.cancel)
+  _merge(t, e, r) {
+    if (e.cancel)
       return this.stop(!0), r(Ze(this));
-    const n = !_.und(e.to), i = !_.und(e.from);
+    const n = !b.und(t.to), i = !b.und(t.from);
     if (n || i)
-      if (t.callId > this._lastToId)
-        this._lastToId = t.callId;
+      if (e.callId > this._lastToId)
+        this._lastToId = e.callId;
       else
         return r(Ze(this));
-    const { key: s, defaultProps: a, animation: c } = this, { to: h, from: u } = c;
-    let { to: l = h, from: f = u } = e;
-    i && !n && (!t.default || _.und(l)) && (l = f), t.reverse && ([l, f] = [f, l]);
-    const b = !De(f, u);
-    b && (c.from = f), f = pe(f);
-    const E = !De(l, h);
-    E && this._focus(l);
-    const P = Pr(t.to), { config: g } = c, { decay: R, velocity: w } = g;
-    (n || i) && (g.velocity = 0), t.config && !P && To(
-      g,
-      We(t.config, s),
+    const { key: s, defaultProps: a, animation: c } = this, { to: d, from: u } = c;
+    let { to: l = d, from: h = u } = t;
+    i && !n && (!e.default || b.und(l)) && (l = h), e.reverse && ([l, h] = [h, l]);
+    const m = !je(h, u);
+    m && (c.from = h), h = pe(h);
+    const w = !je(l, d);
+    w && this._focus(l);
+    const T = br(e.to), { config: y } = c, { decay: R, velocity: E } = y;
+    (n || i) && (y.velocity = 0), e.config && !T && mo(
+      y,
+      We(e.config, s),
       // Avoid calling the same "config" prop twice.
-      t.config !== a.config ? We(a.config, s) : void 0
+      e.config !== a.config ? We(a.config, s) : void 0
     );
-    let C = Ae(this);
-    if (!C || _.und(l))
-      return r(Oe(this, !0));
-    const O = (
+    let O = Ce(this);
+    if (!O || b.und(l))
+      return r(xe(this, !0));
+    const P = (
       // When `reset` is undefined, the `from` prop implies `reset: true`,
       // except for declarative updates. When `reset` is defined, there
       // must exist a value to animate from.
-      _.und(t.reset) ? i && !t.default : !_.und(f) && pt(t.reset, s)
-    ), I = O ? f : this.get(), y = St(l), q = _.num(y) || _.arr(y) || Qt(y), te = !P && (!q || pt(a.immediate || t.immediate, s));
-    if (E) {
-      const G = Tr(l);
-      if (G !== C.constructor)
+      b.und(e.reset) ? i && !e.default : !b.und(h) && ht(e.reset, s)
+    ), A = P ? h : this.get(), _ = Et(l), Y = b.num(_) || b.arr(_) || Bt(_), te = !T && (!Y || ht(a.immediate || e.immediate, s));
+    if (w) {
+      const H = _r(l);
+      if (H !== O.constructor)
         if (te)
-          C = this._set(y);
+          O = this._set(_);
         else
           throw Error(
-            `Cannot animate between ${C.constructor.name} and ${G.name}, as the "to" prop suggests`
+            `Cannot animate between ${O.constructor.name} and ${H.name}, as the "to" prop suggests`
           );
     }
-    const be = C.constructor;
+    const _e = O.constructor;
     let re = Se(l), me = !1;
     if (!re) {
-      const G = O || !lr(this) && b;
-      (E || G) && (me = De(St(I), y), re = !me), (!De(c.immediate, te) && !te || !De(g.decay, R) || !De(g.velocity, w)) && (re = !0);
+      const H = P || !sr(this) && m;
+      (w || H) && (me = je(Et(A), _), re = !me), (!je(c.immediate, te) && !te || !je(y.decay, R) || !je(y.velocity, E)) && (re = !0);
     }
-    if (me && Ve(this) && (c.changed && !O ? re = !0 : re || this._stop(h)), !P && ((re || Se(h)) && (c.values = C.getPayload(), c.toValues = Se(l) ? null : be == Et ? [1] : ye(y)), c.immediate != te && (c.immediate = te, !te && !O && this._set(h)), re)) {
-      const { onRest: G } = c;
-      U(Ao, (Y) => Mn(this, t, Y));
-      const ue = Oe(this, at(this, h));
-      lt(this._pendingCalls, ue), this._pendingCalls.add(r), c.changed && V.batchedUpdates(() => {
-        var Y;
-        c.changed = !O, G == null || G(ue, this), O ? We(a.onRest, ue) : (Y = c.onStart) == null || Y.call(c, ue, this);
+    if (me && Ve(this) && (c.changed && !P ? re = !0 : re || this._stop(d)), !T && ((re || Se(d)) && (c.values = O.getPayload(), c.toValues = Se(l) ? null : _e == wt ? [1] : ye(_)), c.immediate != te && (c.immediate = te, !te && !P && this._set(d)), re)) {
+      const { onRest: H } = c;
+      U(bo, (G) => Tn(this, e, G));
+      const ue = xe(this, ot(this, d));
+      ut(this._pendingCalls, ue), this._pendingCalls.add(r), c.changed && V.batchedUpdates(() => {
+        var G;
+        c.changed = !P, H == null || H(ue, this), P ? We(a.onRest, ue) : (G = c.onStart) == null || G.call(c, ue, this);
       });
     }
-    O && this._set(I), P ? r(Ii(t.to, t, this._state, this)) : re ? this._start() : Ve(this) && !E ? this._pendingCalls.add(r) : r(Ai(I));
+    P && this._set(A), T ? r(wi(e.to, e, this._state, this)) : re ? this._start() : Ve(this) && !w ? this._pendingCalls.add(r) : r(bi(A));
   }
   /** Update the `animation.to` value, which might be a `FluidValue` */
-  _focus(e) {
-    const t = this.animation;
-    e !== t.to && (_n(this) && this._detach(), t.to = e, _n(this) && this._attach());
+  _focus(t) {
+    const e = this.animation;
+    t !== e.to && (fn(this) && this._detach(), e.to = t, fn(this) && this._attach());
   }
   _attach() {
-    let e = 0;
-    const { to: t } = this.animation;
-    Se(t) && (tt(t, this), Rr(t) && (e = t.priority + 1)), this.priority = e;
+    let t = 0;
+    const { to: e } = this.animation;
+    Se(e) && (tt(e, this), Er(e) && (t = e.priority + 1)), this.priority = t;
   }
   _detach() {
-    const { to: e } = this.animation;
-    Se(e) && _t(e, this);
+    const { to: t } = this.animation;
+    Se(t) && _t(t, this);
   }
   /**
    * Update the current value from outside the frameloop,
    * and return the `Animated` node.
    */
-  _set(e, t = !0) {
-    const r = pe(e);
-    if (!_.und(r)) {
-      const n = Ae(this);
-      if (!n || !De(r, n.getValue())) {
-        const i = Tr(r);
-        !n || n.constructor != i ? Br(this, i.create(r)) : n.setValue(r), n && V.batchedUpdates(() => {
-          this._onChange(r, t);
+  _set(t, e = !0) {
+    const r = pe(t);
+    if (!b.und(r)) {
+      const n = Ce(this);
+      if (!n || !je(r, n.getValue())) {
+        const i = _r(r);
+        !n || n.constructor != i ? Nr(this, i.create(r)) : n.setValue(r), n && V.batchedUpdates(() => {
+          this._onChange(r, e);
         });
       }
     }
-    return Ae(this);
+    return Ce(this);
   }
   _onStart() {
-    const e = this.animation;
-    e.changed || (e.changed = !0, ct(
+    const t = this.animation;
+    t.changed || (t.changed = !0, at(
       this,
       "onStart",
-      Oe(this, at(this, e.to)),
+      xe(this, ot(this, t.to)),
       this
     ));
   }
-  _onChange(e, t) {
-    t || (this._onStart(), We(this.animation.onChange, e, this)), We(this.defaultProps.onChange, e, this), super._onChange(e, t);
+  _onChange(t, e) {
+    e || (this._onStart(), We(this.animation.onChange, t, this)), We(this.defaultProps.onChange, t, this), super._onChange(t, e);
   }
   // This method resets the animation state (even if already animating) to
   // ensure the latest from/to range is used, and it also ensures this spring
   // is added to the frameloop.
   _start() {
-    const e = this.animation;
-    Ae(this).reset(pe(e.to)), e.immediate || (e.fromValues = e.values.map((t) => t.lastPosition)), Ve(this) || (In(this, !0), ot(this) || this._resume());
+    const t = this.animation;
+    Ce(this).reset(pe(t.to)), t.immediate || (t.fromValues = t.values.map((e) => e.lastPosition)), Ve(this) || (wn(this, !0), st(this) || this._resume());
   }
   _resume() {
-    Ce.skipAnimation ? this.finish() : Kt.start(this);
+    Oe.skipAnimation ? this.finish() : Wt.start(this);
   }
   /**
    * Exit the frameloop and notify `onRest` listeners.
    *
    * Always wrap `_stop` calls with `batchedUpdates`.
    */
-  _stop(e, t) {
+  _stop(t, e) {
     if (Ve(this)) {
-      In(this, !1);
+      wn(this, !1);
       const r = this.animation;
       U(r.values, (i) => {
         i.done = !0;
-      }), r.toValues && (r.onChange = r.onPause = r.onResume = void 0), bt(this, {
+      }), r.toValues && (r.onChange = r.onPause = r.onResume = void 0), yt(this, {
         type: "idle",
         parent: this
       });
-      const n = t ? Ze(this.get()) : Oe(this.get(), at(this, e ?? r.to));
-      lt(this._pendingCalls, n), r.changed && (r.changed = !1, ct(this, "onRest", n, this));
+      const n = e ? Ze(this.get()) : xe(this.get(), ot(this, t ?? r.to));
+      ut(this._pendingCalls, n), r.changed && (r.changed = !1, at(this, "onRest", n, this));
     }
   }
 };
-function at(e, t) {
-  const r = St(t), n = St(e.get());
-  return De(n, r);
+function ot(t, e) {
+  const r = Et(e), n = Et(t.get());
+  return je(n, r);
 }
-function ki(e, t = e.loop, r = e.to) {
-  const n = We(t);
+function Pi(t, e = t.loop, r = t.to) {
+  const n = We(e);
   if (n) {
-    const i = n !== !0 && Ri(n), s = (i || e).reverse, a = !i || i.reset;
-    return Pt({
-      ...e,
-      loop: t,
+    const i = n !== !0 && yi(n), s = (i || t).reverse, a = !i || i.reset;
+    return Tt({
+      ...t,
+      loop: e,
       // Avoid updating default props when looping.
       default: !1,
       // Never loop the `pause` prop.
@@ -2161,9 +2112,9 @@ function ki(e, t = e.loop, r = e.to) {
       // For the "reverse" prop to loop as expected, the "to" prop
       // must be undefined. The "reverse" prop is ignored when the
       // "to" prop is an array or function.
-      to: !s || Pr(r) ? r : void 0,
+      to: !s || br(r) ? r : void 0,
       // Ignore the "from" prop except on reset.
-      from: a ? e.from : void 0,
+      from: a ? t.from : void 0,
       reset: a,
       // The "loop" prop can return a "useSpring" props object to
       // override any of the original props.
@@ -2171,34 +2122,34 @@ function ki(e, t = e.loop, r = e.to) {
     });
   }
 }
-function Pt(e) {
-  const { to: t, from: r } = e = Ri(e), n = /* @__PURE__ */ new Set();
-  return _.obj(t) && kn(t, n), _.obj(r) && kn(r, n), e.keys = n.size ? Array.from(n) : null, e;
+function Tt(t) {
+  const { to: e, from: r } = t = yi(t), n = /* @__PURE__ */ new Set();
+  return b.obj(e) && Sn(e, n), b.obj(r) && Sn(r, n), t.keys = n.size ? Array.from(n) : null, t;
 }
-function Co(e) {
-  const t = Pt(e);
-  return _.und(t.default) && (t.default = Kr(t)), t;
+function _o(t) {
+  const e = Tt(t);
+  return b.und(e.default) && (e.default = Lr(e)), e;
 }
-function kn(e, t) {
-  xe(e, (r, n) => r != null && t.add(n));
+function Sn(t, e) {
+  Ie(t, (r, n) => r != null && e.add(n));
 }
-var Ao = [
+var bo = [
   "onStart",
   "onRest",
   "onChange",
   "onPause",
   "onResume"
 ];
-function Mn(e, t, r) {
-  e.animation[r] = t[r] !== Oi(t, r) ? Pi(t[r], e.key) : void 0;
+function Tn(t, e, r) {
+  t.animation[r] = e[r] !== gi(e, r) ? vi(e[r], t.key) : void 0;
 }
-function ct(e, t, ...r) {
+function at(t, e, ...r) {
   var n, i, s, a;
-  (i = (n = e.animation)[t]) == null || i.call(n, ...r), (a = (s = e.defaultProps)[t]) == null || a.call(s, ...r);
+  (i = (n = t.animation)[e]) == null || i.call(n, ...r), (a = (s = t.defaultProps)[e]) == null || a.call(s, ...r);
 }
-var Io = ["onStart", "onChange", "onRest"], xo = 1, ko = class {
-  constructor(t, r) {
-    this.id = xo++, this.springs = {}, this.queue = [], this._lastAsyncId = 0, this._active = /* @__PURE__ */ new Set(), this._changed = /* @__PURE__ */ new Set(), this._started = !1, this._state = {
+var wo = ["onStart", "onChange", "onRest"], Eo = 1, So = class {
+  constructor(e, r) {
+    this.id = Eo++, this.springs = {}, this.queue = [], this._lastAsyncId = 0, this._active = /* @__PURE__ */ new Set(), this._changed = /* @__PURE__ */ new Set(), this._started = !1, this._state = {
       paused: !1,
       pauseQueue: /* @__PURE__ */ new Set(),
       resumeQueue: /* @__PURE__ */ new Set(),
@@ -2207,36 +2158,36 @@ var Io = ["onStart", "onChange", "onRest"], xo = 1, ko = class {
       onStart: /* @__PURE__ */ new Map(),
       onChange: /* @__PURE__ */ new Map(),
       onRest: /* @__PURE__ */ new Map()
-    }, this._onFrame = this._onFrame.bind(this), r && (this._flush = r), t && this.start({ default: !0, ...t });
+    }, this._onFrame = this._onFrame.bind(this), r && (this._flush = r), e && this.start({ default: !0, ...e });
   }
   /**
    * Equals `true` when no spring values are in the frameloop, and
    * no async animation is currently active.
    */
   get idle() {
-    return !this._state.asyncTo && Object.values(this.springs).every((t) => t.idle && !t.isDelayed && !t.isPaused);
+    return !this._state.asyncTo && Object.values(this.springs).every((e) => e.idle && !e.isDelayed && !e.isPaused);
   }
   get item() {
     return this._item;
   }
-  set item(t) {
-    this._item = t;
+  set item(e) {
+    this._item = e;
   }
   /** Get the current values of our springs */
   get() {
-    const t = {};
-    return this.each((r, n) => t[n] = r.get()), t;
+    const e = {};
+    return this.each((r, n) => e[n] = r.get()), e;
   }
   /** Set the current values without animating. */
-  set(t) {
-    for (const r in t) {
-      const n = t[r];
-      _.und(n) || this.springs[r].set(n);
+  set(e) {
+    for (const r in e) {
+      const n = e[r];
+      b.und(n) || this.springs[r].set(n);
     }
   }
   /** Push an update onto the queue of each value. */
-  update(t) {
-    return t && this.queue.push(Pt(t)), this;
+  update(e) {
+    return e && this.queue.push(Tt(e)), this;
   }
   /**
    * Start the queued animations for every spring, and resolve the returned
@@ -2245,170 +2196,170 @@ var Io = ["onStart", "onChange", "onRest"], xo = 1, ko = class {
    * When you pass a queue (instead of nothing), that queue is used instead of
    * the queued animations added with the `update` method, which are left alone.
    */
-  start(t) {
+  start(e) {
     let { queue: r } = this;
-    return t ? r = ye(t).map(Pt) : this.queue = [], this._flush ? this._flush(this, r) : ($i(this, r), Ir(this, r));
+    return e ? r = ye(e).map(Tt) : this.queue = [], this._flush ? this._flush(this, r) : (Ai(this, r), Sr(this, r));
   }
   /** @internal */
-  stop(t, r) {
-    if (t !== !!t && (r = t), r) {
+  stop(e, r) {
+    if (e !== !!e && (r = e), r) {
       const n = this.springs;
-      U(ye(r), (i) => n[i].stop(!!t));
+      U(ye(r), (i) => n[i].stop(!!e));
     } else
-      Tt(this._state, this._lastAsyncId), this.each((n) => n.stop(!!t));
+      St(this._state, this._lastAsyncId), this.each((n) => n.stop(!!e));
     return this;
   }
   /** Freeze the active animation in time */
-  pause(t) {
-    if (_.und(t))
+  pause(e) {
+    if (b.und(e))
       this.start({ pause: !0 });
     else {
       const r = this.springs;
-      U(ye(t), (n) => r[n].pause());
+      U(ye(e), (n) => r[n].pause());
     }
     return this;
   }
   /** Resume the animation if paused. */
-  resume(t) {
-    if (_.und(t))
+  resume(e) {
+    if (b.und(e))
       this.start({ pause: !1 });
     else {
       const r = this.springs;
-      U(ye(t), (n) => r[n].resume());
+      U(ye(e), (n) => r[n].resume());
     }
     return this;
   }
   /** Call a function once per spring value */
-  each(t) {
-    xe(this.springs, t);
+  each(e) {
+    Ie(this.springs, e);
   }
   /** @internal Called at the end of every animation frame */
   _onFrame() {
-    const { onStart: t, onChange: r, onRest: n } = this._events, i = this._active.size > 0, s = this._changed.size > 0;
-    (i && !this._started || s && !this._started) && (this._started = !0, dt(t, ([h, u]) => {
-      u.value = this.get(), h(u, this, this._item);
+    const { onStart: e, onChange: r, onRest: n } = this._events, i = this._active.size > 0, s = this._changed.size > 0;
+    (i && !this._started || s && !this._started) && (this._started = !0, ft(e, ([d, u]) => {
+      u.value = this.get(), d(u, this, this._item);
     }));
     const a = !i && this._started, c = s || a && n.size ? this.get() : null;
-    s && r.size && dt(r, ([h, u]) => {
-      u.value = c, h(u, this, this._item);
-    }), a && (this._started = !1, dt(n, ([h, u]) => {
-      u.value = c, h(u, this, this._item);
+    s && r.size && ft(r, ([d, u]) => {
+      u.value = c, d(u, this, this._item);
+    }), a && (this._started = !1, ft(n, ([d, u]) => {
+      u.value = c, d(u, this, this._item);
     }));
   }
   /** @internal */
-  eventObserved(t) {
-    if (t.type == "change")
-      this._changed.add(t.parent), t.idle || this._active.add(t.parent);
-    else if (t.type == "idle")
-      this._active.delete(t.parent);
+  eventObserved(e) {
+    if (e.type == "change")
+      this._changed.add(e.parent), e.idle || this._active.add(e.parent);
+    else if (e.type == "idle")
+      this._active.delete(e.parent);
     else
       return;
     V.onFrame(this._onFrame);
   }
 };
-function Ir(e, t) {
-  return Promise.all(t.map((r) => Mi(e, r))).then(
-    (r) => Hr(e, r)
+function Sr(t, e) {
+  return Promise.all(e.map((r) => xi(t, r))).then(
+    (r) => zr(t, r)
   );
 }
-async function Mi(e, t, r) {
-  const { keys: n, to: i, from: s, loop: a, onRest: c, onResolve: h } = t, u = _.obj(t.default) && t.default;
-  a && (t.loop = !1), i === !1 && (t.to = null), s === !1 && (t.from = null);
-  const l = _.arr(i) || _.fun(i) ? i : void 0;
-  l ? (t.to = void 0, t.onRest = void 0, u && (u.onRest = void 0)) : U(Io, (g) => {
-    const R = t[g];
-    if (_.fun(R)) {
-      const w = e._events[g];
-      t[g] = ({ finished: C, cancelled: O }) => {
-        const I = w.get(R);
-        I ? (C || (I.finished = !1), O && (I.cancelled = !0)) : w.set(R, {
+async function xi(t, e, r) {
+  const { keys: n, to: i, from: s, loop: a, onRest: c, onResolve: d } = e, u = b.obj(e.default) && e.default;
+  a && (e.loop = !1), i === !1 && (e.to = null), s === !1 && (e.from = null);
+  const l = b.arr(i) || b.fun(i) ? i : void 0;
+  l ? (e.to = void 0, e.onRest = void 0, u && (u.onRest = void 0)) : U(wo, (y) => {
+    const R = e[y];
+    if (b.fun(R)) {
+      const E = t._events[y];
+      e[y] = ({ finished: O, cancelled: P }) => {
+        const A = E.get(R);
+        A ? (O || (A.finished = !1), P && (A.cancelled = !0)) : E.set(R, {
           value: null,
-          finished: C || !1,
-          cancelled: O || !1
+          finished: O || !1,
+          cancelled: P || !1
         });
-      }, u && (u[g] = t[g]);
+      }, u && (u[y] = e[y]);
     }
   });
-  const f = e._state;
-  t.pause === !f.paused ? (f.paused = t.pause, lt(t.pause ? f.pauseQueue : f.resumeQueue)) : f.paused && (t.pause = !0);
-  const b = (n || Object.keys(e.springs)).map(
-    (g) => e.springs[g].start(t)
-  ), E = t.cancel === !0 || Oi(t, "cancel") === !0;
-  (l || E && f.asyncId) && b.push(
-    Ci(++e._lastAsyncId, {
-      props: t,
-      state: f,
+  const h = t._state;
+  e.pause === !h.paused ? (h.paused = e.pause, ut(e.pause ? h.pauseQueue : h.resumeQueue)) : h.paused && (e.pause = !0);
+  const m = (n || Object.keys(t.springs)).map(
+    (y) => t.springs[y].start(e)
+  ), w = e.cancel === !0 || gi(e, "cancel") === !0;
+  (l || w && h.asyncId) && m.push(
+    _i(++t._lastAsyncId, {
+      props: e,
+      state: h,
       actions: {
-        pause: Er,
-        resume: Er,
-        start(g, R) {
-          E ? (Tt(f, e._lastAsyncId), R(Ze(e))) : (g.onRest = c, R(
-            Ii(
+        pause: gr,
+        resume: gr,
+        start(y, R) {
+          w ? (St(h, t._lastAsyncId), R(Ze(t))) : (y.onRest = c, R(
+            wi(
               l,
-              g,
-              f,
-              e
+              y,
+              h,
+              t
             )
           ));
         }
       }
     })
-  ), f.paused && await new Promise((g) => {
-    f.resumeQueue.add(g);
+  ), h.paused && await new Promise((y) => {
+    h.resumeQueue.add(y);
   });
-  const P = Hr(e, await Promise.all(b));
-  if (a && P.finished && !(r && P.noop)) {
-    const g = ki(t, a, i);
-    if (g)
-      return $i(e, [g]), Mi(e, g, !0);
+  const T = zr(t, await Promise.all(m));
+  if (a && T.finished && !(r && T.noop)) {
+    const y = Pi(e, a, i);
+    if (y)
+      return Ai(t, [y]), xi(t, y, !0);
   }
-  return h && V.batchedUpdates(() => h(P, e, e.item)), P;
+  return d && V.batchedUpdates(() => d(T, t, t.item)), T;
 }
-function Dn(e, t) {
-  const r = { ...e.springs };
-  return t && U(ye(t), (n) => {
-    _.und(n.keys) && (n = Pt(n)), _.obj(n.to) || (n = { ...n, to: void 0 }), Vi(r, n, (i) => ji(i));
-  }), Di(e, r), r;
+function Pn(t, e) {
+  const r = { ...t.springs };
+  return e && U(ye(e), (n) => {
+    b.und(n.keys) && (n = Tt(n)), b.obj(n.to) || (n = { ...n, to: void 0 }), Ci(r, n, (i) => Oi(i));
+  }), Ri(t, r), r;
 }
-function Di(e, t) {
-  xe(t, (r, n) => {
-    e.springs[n] || (e.springs[n] = r, tt(r, e));
+function Ri(t, e) {
+  Ie(e, (r, n) => {
+    t.springs[n] || (t.springs[n] = r, tt(r, t));
   });
 }
-function ji(e, t) {
-  const r = new Ro();
-  return r.key = e, t && tt(r, t), r;
+function Oi(t, e) {
+  const r = new yo();
+  return r.key = t, e && tt(r, e), r;
 }
-function Vi(e, t, r) {
-  t.keys && U(t.keys, (n) => {
-    (e[n] || (e[n] = r(n)))._prepareNode(t);
+function Ci(t, e, r) {
+  e.keys && U(e.keys, (n) => {
+    (t[n] || (t[n] = r(n)))._prepareNode(e);
   });
 }
-function $i(e, t) {
-  U(t, (r) => {
-    Vi(e.springs, r, (n) => ji(n, e));
+function Ai(t, e) {
+  U(e, (r) => {
+    Ci(t.springs, r, (n) => Oi(n, t));
   });
 }
-var Jt = ({
-  children: e,
-  ...t
+var Gt = ({
+  children: t,
+  ...e
 }) => {
-  const r = jr(Yt), n = t.pause || !!r.pause, i = t.immediate || !!r.immediate;
-  t = so(() => ({ pause: n, immediate: i }), [n, i]);
-  const { Provider: s } = Yt;
-  return /* @__PURE__ */ Dr.createElement(s, { value: t }, e);
-}, Yt = Mo(Jt, {});
-Jt.Provider = Yt.Provider;
-Jt.Consumer = Yt.Consumer;
-function Mo(e, t) {
-  return Object.assign(e, Dr.createContext(t)), e.Provider._context = e, e.Consumer._context = e, e;
+  const r = Or(Lt), n = e.pause || !!r.pause, i = e.immediate || !!r.immediate;
+  e = Xs(() => ({ pause: n, immediate: i }), [n, i]);
+  const { Provider: s } = Lt;
+  return /* @__PURE__ */ Rr.createElement(s, { value: e }, t);
+}, Lt = To(Gt, {});
+Gt.Provider = Lt.Provider;
+Gt.Consumer = Lt.Consumer;
+function To(t, e) {
+  return Object.assign(t, Rr.createContext(e)), t.Provider._context = t, t.Consumer._context = t, t;
 }
-var Do = () => {
-  const e = [], t = function(n) {
-    no();
+var Po = () => {
+  const t = [], e = function(n) {
+    Hs();
     const i = [];
-    return U(e, (s, a) => {
-      if (_.und(n))
+    return U(t, (s, a) => {
+      if (b.und(n))
         i.push(s.start());
       else {
         const c = r(n, s, a);
@@ -2416,181 +2367,189 @@ var Do = () => {
       }
     }), i;
   };
-  t.current = e, t.add = function(n) {
-    e.includes(n) || e.push(n);
-  }, t.delete = function(n) {
-    const i = e.indexOf(n);
-    ~i && e.splice(i, 1);
-  }, t.pause = function() {
-    return U(e, (n) => n.pause(...arguments)), this;
-  }, t.resume = function() {
-    return U(e, (n) => n.resume(...arguments)), this;
-  }, t.set = function(n) {
-    U(e, (i, s) => {
-      const a = _.fun(n) ? n(s, i) : n;
+  e.current = t, e.add = function(n) {
+    t.includes(n) || t.push(n);
+  }, e.delete = function(n) {
+    const i = t.indexOf(n);
+    ~i && t.splice(i, 1);
+  }, e.pause = function() {
+    return U(t, (n) => n.pause(...arguments)), this;
+  }, e.resume = function() {
+    return U(t, (n) => n.resume(...arguments)), this;
+  }, e.set = function(n) {
+    U(t, (i, s) => {
+      const a = b.fun(n) ? n(s, i) : n;
       a && i.set(a);
     });
-  }, t.start = function(n) {
+  }, e.start = function(n) {
     const i = [];
-    return U(e, (s, a) => {
-      if (_.und(n))
+    return U(t, (s, a) => {
+      if (b.und(n))
         i.push(s.start());
       else {
         const c = this._getProps(n, s, a);
         c && i.push(s.start(c));
       }
     }), i;
-  }, t.stop = function() {
-    return U(e, (n) => n.stop(...arguments)), this;
-  }, t.update = function(n) {
-    return U(e, (i, s) => i.update(this._getProps(n, i, s))), this;
+  }, e.stop = function() {
+    return U(t, (n) => n.stop(...arguments)), this;
+  }, e.update = function(n) {
+    return U(t, (i, s) => i.update(this._getProps(n, i, s))), this;
   };
   const r = function(n, i, s) {
-    return _.fun(n) ? n(s, i) : n;
+    return b.fun(n) ? n(s, i) : n;
   };
-  return t._getProps = r, t;
+  return e._getProps = r, e;
 };
-function jo(e, t, r) {
-  const n = _.fun(t) && t;
+function xo(t, e, r) {
+  const n = b.fun(e) && e;
   n && !r && (r = []);
-  const i = ut(
-    () => n || arguments.length == 3 ? Do() : void 0,
+  const i = ct(
+    () => n || arguments.length == 3 ? Po() : void 0,
     []
-  ), s = he(0), a = wi(), c = ut(
+  ), s = he(0), a = di(), c = ct(
     () => ({
       ctrls: [],
       queue: [],
-      flush(w, C) {
-        const O = Dn(w, C);
-        return s.current > 0 && !c.queue.length && !Object.keys(O).some((y) => !w.springs[y]) ? Ir(w, C) : new Promise((y) => {
-          Di(w, O), c.queue.push(() => {
-            y(Ir(w, C));
+      flush(E, O) {
+        const P = Pn(E, O);
+        return s.current > 0 && !c.queue.length && !Object.keys(P).some((_) => !E.springs[_]) ? Sr(E, O) : new Promise((_) => {
+          Ri(E, P), c.queue.push(() => {
+            _(Sr(E, O));
           }), a();
         });
       }
     }),
     []
-  ), h = he([...c.ctrls]), u = [], l = En(e) || 0;
-  ut(() => {
-    U(h.current.slice(e, l), (w) => {
-      _o(w, i), w.stop(!0);
-    }), h.current.length = e, f(l, e);
-  }, [e]), ut(() => {
-    f(0, Math.min(l, e));
+  ), d = he([...c.ctrls]), u = [], l = hn(t) || 0;
+  ct(() => {
+    U(d.current.slice(t, l), (E) => {
+      lo(E, i), E.stop(!0);
+    }), d.current.length = t, h(l, t);
+  }, [t]), ct(() => {
+    h(0, Math.min(l, t));
   }, r);
-  function f(w, C) {
-    for (let O = w; O < C; O++) {
-      const I = h.current[O] || (h.current[O] = new ko(null, c.flush)), y = n ? n(O, I) : t[O];
-      y && (u[O] = Co(y));
+  function h(E, O) {
+    for (let P = E; P < O; P++) {
+      const A = d.current[P] || (d.current[P] = new So(null, c.flush)), _ = n ? n(P, A) : e[P];
+      _ && (u[P] = _o(_));
     }
   }
-  const b = h.current.map((w, C) => Dn(w, u[C])), E = jr(Jt), P = En(E), g = E !== P && bo(E);
-  qr(() => {
-    s.current++, c.ctrls = h.current;
-    const { queue: w } = c;
-    w.length && (c.queue = [], U(w, (C) => C())), U(h.current, (C, O) => {
-      i == null || i.add(C), g && C.start({ default: E });
-      const I = u[O];
-      I && (wo(C, I.ref), C.ref ? C.queue.push(I) : C.start(I));
+  const m = d.current.map((E, O) => Pn(E, u[O])), w = Or(Gt), T = hn(w), y = w !== T && uo(w);
+  Fr(() => {
+    s.current++, c.ctrls = d.current;
+    const { queue: E } = c;
+    E.length && (c.queue = [], U(E, (O) => O())), U(d.current, (O, P) => {
+      i == null || i.add(O), y && O.start({ default: w });
+      const A = u[P];
+      A && (fo(O, A.ref), O.ref ? O.queue.push(A) : O.start(A));
     });
-  }), Ei(() => () => {
-    U(c.ctrls, (w) => w.stop(!0));
+  }), hi(() => () => {
+    U(c.ctrls, (E) => E.stop(!0));
   });
-  const R = b.map((w) => ({ ...w }));
+  const R = m.map((E) => ({ ...E }));
   return i ? [R, i] : R;
 }
-function Vo(e, t) {
-  const r = _.fun(e), [[n], i] = jo(
+function Ro(t, e) {
+  const r = b.fun(t), [[n], i] = xo(
     1,
-    r ? e : [e],
-    r ? [] : t
+    r ? t : [t],
+    r ? [] : e
   );
   return r || arguments.length == 2 ? [n, i] : n;
 }
-var $o = class extends Gr {
-  constructor(e, t) {
-    super(), this.source = e, this.idle = !0, this._active = /* @__PURE__ */ new Set(), this.calc = gt(...t);
-    const r = this._get(), n = Tr(r);
-    Br(this, n.create(r));
+var Oo = class extends Ur {
+  constructor(t, e) {
+    super(), this.source = t, this.idle = !0, this._active = /* @__PURE__ */ new Set(), this.calc = vt(...e);
+    const r = this._get(), n = _r(r);
+    Nr(this, n.create(r));
   }
-  advance(e) {
-    const t = this._get(), r = this.get();
-    De(t, r) || (Ae(this).setValue(t), this._onChange(t, this.idle)), !this.idle && jn(this._active) && fr(this);
+  advance(t) {
+    const e = this._get(), r = this.get();
+    je(e, r) || (Ce(this).setValue(e), this._onChange(e, this.idle)), !this.idle && xn(this._active) && or(this);
   }
   _get() {
-    const e = _.arr(this.source) ? this.source.map(pe) : ye(pe(this.source));
-    return this.calc(...e);
+    const t = b.arr(this.source) ? this.source.map(pe) : ye(pe(this.source));
+    return this.calc(...t);
   }
   _start() {
-    this.idle && !jn(this._active) && (this.idle = !1, U(Xt(this), (e) => {
-      e.done = !1;
-    }), Ce.skipAnimation ? (V.batchedUpdates(() => this.advance()), fr(this)) : Kt.start(this));
+    this.idle && !xn(this._active) && (this.idle = !1, U(Kt(this), (t) => {
+      t.done = !1;
+    }), Oe.skipAnimation ? (V.batchedUpdates(() => this.advance()), or(this)) : Wt.start(this));
   }
   // Observe our sources only when we're observed.
   _attach() {
-    let e = 1;
-    U(ye(this.source), (t) => {
-      Se(t) && tt(t, this), Rr(t) && (t.idle || this._active.add(t), e = Math.max(e, t.priority + 1));
-    }), this.priority = e, this._start();
+    let t = 1;
+    U(ye(this.source), (e) => {
+      Se(e) && tt(e, this), Er(e) && (e.idle || this._active.add(e), t = Math.max(t, e.priority + 1));
+    }), this.priority = t, this._start();
   }
   // Stop observing our sources once we have no observers.
   _detach() {
-    U(ye(this.source), (e) => {
-      Se(e) && _t(e, this);
-    }), this._active.clear(), fr(this);
+    U(ye(this.source), (t) => {
+      Se(t) && _t(t, this);
+    }), this._active.clear(), or(this);
   }
   /** @internal */
-  eventObserved(e) {
-    e.type == "change" ? e.idle ? this.advance() : (this._active.add(e.parent), this._start()) : e.type == "idle" ? this._active.delete(e.parent) : e.type == "priority" && (this.priority = ye(this.source).reduce(
-      (t, r) => Math.max(t, (Rr(r) ? r.priority : 0) + 1),
+  eventObserved(t) {
+    t.type == "change" ? t.idle ? this.advance() : (this._active.add(t.parent), this._start()) : t.type == "idle" ? this._active.delete(t.parent) : t.type == "priority" && (this.priority = ye(this.source).reduce(
+      (e, r) => Math.max(e, (Er(r) ? r.priority : 0) + 1),
       0
     ));
   }
 };
-function Fo(e) {
-  return e.idle !== !1;
+function Co(t) {
+  return t.idle !== !1;
 }
-function jn(e) {
-  return !e.size || Array.from(e).every(Fo);
+function xn(t) {
+  return !t.size || Array.from(t).every(Co);
 }
-function fr(e) {
-  e.idle || (e.idle = !0, U(Xt(e), (t) => {
-    t.done = !0;
-  }), bt(e, {
+function or(t) {
+  t.idle || (t.idle = !0, U(Kt(t), (e) => {
+    e.done = !0;
+  }), yt(t, {
     type: "idle",
-    parent: e
+    parent: t
   }));
 }
-Ce.assign({
-  createStringInterpolator: bi,
-  to: (e, t) => new $o(e, t)
+Oe.assign({
+  createStringInterpolator: li,
+  to: (t, e) => new Oo(t, e)
 });
-var Fi = /^--/;
-function No(e, t) {
-  return t == null || typeof t == "boolean" || t === "" ? "" : typeof t == "number" && t !== 0 && !Fi.test(e) && !(mt.hasOwnProperty(e) && mt[e]) ? t + "px" : ("" + t).trim();
+var Ii = /^--/;
+function Ao(t, e) {
+  return e == null || typeof e == "boolean" || e === "" ? "" : typeof e == "number" && e !== 0 && !Ii.test(t) && !(pt.hasOwnProperty(t) && pt[t]) ? e + "px" : ("" + e).trim();
 }
-var Vn = {};
-function Lo(e, t) {
-  if (!e.nodeType || !e.setAttribute)
+var Rn = {};
+function Io(t, e) {
+  if (!t.nodeType || !t.setAttribute)
     return !1;
-  const r = e.nodeName === "filter" || e.parentNode && e.parentNode.nodeName === "filter", { style: n, children: i, scrollTop: s, scrollLeft: a, viewBox: c, ...h } = t, u = Object.values(h), l = Object.keys(h).map(
-    (f) => r || e.hasAttribute(f) ? f : Vn[f] || (Vn[f] = f.replace(
+  const r = t.nodeName === "filter" || t.parentNode && t.parentNode.nodeName === "filter", {
+    className: n,
+    style: i,
+    children: s,
+    scrollTop: a,
+    scrollLeft: c,
+    viewBox: d,
+    ...u
+  } = e, l = Object.values(u), h = Object.keys(u).map(
+    (m) => r || t.hasAttribute(m) ? m : Rn[m] || (Rn[m] = m.replace(
       /([A-Z])/g,
       // Attributes are written in dash case
-      (b) => "-" + b.toLowerCase()
+      (w) => "-" + w.toLowerCase()
     ))
   );
-  i !== void 0 && (e.textContent = i);
-  for (const f in n)
-    if (n.hasOwnProperty(f)) {
-      const b = No(f, n[f]);
-      Fi.test(f) ? e.style.setProperty(f, b) : e.style[f] = b;
+  s !== void 0 && (t.textContent = s);
+  for (const m in i)
+    if (i.hasOwnProperty(m)) {
+      const w = Ao(m, i[m]);
+      Ii.test(m) ? t.style.setProperty(m, w) : t.style[m] = w;
     }
-  l.forEach((f, b) => {
-    e.setAttribute(f, u[b]);
-  }), s !== void 0 && (e.scrollTop = s), a !== void 0 && (e.scrollLeft = a), c !== void 0 && e.setAttribute("viewBox", c);
+  h.forEach((m, w) => {
+    t.setAttribute(m, l[w]);
+  }), n !== void 0 && (t.className = n), a !== void 0 && (t.scrollTop = a), c !== void 0 && (t.scrollLeft = c), d !== void 0 && t.setAttribute("viewBox", d);
 }
-var mt = {
+var pt = {
   animationIterationCount: !0,
   borderImageOutset: !0,
   borderImageSlice: !0,
@@ -2633,74 +2592,74 @@ var mt = {
   strokeMiterlimit: !0,
   strokeOpacity: !0,
   strokeWidth: !0
-}, zo = (e, t) => e + t.charAt(0).toUpperCase() + t.substring(1), Uo = ["Webkit", "Ms", "Moz", "O"];
-mt = Object.keys(mt).reduce((e, t) => (Uo.forEach((r) => e[zo(r, t)] = e[t]), e), mt);
-var Wo = /^(matrix|translate|scale|rotate|skew)/, Yo = /^(translate)/, qo = /^(rotate|skew)/, dr = (e, t) => _.num(e) && e !== 0 ? e + t : e, Ft = (e, t) => _.arr(e) ? e.every((r) => Ft(r, t)) : _.num(e) ? e === t : parseFloat(e) === t, Bo = class extends Zt {
-  constructor({ x: e, y: t, z: r, ...n }) {
+}, ko = (t, e) => t + e.charAt(0).toUpperCase() + e.substring(1), Do = ["Webkit", "Ms", "Moz", "O"];
+pt = Object.keys(pt).reduce((t, e) => (Do.forEach((r) => t[ko(r, e)] = t[e]), t), pt);
+var jo = /^(matrix|translate|scale|rotate|skew)/, Mo = /^(translate)/, Vo = /^(rotate|skew)/, ar = (t, e) => b.num(t) && t !== 0 ? t + e : t, Mt = (t, e) => b.arr(t) ? t.every((r) => Mt(r, e)) : b.num(t) ? t === e : parseFloat(t) === e, $o = class extends Ht {
+  constructor({ x: t, y: e, z: r, ...n }) {
     const i = [], s = [];
-    (e || t || r) && (i.push([e || 0, t || 0, r || 0]), s.push((a) => [
-      `translate3d(${a.map((c) => dr(c, "px")).join(",")})`,
+    (t || e || r) && (i.push([t || 0, e || 0, r || 0]), s.push((a) => [
+      `translate3d(${a.map((c) => ar(c, "px")).join(",")})`,
       // prettier-ignore
-      Ft(a, 0)
-    ])), xe(n, (a, c) => {
+      Mt(a, 0)
+    ])), Ie(n, (a, c) => {
       if (c === "transform")
-        i.push([a || ""]), s.push((h) => [h, h === ""]);
-      else if (Wo.test(c)) {
-        if (delete n[c], _.und(a))
+        i.push([a || ""]), s.push((d) => [d, d === ""]);
+      else if (jo.test(c)) {
+        if (delete n[c], b.und(a))
           return;
-        const h = Yo.test(c) ? "px" : qo.test(c) ? "deg" : "";
+        const d = Mo.test(c) ? "px" : Vo.test(c) ? "deg" : "";
         i.push(ye(a)), s.push(
-          c === "rotate3d" ? ([u, l, f, b]) => [
-            `rotate3d(${u},${l},${f},${dr(b, h)})`,
-            Ft(b, 0)
+          c === "rotate3d" ? ([u, l, h, m]) => [
+            `rotate3d(${u},${l},${h},${ar(m, d)})`,
+            Mt(m, 0)
           ] : (u) => [
-            `${c}(${u.map((l) => dr(l, h)).join(",")})`,
-            Ft(u, c.startsWith("scale") ? 1 : 0)
+            `${c}(${u.map((l) => ar(l, d)).join(",")})`,
+            Mt(u, c.startsWith("scale") ? 1 : 0)
           ]
         );
       }
-    }), i.length && (n.transform = new Ko(i, s)), super(n);
+    }), i.length && (n.transform = new Fo(i, s)), super(n);
   }
-}, Ko = class extends vi {
-  constructor(e, t) {
-    super(), this.inputs = e, this.transforms = t, this._value = null;
+}, Fo = class extends ai {
+  constructor(t, e) {
+    super(), this.inputs = t, this.transforms = e, this._value = null;
   }
   get() {
     return this._value || (this._value = this._get());
   }
   _get() {
-    let e = "", t = !0;
+    let t = "", e = !0;
     return U(this.inputs, (r, n) => {
       const i = pe(r[0]), [s, a] = this.transforms[n](
-        _.arr(i) ? i : r.map(pe)
+        b.arr(i) ? i : r.map(pe)
       );
-      e += " " + s, t = t && a;
-    }), t ? "none" : e;
+      t += " " + s, e = e && a;
+    }), e ? "none" : t;
   }
   // Start observing our inputs once we have an observer.
-  observerAdded(e) {
-    e == 1 && U(
+  observerAdded(t) {
+    t == 1 && U(
       this.inputs,
-      (t) => U(
-        t,
+      (e) => U(
+        e,
         (r) => Se(r) && tt(r, this)
       )
     );
   }
   // Stop observing our inputs once we have no observers.
-  observerRemoved(e) {
-    e == 0 && U(
+  observerRemoved(t) {
+    t == 0 && U(
       this.inputs,
-      (t) => U(
-        t,
+      (e) => U(
+        e,
         (r) => Se(r) && _t(r, this)
       )
     );
   }
-  eventObserved(e) {
-    e.type == "change" && (this._value = null), bt(this, e);
+  eventObserved(t) {
+    t.type == "change" && (this._value = null), yt(this, t);
   }
-}, Ho = [
+}, No = [
   "a",
   "abbr",
   "address",
@@ -2836,93 +2795,91 @@ var Wo = /^(matrix|translate|scale|rotate|skew)/, Yo = /^(translate)/, qo = /^(r
   "text",
   "tspan"
 ];
-Ce.assign({
-  batchedUpdates: Es,
-  createStringInterpolator: bi,
-  colors: Ds
+Oe.assign({
+  batchedUpdates: ms,
+  createStringInterpolator: li,
+  colors: xs
 });
-var Go = po(Ho, {
-  applyAnimatedValues: Lo,
-  createAnimatedStyle: (e) => new Bo(e),
+var Lo = io(No, {
+  applyAnimatedValues: Io,
+  createAnimatedStyle: (t) => new $o(t),
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  getComponentProps: ({ scrollTop: e, scrollLeft: t, ...r }) => r
-}), Qo = Go.animated;
-function Xo(e, t, r) {
-  return Math.max(t, Math.min(e, r));
+  getComponentProps: ({ scrollTop: t, scrollLeft: e, ...r }) => r
+}), zo = Lo.animated;
+function Uo(t, e, r) {
+  return Math.max(e, Math.min(t, r));
 }
 const J = {
-  toVector(e, t) {
-    return e === void 0 && (e = t), Array.isArray(e) ? e : [e, e];
+  toVector(t, e) {
+    return t === void 0 && (t = e), Array.isArray(t) ? t : [t, t];
   },
-  add(e, t) {
-    return [e[0] + t[0], e[1] + t[1]];
+  add(t, e) {
+    return [t[0] + e[0], t[1] + e[1]];
   },
-  sub(e, t) {
-    return [e[0] - t[0], e[1] - t[1]];
+  sub(t, e) {
+    return [t[0] - e[0], t[1] - e[1]];
   },
-  addTo(e, t) {
-    e[0] += t[0], e[1] += t[1];
+  addTo(t, e) {
+    t[0] += e[0], t[1] += e[1];
   },
-  subTo(e, t) {
-    e[0] -= t[0], e[1] -= t[1];
+  subTo(t, e) {
+    t[0] -= e[0], t[1] -= e[1];
   }
 };
-function $n(e, t, r) {
-  return t === 0 || Math.abs(t) === 1 / 0 ? Math.pow(e, r * 5) : e * t * r / (t + r * e);
+function On(t, e, r) {
+  return e === 0 || Math.abs(e) === 1 / 0 ? Math.pow(t, r * 5) : t * e * r / (e + r * t);
 }
-function Fn(e, t, r, n = 0.15) {
-  return n === 0 ? Xo(e, t, r) : e < t ? -$n(t - e, r - t, n) + t : e > r ? +$n(e - r, r - t, n) + r : e;
+function Cn(t, e, r, n = 0.15) {
+  return n === 0 ? Uo(t, e, r) : t < e ? -On(e - t, r - e, n) + e : t > r ? +On(t - r, r - e, n) + r : t;
 }
-function Zo(e, [t, r], [n, i]) {
-  const [[s, a], [c, h]] = e;
-  return [Fn(t, s, a, n), Fn(r, c, h, i)];
+function Wo(t, [e, r], [n, i]) {
+  const [[s, a], [c, d]] = t;
+  return [Cn(e, s, a, n), Cn(r, c, d, i)];
 }
-function Jo(e, t) {
-  if (typeof e != "object" || e === null)
-    return e;
-  var r = e[Symbol.toPrimitive];
+function Yo(t, e) {
+  if (typeof t != "object" || t === null) return t;
+  var r = t[Symbol.toPrimitive];
   if (r !== void 0) {
-    var n = r.call(e, t || "default");
-    if (typeof n != "object")
-      return n;
+    var n = r.call(t, e);
+    if (typeof n != "object") return n;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
-  return (t === "string" ? String : Number)(e);
+  return (e === "string" ? String : Number)(t);
 }
-function ea(e) {
-  var t = Jo(e, "string");
-  return typeof t == "symbol" ? t : String(t);
+function qo(t) {
+  var e = Yo(t, "string");
+  return typeof e == "symbol" ? e : String(e);
 }
-function ae(e, t, r) {
-  return t = ea(t), t in e ? Object.defineProperty(e, t, {
+function ae(t, e, r) {
+  return e = qo(e), e in t ? Object.defineProperty(t, e, {
     value: r,
     enumerable: !0,
     configurable: !0,
     writable: !0
-  }) : e[t] = r, e;
+  }) : t[e] = r, t;
 }
-function Nn(e, t) {
-  var r = Object.keys(e);
+function An(t, e) {
+  var r = Object.keys(t);
   if (Object.getOwnPropertySymbols) {
-    var n = Object.getOwnPropertySymbols(e);
-    t && (n = n.filter(function(i) {
-      return Object.getOwnPropertyDescriptor(e, i).enumerable;
+    var n = Object.getOwnPropertySymbols(t);
+    e && (n = n.filter(function(i) {
+      return Object.getOwnPropertyDescriptor(t, i).enumerable;
     })), r.push.apply(r, n);
   }
   return r;
 }
-function ee(e) {
-  for (var t = 1; t < arguments.length; t++) {
-    var r = arguments[t] != null ? arguments[t] : {};
-    t % 2 ? Nn(Object(r), !0).forEach(function(n) {
-      ae(e, n, r[n]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(r)) : Nn(Object(r)).forEach(function(n) {
-      Object.defineProperty(e, n, Object.getOwnPropertyDescriptor(r, n));
+function ee(t) {
+  for (var e = 1; e < arguments.length; e++) {
+    var r = arguments[e] != null ? arguments[e] : {};
+    e % 2 ? An(Object(r), !0).forEach(function(n) {
+      ae(t, n, r[n]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(r)) : An(Object(r)).forEach(function(n) {
+      Object.defineProperty(t, n, Object.getOwnPropertyDescriptor(r, n));
     });
   }
-  return e;
+  return t;
 }
-const Ni = {
+const ki = {
   pointer: {
     start: "down",
     change: "move",
@@ -2944,54 +2901,54 @@ const Ni = {
     end: "end"
   }
 };
-function Ln(e) {
-  return e ? e[0].toUpperCase() + e.slice(1) : "";
+function In(t) {
+  return t ? t[0].toUpperCase() + t.slice(1) : "";
 }
-const ta = ["enter", "leave"];
-function ra(e = !1, t) {
-  return e && !ta.includes(t);
+const Bo = ["enter", "leave"];
+function Ko(t = !1, e) {
+  return t && !Bo.includes(e);
 }
-function na(e, t = "", r = !1) {
-  const n = Ni[e], i = n && n[t] || t;
-  return "on" + Ln(e) + Ln(i) + (ra(r, i) ? "Capture" : "");
+function Ho(t, e = "", r = !1) {
+  const n = ki[t], i = n && n[e] || e;
+  return "on" + In(t) + In(i) + (Ko(r, i) ? "Capture" : "");
 }
-const ia = ["gotpointercapture", "lostpointercapture"];
-function sa(e) {
-  let t = e.substring(2).toLowerCase();
-  const r = !!~t.indexOf("passive");
-  r && (t = t.replace("passive", ""));
-  const n = ia.includes(t) ? "capturecapture" : "capture", i = !!~t.indexOf(n);
-  return i && (t = t.replace("capture", "")), {
-    device: t,
+const Go = ["gotpointercapture", "lostpointercapture"];
+function Xo(t) {
+  let e = t.substring(2).toLowerCase();
+  const r = !!~e.indexOf("passive");
+  r && (e = e.replace("passive", ""));
+  const n = Go.includes(e) ? "capturecapture" : "capture", i = !!~e.indexOf(n);
+  return i && (e = e.replace("capture", "")), {
+    device: e,
     capture: i,
     passive: r
   };
 }
-function oa(e, t = "") {
-  const r = Ni[e], n = r && r[t] || t;
-  return e + n;
+function Qo(t, e = "") {
+  const r = ki[t], n = r && r[e] || e;
+  return t + n;
 }
-function er(e) {
-  return "touches" in e;
+function Xt(t) {
+  return "touches" in t;
 }
-function Li(e) {
-  return er(e) ? "touch" : "pointerType" in e ? e.pointerType : "mouse";
+function Di(t) {
+  return Xt(t) ? "touch" : "pointerType" in t ? t.pointerType : "mouse";
 }
-function aa(e) {
-  return Array.from(e.touches).filter((t) => {
+function Zo(t) {
+  return Array.from(t.touches).filter((e) => {
     var r, n;
-    return t.target === e.currentTarget || ((r = e.currentTarget) === null || r === void 0 || (n = r.contains) === null || n === void 0 ? void 0 : n.call(r, t.target));
+    return e.target === t.currentTarget || ((r = t.currentTarget) === null || r === void 0 || (n = r.contains) === null || n === void 0 ? void 0 : n.call(r, e.target));
   });
 }
-function ca(e) {
-  return e.type === "touchend" || e.type === "touchcancel" ? e.changedTouches : e.targetTouches;
+function Jo(t) {
+  return t.type === "touchend" || t.type === "touchcancel" ? t.changedTouches : t.targetTouches;
 }
-function zi(e) {
-  return er(e) ? ca(e)[0] : e;
+function ji(t) {
+  return Xt(t) ? Jo(t)[0] : t;
 }
-function xr(e, t) {
+function Tr(t, e) {
   try {
-    const r = t.clientX - e.clientX, n = t.clientY - e.clientY, i = (t.clientX + e.clientX) / 2, s = (t.clientY + e.clientY) / 2, a = Math.hypot(r, n);
+    const r = e.clientX - t.clientX, n = e.clientY - t.clientY, i = (e.clientX + t.clientX) / 2, s = (e.clientY + t.clientY) / 2, a = Math.hypot(r, n);
     return {
       angle: -(Math.atan2(r, n) * 180) / Math.PI,
       distance: a,
@@ -3001,84 +2958,84 @@ function xr(e, t) {
   }
   return null;
 }
-function ua(e) {
-  return aa(e).map((t) => t.identifier);
+function ea(t) {
+  return Zo(t).map((e) => e.identifier);
 }
-function zn(e, t) {
-  const [r, n] = Array.from(e.touches).filter((i) => t.includes(i.identifier));
-  return xr(r, n);
+function kn(t, e) {
+  const [r, n] = Array.from(t.touches).filter((i) => e.includes(i.identifier));
+  return Tr(r, n);
 }
-function hr(e) {
-  const t = zi(e);
-  return er(e) ? t.identifier : t.pointerId;
+function cr(t) {
+  const e = ji(t);
+  return Xt(t) ? e.identifier : e.pointerId;
 }
-function et(e) {
-  const t = zi(e);
-  return [t.clientX, t.clientY];
+function et(t) {
+  const e = ji(t);
+  return [e.clientX, e.clientY];
 }
-const Un = 40, Wn = 800;
-function Ui(e) {
+const Dn = 40, jn = 800;
+function Mi(t) {
   let {
-    deltaX: t,
+    deltaX: e,
     deltaY: r,
     deltaMode: n
-  } = e;
-  return n === 1 ? (t *= Un, r *= Un) : n === 2 && (t *= Wn, r *= Wn), [t, r];
+  } = t;
+  return n === 1 ? (e *= Dn, r *= Dn) : n === 2 && (e *= jn, r *= jn), [e, r];
 }
-function la(e) {
-  var t, r;
+function ta(t) {
+  var e, r;
   const {
     scrollX: n,
     scrollY: i,
     scrollLeft: s,
     scrollTop: a
-  } = e.currentTarget;
-  return [(t = n ?? s) !== null && t !== void 0 ? t : 0, (r = i ?? a) !== null && r !== void 0 ? r : 0];
+  } = t.currentTarget;
+  return [(e = n ?? s) !== null && e !== void 0 ? e : 0, (r = i ?? a) !== null && r !== void 0 ? r : 0];
 }
-function fa(e) {
-  const t = {};
-  if ("buttons" in e && (t.buttons = e.buttons), "shiftKey" in e) {
+function ra(t) {
+  const e = {};
+  if ("buttons" in t && (e.buttons = t.buttons), "shiftKey" in t) {
     const {
       shiftKey: r,
       altKey: n,
       metaKey: i,
       ctrlKey: s
-    } = e;
-    Object.assign(t, {
+    } = t;
+    Object.assign(e, {
       shiftKey: r,
       altKey: n,
       metaKey: i,
       ctrlKey: s
     });
   }
-  return t;
+  return e;
 }
-function qt(e, ...t) {
-  return typeof e == "function" ? e(...t) : e;
+function zt(t, ...e) {
+  return typeof t == "function" ? t(...e) : t;
 }
-function da() {
+function na() {
 }
-function ha(...e) {
-  return e.length === 0 ? da : e.length === 1 ? e[0] : function() {
-    let t;
-    for (const r of e)
-      t = r.apply(this, arguments) || t;
-    return t;
+function ia(...t) {
+  return t.length === 0 ? na : t.length === 1 ? t[0] : function() {
+    let e;
+    for (const r of t)
+      e = r.apply(this, arguments) || e;
+    return e;
   };
 }
-function Yn(e, t) {
-  return Object.assign({}, t, e || {});
+function Mn(t, e) {
+  return Object.assign({}, e, t || {});
 }
-const pa = 32;
-class Wi {
-  constructor(t, r, n) {
-    this.ctrl = t, this.args = r, this.key = n, this.state || (this.state = {}, this.computeValues([0, 0]), this.computeInitial(), this.init && this.init(), this.reset());
+const sa = 32;
+class Vi {
+  constructor(e, r, n) {
+    this.ctrl = e, this.args = r, this.key = n, this.state || (this.state = {}, this.computeValues([0, 0]), this.computeInitial(), this.init && this.init(), this.reset());
   }
   get state() {
     return this.ctrl.state[this.key];
   }
-  set state(t) {
-    this.ctrl.state[this.key] = t;
+  set state(e) {
+    this.ctrl.state[this.key] = e;
   }
   get shared() {
     return this.ctrl.state.shared;
@@ -3100,26 +3057,26 @@ class Wi {
   }
   reset() {
     const {
-      state: t,
+      state: e,
       shared: r,
       ingKey: n,
       args: i
     } = this;
-    r[n] = t._active = t.active = t._blocked = t._force = !1, t._step = [!1, !1], t.intentional = !1, t._movement = [0, 0], t._distance = [0, 0], t._direction = [0, 0], t._delta = [0, 0], t._bounds = [[-1 / 0, 1 / 0], [-1 / 0, 1 / 0]], t.args = i, t.axis = void 0, t.memo = void 0, t.elapsedTime = t.timeDelta = 0, t.direction = [0, 0], t.distance = [0, 0], t.overflow = [0, 0], t._movementBound = [!1, !1], t.velocity = [0, 0], t.movement = [0, 0], t.delta = [0, 0], t.timeStamp = 0;
+    r[n] = e._active = e.active = e._blocked = e._force = !1, e._step = [!1, !1], e.intentional = !1, e._movement = [0, 0], e._distance = [0, 0], e._direction = [0, 0], e._delta = [0, 0], e._bounds = [[-1 / 0, 1 / 0], [-1 / 0, 1 / 0]], e.args = i, e.axis = void 0, e.memo = void 0, e.elapsedTime = e.timeDelta = 0, e.direction = [0, 0], e.distance = [0, 0], e.overflow = [0, 0], e._movementBound = [!1, !1], e.velocity = [0, 0], e.movement = [0, 0], e.delta = [0, 0], e.timeStamp = 0;
   }
-  start(t) {
+  start(e) {
     const r = this.state, n = this.config;
-    r._active || (this.reset(), this.computeInitial(), r._active = !0, r.target = t.target, r.currentTarget = t.currentTarget, r.lastOffset = n.from ? qt(n.from, r) : r.offset, r.offset = r.lastOffset, r.startTime = r.timeStamp = t.timeStamp);
+    r._active || (this.reset(), this.computeInitial(), r._active = !0, r.target = e.target, r.currentTarget = e.currentTarget, r.lastOffset = n.from ? zt(n.from, r) : r.offset, r.offset = r.lastOffset, r.startTime = r.timeStamp = e.timeStamp);
   }
-  computeValues(t) {
+  computeValues(e) {
     const r = this.state;
-    r._values = t, r.values = this.config.transform(t);
+    r._values = e, r.values = this.config.transform(e);
   }
   computeInitial() {
-    const t = this.state;
-    t._initial = t._values, t.initial = t.values;
+    const e = this.state;
+    e._initial = e._values, e.initial = e.values;
   }
-  compute(t) {
+  compute(e) {
     const {
       state: r,
       config: n,
@@ -3127,58 +3084,56 @@ class Wi {
     } = this;
     r.args = this.args;
     let s = 0;
-    if (t && (r.event = t, n.preventDefault && t.cancelable && r.event.preventDefault(), r.type = t.type, i.touches = this.ctrl.pointerIds.size || this.ctrl.touchIds.size, i.locked = !!document.pointerLockElement, Object.assign(i, fa(t)), i.down = i.pressed = i.buttons % 2 === 1 || i.touches > 0, s = t.timeStamp - r.timeStamp, r.timeStamp = t.timeStamp, r.elapsedTime = r.timeStamp - r.startTime), r._active) {
-      const q = r._delta.map(Math.abs);
-      J.addTo(r._distance, q);
+    if (e && (r.event = e, n.preventDefault && e.cancelable && r.event.preventDefault(), r.type = e.type, i.touches = this.ctrl.pointerIds.size || this.ctrl.touchIds.size, i.locked = !!document.pointerLockElement, Object.assign(i, ra(e)), i.down = i.pressed = i.buttons % 2 === 1 || i.touches > 0, s = e.timeStamp - r.timeStamp, r.timeStamp = e.timeStamp, r.elapsedTime = r.timeStamp - r.startTime), r._active) {
+      const Y = r._delta.map(Math.abs);
+      J.addTo(r._distance, Y);
     }
-    this.axisIntent && this.axisIntent(t);
-    const [a, c] = r._movement, [h, u] = n.threshold, {
+    this.axisIntent && this.axisIntent(e);
+    const [a, c] = r._movement, [d, u] = n.threshold, {
       _step: l,
-      values: f
+      values: h
     } = r;
-    if (n.hasCustomTransform ? (l[0] === !1 && (l[0] = Math.abs(a) >= h && f[0]), l[1] === !1 && (l[1] = Math.abs(c) >= u && f[1])) : (l[0] === !1 && (l[0] = Math.abs(a) >= h && Math.sign(a) * h), l[1] === !1 && (l[1] = Math.abs(c) >= u && Math.sign(c) * u)), r.intentional = l[0] !== !1 || l[1] !== !1, !r.intentional)
-      return;
-    const b = [0, 0];
+    if (n.hasCustomTransform ? (l[0] === !1 && (l[0] = Math.abs(a) >= d && h[0]), l[1] === !1 && (l[1] = Math.abs(c) >= u && h[1])) : (l[0] === !1 && (l[0] = Math.abs(a) >= d && Math.sign(a) * d), l[1] === !1 && (l[1] = Math.abs(c) >= u && Math.sign(c) * u)), r.intentional = l[0] !== !1 || l[1] !== !1, !r.intentional) return;
+    const m = [0, 0];
     if (n.hasCustomTransform) {
-      const [q, te] = f;
-      b[0] = l[0] !== !1 ? q - l[0] : 0, b[1] = l[1] !== !1 ? te - l[1] : 0;
+      const [Y, te] = h;
+      m[0] = l[0] !== !1 ? Y - l[0] : 0, m[1] = l[1] !== !1 ? te - l[1] : 0;
     } else
-      b[0] = l[0] !== !1 ? a - l[0] : 0, b[1] = l[1] !== !1 ? c - l[1] : 0;
-    this.restrictToAxis && !r._blocked && this.restrictToAxis(b);
-    const E = r.offset, P = r._active && !r._blocked || r.active;
-    P && (r.first = r._active && !r.active, r.last = !r._active && r.active, r.active = i[this.ingKey] = r._active, t && (r.first && ("bounds" in n && (r._bounds = qt(n.bounds, r)), this.setup && this.setup()), r.movement = b, this.computeOffset()));
-    const [g, R] = r.offset, [[w, C], [O, I]] = r._bounds;
-    r.overflow = [g < w ? -1 : g > C ? 1 : 0, R < O ? -1 : R > I ? 1 : 0], r._movementBound[0] = r.overflow[0] ? r._movementBound[0] === !1 ? r._movement[0] : r._movementBound[0] : !1, r._movementBound[1] = r.overflow[1] ? r._movementBound[1] === !1 ? r._movement[1] : r._movementBound[1] : !1;
-    const y = r._active ? n.rubberband || [0, 0] : [0, 0];
-    if (r.offset = Zo(r._bounds, r.offset, y), r.delta = J.sub(r.offset, E), this.computeMovement(), P && (!r.last || s > pa)) {
-      r.delta = J.sub(r.offset, E);
-      const q = r.delta.map(Math.abs);
-      J.addTo(r.distance, q), r.direction = r.delta.map(Math.sign), r._direction = r._delta.map(Math.sign), !r.first && s > 0 && (r.velocity = [q[0] / s, q[1] / s], r.timeDelta = s);
+      m[0] = l[0] !== !1 ? a - l[0] : 0, m[1] = l[1] !== !1 ? c - l[1] : 0;
+    this.restrictToAxis && !r._blocked && this.restrictToAxis(m);
+    const w = r.offset, T = r._active && !r._blocked || r.active;
+    T && (r.first = r._active && !r.active, r.last = !r._active && r.active, r.active = i[this.ingKey] = r._active, e && (r.first && ("bounds" in n && (r._bounds = zt(n.bounds, r)), this.setup && this.setup()), r.movement = m, this.computeOffset()));
+    const [y, R] = r.offset, [[E, O], [P, A]] = r._bounds;
+    r.overflow = [y < E ? -1 : y > O ? 1 : 0, R < P ? -1 : R > A ? 1 : 0], r._movementBound[0] = r.overflow[0] ? r._movementBound[0] === !1 ? r._movement[0] : r._movementBound[0] : !1, r._movementBound[1] = r.overflow[1] ? r._movementBound[1] === !1 ? r._movement[1] : r._movementBound[1] : !1;
+    const _ = r._active ? n.rubberband || [0, 0] : [0, 0];
+    if (r.offset = Wo(r._bounds, r.offset, _), r.delta = J.sub(r.offset, w), this.computeMovement(), T && (!r.last || s > sa)) {
+      r.delta = J.sub(r.offset, w);
+      const Y = r.delta.map(Math.abs);
+      J.addTo(r.distance, Y), r.direction = r.delta.map(Math.sign), r._direction = r._delta.map(Math.sign), !r.first && s > 0 && (r.velocity = [Y[0] / s, Y[1] / s], r.timeDelta = s);
     }
   }
   emit() {
-    const t = this.state, r = this.shared, n = this.config;
-    if (t._active || this.clean(), (t._blocked || !t.intentional) && !t._force && !n.triggerAllEvents)
-      return;
-    const i = this.handler(ee(ee(ee({}, r), t), {}, {
-      [this.aliasKey]: t.values
+    const e = this.state, r = this.shared, n = this.config;
+    if (e._active || this.clean(), (e._blocked || !e.intentional) && !e._force && !n.triggerAllEvents) return;
+    const i = this.handler(ee(ee(ee({}, r), e), {}, {
+      [this.aliasKey]: e.values
     }));
-    i !== void 0 && (t.memo = i);
+    i !== void 0 && (e.memo = i);
   }
   clean() {
     this.eventStore.clean(), this.timeoutStore.clean();
   }
 }
-function ma([e, t], r) {
-  const n = Math.abs(e), i = Math.abs(t);
+function oa([t, e], r) {
+  const n = Math.abs(t), i = Math.abs(e);
   if (n > i && n > r)
     return "x";
   if (i > n && i > r)
     return "y";
 }
-class It extends Wi {
-  constructor(...t) {
-    super(...t), ae(this, "aliasKey", "xy");
+class Ct extends Vi {
+  constructor(...e) {
+    super(...e), ae(this, "aliasKey", "xy");
   }
   reset() {
     super.reset(), this.state.axis = void 0;
@@ -3192,142 +3147,139 @@ class It extends Wi {
   computeMovement() {
     this.state.movement = J.sub(this.state.offset, this.state.lastOffset);
   }
-  axisIntent(t) {
+  axisIntent(e) {
     const r = this.state, n = this.config;
-    if (!r.axis && t) {
-      const i = typeof n.axisThreshold == "object" ? n.axisThreshold[Li(t)] : n.axisThreshold;
-      r.axis = ma(r._movement, i);
+    if (!r.axis && e) {
+      const i = typeof n.axisThreshold == "object" ? n.axisThreshold[Di(e)] : n.axisThreshold;
+      r.axis = oa(r._movement, i);
     }
     r._blocked = (n.lockDirection || !!n.axis) && !r.axis || !!n.axis && n.axis !== r.axis;
   }
-  restrictToAxis(t) {
+  restrictToAxis(e) {
     if (this.config.axis || this.config.lockDirection)
       switch (this.state.axis) {
         case "x":
-          t[1] = 0;
+          e[1] = 0;
           break;
         case "y":
-          t[0] = 0;
+          e[0] = 0;
           break;
       }
   }
 }
-const qn = (e) => e, Bn = 0.15, Qr = {
-  enabled(e = !0) {
-    return e;
+const Vn = (t) => t, $n = 0.15, Wr = {
+  enabled(t = !0) {
+    return t;
   },
-  eventOptions(e, t, r) {
-    return ee(ee({}, r.shared.eventOptions), e);
+  eventOptions(t, e, r) {
+    return ee(ee({}, r.shared.eventOptions), t);
   },
-  preventDefault(e = !1) {
-    return e;
+  preventDefault(t = !1) {
+    return t;
   },
-  triggerAllEvents(e = !1) {
-    return e;
+  triggerAllEvents(t = !1) {
+    return t;
   },
-  rubberband(e = 0) {
-    switch (e) {
+  rubberband(t = 0) {
+    switch (t) {
       case !0:
-        return [Bn, Bn];
+        return [$n, $n];
       case !1:
         return [0, 0];
       default:
-        return J.toVector(e);
+        return J.toVector(t);
     }
   },
-  from(e) {
-    if (typeof e == "function")
-      return e;
-    if (e != null)
-      return J.toVector(e);
+  from(t) {
+    if (typeof t == "function") return t;
+    if (t != null) return J.toVector(t);
   },
-  transform(e, t, r) {
-    const n = e || r.shared.transform;
+  transform(t, e, r) {
+    const n = t || r.shared.transform;
     if (this.hasCustomTransform = !!n, process.env.NODE_ENV === "development") {
-      const i = n || qn;
+      const i = n || Vn;
       return (s) => {
         const a = i(s);
         return (!isFinite(a[0]) || !isFinite(a[1])) && console.warn(`[@use-gesture]: config.transform() must produce a valid result, but it was: [${a[0]},${[1]}]`), a;
       };
     }
-    return n || qn;
+    return n || Vn;
   },
-  threshold(e) {
-    return J.toVector(e, 0);
+  threshold(t) {
+    return J.toVector(t, 0);
   }
 };
-process.env.NODE_ENV === "development" && Object.assign(Qr, {
-  domTarget(e) {
-    if (e !== void 0)
+process.env.NODE_ENV === "development" && Object.assign(Wr, {
+  domTarget(t) {
+    if (t !== void 0)
       throw Error("[@use-gesture]: `domTarget` option has been renamed to `target`.");
     return NaN;
   },
-  lockDirection(e) {
-    if (e !== void 0)
+  lockDirection(t) {
+    if (t !== void 0)
       throw Error("[@use-gesture]: `lockDirection` option has been merged with `axis`. Use it as in `{ axis: 'lock' }`");
     return NaN;
   },
-  initial(e) {
-    if (e !== void 0)
+  initial(t) {
+    if (t !== void 0)
       throw Error("[@use-gesture]: `initial` option has been renamed to `from`.");
     return NaN;
   }
 });
-const va = 0, qe = ee(ee({}, Qr), {}, {
-  axis(e, t, {
+const aa = 0, qe = ee(ee({}, Wr), {}, {
+  axis(t, e, {
     axis: r
   }) {
-    if (this.lockDirection = r === "lock", !this.lockDirection)
-      return r;
+    if (this.lockDirection = r === "lock", !this.lockDirection) return r;
   },
-  axisThreshold(e = va) {
-    return e;
+  axisThreshold(t = aa) {
+    return t;
   },
-  bounds(e = {}) {
-    if (typeof e == "function")
-      return (s) => qe.bounds(e(s));
-    if ("current" in e)
-      return () => e.current;
-    if (typeof HTMLElement == "function" && e instanceof HTMLElement)
-      return e;
+  bounds(t = {}) {
+    if (typeof t == "function")
+      return (s) => qe.bounds(t(s));
+    if ("current" in t)
+      return () => t.current;
+    if (typeof HTMLElement == "function" && t instanceof HTMLElement)
+      return t;
     const {
-      left: t = -1 / 0,
+      left: e = -1 / 0,
       right: r = 1 / 0,
       top: n = -1 / 0,
       bottom: i = 1 / 0
-    } = e;
-    return [[t, r], [n, i]];
+    } = t;
+    return [[e, r], [n, i]];
   }
-}), Kn = {
-  ArrowRight: (e, t = 1) => [e * t, 0],
-  ArrowLeft: (e, t = 1) => [-1 * e * t, 0],
-  ArrowUp: (e, t = 1) => [0, -1 * e * t],
-  ArrowDown: (e, t = 1) => [0, e * t]
+}), Fn = {
+  ArrowRight: (t, e = 1) => [t * e, 0],
+  ArrowLeft: (t, e = 1) => [-1 * t * e, 0],
+  ArrowUp: (t, e = 1) => [0, -1 * t * e],
+  ArrowDown: (t, e = 1) => [0, t * e]
 };
-class ga extends It {
-  constructor(...t) {
-    super(...t), ae(this, "ingKey", "dragging");
+class ca extends Ct {
+  constructor(...e) {
+    super(...e), ae(this, "ingKey", "dragging");
   }
   reset() {
     super.reset();
-    const t = this.state;
-    t._pointerId = void 0, t._pointerActive = !1, t._keyboardActive = !1, t._preventScroll = !1, t._delayed = !1, t.swipe = [0, 0], t.tap = !1, t.canceled = !1, t.cancel = this.cancel.bind(this);
+    const e = this.state;
+    e._pointerId = void 0, e._pointerActive = !1, e._keyboardActive = !1, e._preventScroll = !1, e._delayed = !1, e.swipe = [0, 0], e.tap = !1, e.canceled = !1, e.cancel = this.cancel.bind(this);
   }
   setup() {
-    const t = this.state;
-    if (t._bounds instanceof HTMLElement) {
-      const r = t._bounds.getBoundingClientRect(), n = t.currentTarget.getBoundingClientRect(), i = {
-        left: r.left - n.left + t.offset[0],
-        right: r.right - n.right + t.offset[0],
-        top: r.top - n.top + t.offset[1],
-        bottom: r.bottom - n.bottom + t.offset[1]
+    const e = this.state;
+    if (e._bounds instanceof HTMLElement) {
+      const r = e._bounds.getBoundingClientRect(), n = e.currentTarget.getBoundingClientRect(), i = {
+        left: r.left - n.left + e.offset[0],
+        right: r.right - n.right + e.offset[0],
+        top: r.top - n.top + e.offset[1],
+        bottom: r.bottom - n.bottom + e.offset[1]
       };
-      t._bounds = qe.bounds(i);
+      e._bounds = qe.bounds(i);
     }
   }
   cancel() {
-    const t = this.state;
-    t.canceled || (t.canceled = !0, t._active = !1, setTimeout(() => {
+    const e = this.state;
+    e.canceled || (e.canceled = !0, e._active = !1, setTimeout(() => {
       this.compute(), this.emit();
     }, 0));
   }
@@ -3337,27 +3289,24 @@ class ga extends It {
   clean() {
     this.pointerClean(), this.state._pointerActive = !1, this.state._keyboardActive = !1, super.clean();
   }
-  pointerDown(t) {
+  pointerDown(e) {
     const r = this.config, n = this.state;
-    if (t.buttons != null && (Array.isArray(r.pointerButtons) ? !r.pointerButtons.includes(t.buttons) : r.pointerButtons !== -1 && r.pointerButtons !== t.buttons))
-      return;
-    const i = this.ctrl.setEventIds(t);
-    r.pointerCapture && t.target.setPointerCapture(t.pointerId), !(i && i.size > 1 && n._pointerActive) && (this.start(t), this.setupPointer(t), n._pointerId = hr(t), n._pointerActive = !0, this.computeValues(et(t)), this.computeInitial(), r.preventScrollAxis && Li(t) !== "mouse" ? (n._active = !1, this.setupScrollPrevention(t)) : r.delay > 0 ? (this.setupDelayTrigger(t), r.triggerAllEvents && (this.compute(t), this.emit())) : this.startPointerDrag(t));
+    if (e.buttons != null && (Array.isArray(r.pointerButtons) ? !r.pointerButtons.includes(e.buttons) : r.pointerButtons !== -1 && r.pointerButtons !== e.buttons)) return;
+    const i = this.ctrl.setEventIds(e);
+    r.pointerCapture && e.target.setPointerCapture(e.pointerId), !(i && i.size > 1 && n._pointerActive) && (this.start(e), this.setupPointer(e), n._pointerId = cr(e), n._pointerActive = !0, this.computeValues(et(e)), this.computeInitial(), r.preventScrollAxis && Di(e) !== "mouse" ? (n._active = !1, this.setupScrollPrevention(e)) : r.delay > 0 ? (this.setupDelayTrigger(e), r.triggerAllEvents && (this.compute(e), this.emit())) : this.startPointerDrag(e));
   }
-  startPointerDrag(t) {
+  startPointerDrag(e) {
     const r = this.state;
-    r._active = !0, r._preventScroll = !0, r._delayed = !1, this.compute(t), this.emit();
+    r._active = !0, r._preventScroll = !0, r._delayed = !1, this.compute(e), this.emit();
   }
-  pointerMove(t) {
+  pointerMove(e) {
     const r = this.state, n = this.config;
-    if (!r._pointerActive)
-      return;
-    const i = hr(t);
-    if (r._pointerId !== void 0 && i !== r._pointerId)
-      return;
-    const s = et(t);
-    if (document.pointerLockElement === t.target ? r._delta = [t.movementX, t.movementY] : (r._delta = J.sub(s, r._values), this.computeValues(s)), J.addTo(r._movement, r._delta), this.compute(t), r._delayed && r.intentional) {
-      this.timeoutStore.remove("dragDelay"), r.active = !1, this.startPointerDrag(t);
+    if (!r._pointerActive) return;
+    const i = cr(e);
+    if (r._pointerId !== void 0 && i !== r._pointerId) return;
+    const s = et(e);
+    if (document.pointerLockElement === e.target ? r._delta = [e.movementX, e.movementY] : (r._delta = J.sub(s, r._values), this.computeValues(s)), J.addTo(r._movement, r._delta), this.compute(e), r._delayed && r.intentional) {
+      this.timeoutStore.remove("dragDelay"), r.active = !1, this.startPointerDrag(e);
       return;
     }
     if (n.preventScrollAxis && !r._preventScroll)
@@ -3366,107 +3315,105 @@ class ga extends It {
           r._active = !1, this.clean();
           return;
         } else {
-          this.timeoutStore.remove("startPointerDrag"), this.startPointerDrag(t);
+          this.timeoutStore.remove("startPointerDrag"), this.startPointerDrag(e);
           return;
         }
       else
         return;
     this.emit();
   }
-  pointerUp(t) {
-    this.ctrl.setEventIds(t);
+  pointerUp(e) {
+    this.ctrl.setEventIds(e);
     try {
-      this.config.pointerCapture && t.target.hasPointerCapture(t.pointerId) && t.target.releasePointerCapture(t.pointerId);
+      this.config.pointerCapture && e.target.hasPointerCapture(e.pointerId) && e.target.releasePointerCapture(e.pointerId);
     } catch {
       process.env.NODE_ENV === "development" && console.warn("[@use-gesture]: If you see this message, it's likely that you're using an outdated version of `@react-three/fiber`. \n\nPlease upgrade to the latest version.");
     }
     const r = this.state, n = this.config;
-    if (!r._active || !r._pointerActive)
-      return;
-    const i = hr(t);
-    if (r._pointerId !== void 0 && i !== r._pointerId)
-      return;
-    this.state._pointerActive = !1, this.setActive(), this.compute(t);
+    if (!r._active || !r._pointerActive) return;
+    const i = cr(e);
+    if (r._pointerId !== void 0 && i !== r._pointerId) return;
+    this.state._pointerActive = !1, this.setActive(), this.compute(e);
     const [s, a] = r._distance;
     if (r.tap = s <= n.tapsThreshold && a <= n.tapsThreshold, r.tap && n.filterTaps)
       r._force = !0;
     else {
-      const [c, h] = r._delta, [u, l] = r._movement, [f, b] = n.swipe.velocity, [E, P] = n.swipe.distance, g = n.swipe.duration;
-      if (r.elapsedTime < g) {
-        const R = Math.abs(c / r.timeDelta), w = Math.abs(h / r.timeDelta);
-        R > f && Math.abs(u) > E && (r.swipe[0] = Math.sign(c)), w > b && Math.abs(l) > P && (r.swipe[1] = Math.sign(h));
+      const [c, d] = r._delta, [u, l] = r._movement, [h, m] = n.swipe.velocity, [w, T] = n.swipe.distance, y = n.swipe.duration;
+      if (r.elapsedTime < y) {
+        const R = Math.abs(c / r.timeDelta), E = Math.abs(d / r.timeDelta);
+        R > h && Math.abs(u) > w && (r.swipe[0] = Math.sign(c)), E > m && Math.abs(l) > T && (r.swipe[1] = Math.sign(d));
       }
     }
     this.emit();
   }
-  pointerClick(t) {
-    !this.state.tap && t.detail > 0 && (t.preventDefault(), t.stopPropagation());
+  pointerClick(e) {
+    !this.state.tap && e.detail > 0 && (e.preventDefault(), e.stopPropagation());
   }
-  setupPointer(t) {
+  setupPointer(e) {
     const r = this.config, n = r.device;
     if (process.env.NODE_ENV === "development")
       try {
         if (n === "pointer" && r.preventScrollDelay === void 0) {
-          const i = "uv" in t ? t.sourceEvent.currentTarget : t.currentTarget;
+          const i = "uv" in e ? e.sourceEvent.currentTarget : e.currentTarget;
           window.getComputedStyle(i).touchAction === "auto" && console.warn("[@use-gesture]: The drag target has its `touch-action` style property set to `auto`. It is recommended to add `touch-action: 'none'` so that the drag gesture behaves correctly on touch-enabled devices. For more information read this: https://use-gesture.netlify.app/docs/extras/#touch-action.\n\nThis message will only show in development mode. It won't appear in production. If this is intended, you can ignore it.", i);
         }
       } catch {
       }
-    r.pointerLock && t.currentTarget.requestPointerLock(), r.pointerCapture || (this.eventStore.add(this.sharedConfig.window, n, "change", this.pointerMove.bind(this)), this.eventStore.add(this.sharedConfig.window, n, "end", this.pointerUp.bind(this)), this.eventStore.add(this.sharedConfig.window, n, "cancel", this.pointerUp.bind(this)));
+    r.pointerLock && e.currentTarget.requestPointerLock(), r.pointerCapture || (this.eventStore.add(this.sharedConfig.window, n, "change", this.pointerMove.bind(this)), this.eventStore.add(this.sharedConfig.window, n, "end", this.pointerUp.bind(this)), this.eventStore.add(this.sharedConfig.window, n, "cancel", this.pointerUp.bind(this)));
   }
   pointerClean() {
     this.config.pointerLock && document.pointerLockElement === this.state.currentTarget && document.exitPointerLock();
   }
-  preventScroll(t) {
-    this.state._preventScroll && t.cancelable && t.preventDefault();
+  preventScroll(e) {
+    this.state._preventScroll && e.cancelable && e.preventDefault();
   }
-  setupScrollPrevention(t) {
-    this.state._preventScroll = !1, ya(t);
+  setupScrollPrevention(e) {
+    this.state._preventScroll = !1, ua(e);
     const r = this.eventStore.add(this.sharedConfig.window, "touch", "change", this.preventScroll.bind(this), {
       passive: !1
     });
-    this.eventStore.add(this.sharedConfig.window, "touch", "end", r), this.eventStore.add(this.sharedConfig.window, "touch", "cancel", r), this.timeoutStore.add("startPointerDrag", this.startPointerDrag.bind(this), this.config.preventScrollDelay, t);
+    this.eventStore.add(this.sharedConfig.window, "touch", "end", r), this.eventStore.add(this.sharedConfig.window, "touch", "cancel", r), this.timeoutStore.add("startPointerDrag", this.startPointerDrag.bind(this), this.config.preventScrollDelay, e);
   }
-  setupDelayTrigger(t) {
+  setupDelayTrigger(e) {
     this.state._delayed = !0, this.timeoutStore.add("dragDelay", () => {
-      this.state._step = [0, 0], this.startPointerDrag(t);
+      this.state._step = [0, 0], this.startPointerDrag(e);
     }, this.config.delay);
   }
-  keyDown(t) {
-    const r = Kn[t.key];
+  keyDown(e) {
+    const r = Fn[e.key];
     if (r) {
-      const n = this.state, i = t.shiftKey ? 10 : t.altKey ? 0.1 : 1;
-      this.start(t), n._delta = r(this.config.keyboardDisplacement, i), n._keyboardActive = !0, J.addTo(n._movement, n._delta), this.compute(t), this.emit();
+      const n = this.state, i = e.shiftKey ? 10 : e.altKey ? 0.1 : 1;
+      this.start(e), n._delta = r(this.config.keyboardDisplacement, i), n._keyboardActive = !0, J.addTo(n._movement, n._delta), this.compute(e), this.emit();
     }
   }
-  keyUp(t) {
-    t.key in Kn && (this.state._keyboardActive = !1, this.setActive(), this.compute(t), this.emit());
+  keyUp(e) {
+    e.key in Fn && (this.state._keyboardActive = !1, this.setActive(), this.compute(e), this.emit());
   }
-  bind(t) {
+  bind(e) {
     const r = this.config.device;
-    t(r, "start", this.pointerDown.bind(this)), this.config.pointerCapture && (t(r, "change", this.pointerMove.bind(this)), t(r, "end", this.pointerUp.bind(this)), t(r, "cancel", this.pointerUp.bind(this)), t("lostPointerCapture", "", this.pointerUp.bind(this))), this.config.keys && (t("key", "down", this.keyDown.bind(this)), t("key", "up", this.keyUp.bind(this))), this.config.filterTaps && t("click", "", this.pointerClick.bind(this), {
+    e(r, "start", this.pointerDown.bind(this)), this.config.pointerCapture && (e(r, "change", this.pointerMove.bind(this)), e(r, "end", this.pointerUp.bind(this)), e(r, "cancel", this.pointerUp.bind(this)), e("lostPointerCapture", "", this.pointerUp.bind(this))), this.config.keys && (e("key", "down", this.keyDown.bind(this)), e("key", "up", this.keyUp.bind(this))), this.config.filterTaps && e("click", "", this.pointerClick.bind(this), {
       capture: !0,
       passive: !1
     });
   }
 }
-function ya(e) {
-  "persist" in e && typeof e.persist == "function" && e.persist();
+function ua(t) {
+  "persist" in t && typeof t.persist == "function" && t.persist();
 }
-const xt = typeof window < "u" && window.document && window.document.createElement;
-function Yi() {
-  return xt && "ontouchstart" in window;
+const At = typeof window < "u" && window.document && window.document.createElement;
+function $i() {
+  return At && "ontouchstart" in window;
 }
-function ba() {
-  return Yi() || xt && window.navigator.maxTouchPoints > 1;
+function la() {
+  return $i() || At && window.navigator.maxTouchPoints > 1;
 }
-function _a() {
-  return xt && "onpointerdown" in window;
+function fa() {
+  return At && "onpointerdown" in window;
 }
-function wa() {
-  return xt && "exitPointerLock" in window.document;
+function da() {
+  return At && "exitPointerLock" in window.document;
 }
-function Ea() {
+function ha() {
   try {
     return "constructor" in GestureEvent;
   } catch {
@@ -3474,18 +3421,18 @@ function Ea() {
   }
 }
 const Te = {
-  isBrowser: xt,
-  gesture: Ea(),
-  touch: Yi(),
-  touchscreen: ba(),
-  pointer: _a(),
-  pointerLock: wa()
-}, Sa = 250, Ta = 180, Pa = 0.5, Oa = 50, Ra = 250, Ca = 10, Hn = {
+  isBrowser: At,
+  gesture: ha(),
+  touch: $i(),
+  touchscreen: la(),
+  pointer: fa(),
+  pointerLock: da()
+}, pa = 250, ma = 180, va = 0.5, ga = 50, ya = 250, _a = 10, Nn = {
   mouse: 0,
   touch: 0,
   pen: 8
-}, qi = ee(ee({}, qe), {}, {
-  device(e, t, {
+}, Fi = ee(ee({}, qe), {}, {
+  device(t, e, {
     pointer: {
       touch: r = !1,
       lock: n = !1,
@@ -3494,13 +3441,13 @@ const Te = {
   }) {
     return this.pointerLock = n && Te.pointerLock, Te.touch && r ? "touch" : this.pointerLock ? "mouse" : Te.pointer && !i ? "pointer" : Te.touch ? "touch" : "mouse";
   },
-  preventScrollAxis(e, t, {
+  preventScrollAxis(t, e, {
     preventScroll: r
   }) {
-    if (this.preventScrollDelay = typeof r == "number" ? r : r || r === void 0 && e ? Sa : void 0, !(!Te.touchscreen || r === !1))
-      return e || (r !== void 0 ? "y" : void 0);
+    if (this.preventScrollDelay = typeof r == "number" ? r : r || r === void 0 && t ? pa : void 0, !(!Te.touchscreen || r === !1))
+      return t || (r !== void 0 ? "y" : void 0);
   },
-  pointerCapture(e, t, {
+  pointerCapture(t, e, {
     pointer: {
       capture: r = !0,
       buttons: n = 1,
@@ -3509,239 +3456,229 @@ const Te = {
   }) {
     return this.pointerButtons = n, this.keys = i, !this.pointerLock && this.device === "pointer" && r;
   },
-  threshold(e, t, {
+  threshold(t, e, {
     filterTaps: r = !1,
     tapsThreshold: n = 3,
     axis: i = void 0
   }) {
-    const s = J.toVector(e, r ? n : i ? 1 : 0);
+    const s = J.toVector(t, r ? n : i ? 1 : 0);
     return this.filterTaps = r, this.tapsThreshold = n, s;
   },
   swipe({
-    velocity: e = Pa,
-    distance: t = Oa,
-    duration: r = Ra
+    velocity: t = va,
+    distance: e = ga,
+    duration: r = ya
   } = {}) {
     return {
-      velocity: this.transform(J.toVector(e)),
-      distance: this.transform(J.toVector(t)),
+      velocity: this.transform(J.toVector(t)),
+      distance: this.transform(J.toVector(e)),
       duration: r
     };
   },
-  delay(e = 0) {
-    switch (e) {
+  delay(t = 0) {
+    switch (t) {
       case !0:
-        return Ta;
+        return ma;
       case !1:
         return 0;
       default:
-        return e;
+        return t;
     }
   },
-  axisThreshold(e) {
-    return e ? ee(ee({}, Hn), e) : Hn;
+  axisThreshold(t) {
+    return t ? ee(ee({}, Nn), t) : Nn;
   },
-  keyboardDisplacement(e = Ca) {
-    return e;
+  keyboardDisplacement(t = _a) {
+    return t;
   }
 });
-process.env.NODE_ENV === "development" && Object.assign(qi, {
-  useTouch(e) {
-    if (e !== void 0)
+process.env.NODE_ENV === "development" && Object.assign(Fi, {
+  useTouch(t) {
+    if (t !== void 0)
       throw Error("[@use-gesture]: `useTouch` option has been renamed to `pointer.touch`. Use it as in `{ pointer: { touch: true } }`.");
     return NaN;
   },
-  experimental_preventWindowScrollY(e) {
-    if (e !== void 0)
+  experimental_preventWindowScrollY(t) {
+    if (t !== void 0)
       throw Error("[@use-gesture]: `experimental_preventWindowScrollY` option has been renamed to `preventScroll`.");
     return NaN;
   },
-  swipeVelocity(e) {
-    if (e !== void 0)
+  swipeVelocity(t) {
+    if (t !== void 0)
       throw Error("[@use-gesture]: `swipeVelocity` option has been renamed to `swipe.velocity`. Use it as in `{ swipe: { velocity: 0.5 } }`.");
     return NaN;
   },
-  swipeDistance(e) {
-    if (e !== void 0)
+  swipeDistance(t) {
+    if (t !== void 0)
       throw Error("[@use-gesture]: `swipeDistance` option has been renamed to `swipe.distance`. Use it as in `{ swipe: { distance: 50 } }`.");
     return NaN;
   },
-  swipeDuration(e) {
-    if (e !== void 0)
+  swipeDuration(t) {
+    if (t !== void 0)
       throw Error("[@use-gesture]: `swipeDuration` option has been renamed to `swipe.duration`. Use it as in `{ swipe: { duration: 250 } }`.");
     return NaN;
   }
 });
-function Bi(e) {
-  const [t, r] = e.overflow, [n, i] = e._delta, [s, a] = e._direction;
-  (t < 0 && n > 0 && s < 0 || t > 0 && n < 0 && s > 0) && (e._movement[0] = e._movementBound[0]), (r < 0 && i > 0 && a < 0 || r > 0 && i < 0 && a > 0) && (e._movement[1] = e._movementBound[1]);
+function Ni(t) {
+  const [e, r] = t.overflow, [n, i] = t._delta, [s, a] = t._direction;
+  (e < 0 && n > 0 && s < 0 || e > 0 && n < 0 && s > 0) && (t._movement[0] = t._movementBound[0]), (r < 0 && i > 0 && a < 0 || r > 0 && i < 0 && a > 0) && (t._movement[1] = t._movementBound[1]);
 }
-const Aa = 30, Ia = 100;
-class xa extends Wi {
-  constructor(...t) {
-    super(...t), ae(this, "ingKey", "pinching"), ae(this, "aliasKey", "da");
+const ba = 30, wa = 100;
+class Ea extends Vi {
+  constructor(...e) {
+    super(...e), ae(this, "ingKey", "pinching"), ae(this, "aliasKey", "da");
   }
   init() {
     this.state.offset = [1, 0], this.state.lastOffset = [1, 0], this.state._pointerEvents = /* @__PURE__ */ new Map();
   }
   reset() {
     super.reset();
-    const t = this.state;
-    t._touchIds = [], t.canceled = !1, t.cancel = this.cancel.bind(this), t.turns = 0;
+    const e = this.state;
+    e._touchIds = [], e.canceled = !1, e.cancel = this.cancel.bind(this), e.turns = 0;
   }
   computeOffset() {
     const {
-      type: t,
+      type: e,
       movement: r,
       lastOffset: n
     } = this.state;
-    t === "wheel" ? this.state.offset = J.add(r, n) : this.state.offset = [(1 + r[0]) * n[0], r[1] + n[1]];
+    e === "wheel" ? this.state.offset = J.add(r, n) : this.state.offset = [(1 + r[0]) * n[0], r[1] + n[1]];
   }
   computeMovement() {
     const {
-      offset: t,
+      offset: e,
       lastOffset: r
     } = this.state;
-    this.state.movement = [t[0] / r[0], t[1] - r[1]];
+    this.state.movement = [e[0] / r[0], e[1] - r[1]];
   }
   axisIntent() {
-    const t = this.state, [r, n] = t._movement;
-    if (!t.axis) {
-      const i = Math.abs(r) * Aa - Math.abs(n);
-      i < 0 ? t.axis = "angle" : i > 0 && (t.axis = "scale");
+    const e = this.state, [r, n] = e._movement;
+    if (!e.axis) {
+      const i = Math.abs(r) * ba - Math.abs(n);
+      i < 0 ? e.axis = "angle" : i > 0 && (e.axis = "scale");
     }
   }
-  restrictToAxis(t) {
-    this.config.lockDirection && (this.state.axis === "scale" ? t[1] = 0 : this.state.axis === "angle" && (t[0] = 0));
+  restrictToAxis(e) {
+    this.config.lockDirection && (this.state.axis === "scale" ? e[1] = 0 : this.state.axis === "angle" && (e[0] = 0));
   }
   cancel() {
-    const t = this.state;
-    t.canceled || setTimeout(() => {
-      t.canceled = !0, t._active = !1, this.compute(), this.emit();
+    const e = this.state;
+    e.canceled || setTimeout(() => {
+      e.canceled = !0, e._active = !1, this.compute(), this.emit();
     }, 0);
   }
-  touchStart(t) {
-    this.ctrl.setEventIds(t);
+  touchStart(e) {
+    this.ctrl.setEventIds(e);
     const r = this.state, n = this.ctrl.touchIds;
-    if (r._active && r._touchIds.every((s) => n.has(s)) || n.size < 2)
-      return;
-    this.start(t), r._touchIds = Array.from(n).slice(0, 2);
-    const i = zn(t, r._touchIds);
-    i && this.pinchStart(t, i);
+    if (r._active && r._touchIds.every((s) => n.has(s)) || n.size < 2) return;
+    this.start(e), r._touchIds = Array.from(n).slice(0, 2);
+    const i = kn(e, r._touchIds);
+    i && this.pinchStart(e, i);
   }
-  pointerStart(t) {
-    if (t.buttons != null && t.buttons % 2 !== 1)
-      return;
-    this.ctrl.setEventIds(t), t.target.setPointerCapture(t.pointerId);
+  pointerStart(e) {
+    if (e.buttons != null && e.buttons % 2 !== 1) return;
+    this.ctrl.setEventIds(e), e.target.setPointerCapture(e.pointerId);
     const r = this.state, n = r._pointerEvents, i = this.ctrl.pointerIds;
-    if (r._active && Array.from(n.keys()).every((a) => i.has(a)) || (n.size < 2 && n.set(t.pointerId, t), r._pointerEvents.size < 2))
-      return;
-    this.start(t);
-    const s = xr(...Array.from(n.values()));
-    s && this.pinchStart(t, s);
+    if (r._active && Array.from(n.keys()).every((a) => i.has(a)) || (n.size < 2 && n.set(e.pointerId, e), r._pointerEvents.size < 2)) return;
+    this.start(e);
+    const s = Tr(...Array.from(n.values()));
+    s && this.pinchStart(e, s);
   }
-  pinchStart(t, r) {
+  pinchStart(e, r) {
     const n = this.state;
-    n.origin = r.origin, this.computeValues([r.distance, r.angle]), this.computeInitial(), this.compute(t), this.emit();
+    n.origin = r.origin, this.computeValues([r.distance, r.angle]), this.computeInitial(), this.compute(e), this.emit();
   }
-  touchMove(t) {
-    if (!this.state._active)
-      return;
-    const r = zn(t, this.state._touchIds);
-    r && this.pinchMove(t, r);
+  touchMove(e) {
+    if (!this.state._active) return;
+    const r = kn(e, this.state._touchIds);
+    r && this.pinchMove(e, r);
   }
-  pointerMove(t) {
+  pointerMove(e) {
     const r = this.state._pointerEvents;
-    if (r.has(t.pointerId) && r.set(t.pointerId, t), !this.state._active)
-      return;
-    const n = xr(...Array.from(r.values()));
-    n && this.pinchMove(t, n);
+    if (r.has(e.pointerId) && r.set(e.pointerId, e), !this.state._active) return;
+    const n = Tr(...Array.from(r.values()));
+    n && this.pinchMove(e, n);
   }
-  pinchMove(t, r) {
+  pinchMove(e, r) {
     const n = this.state, i = n._values[1], s = r.angle - i;
     let a = 0;
-    Math.abs(s) > 270 && (a += Math.sign(s)), this.computeValues([r.distance, r.angle - 360 * a]), n.origin = r.origin, n.turns = a, n._movement = [n._values[0] / n._initial[0] - 1, n._values[1] - n._initial[1]], this.compute(t), this.emit();
+    Math.abs(s) > 270 && (a += Math.sign(s)), this.computeValues([r.distance, r.angle - 360 * a]), n.origin = r.origin, n.turns = a, n._movement = [n._values[0] / n._initial[0] - 1, n._values[1] - n._initial[1]], this.compute(e), this.emit();
   }
-  touchEnd(t) {
-    this.ctrl.setEventIds(t), this.state._active && this.state._touchIds.some((r) => !this.ctrl.touchIds.has(r)) && (this.state._active = !1, this.compute(t), this.emit());
+  touchEnd(e) {
+    this.ctrl.setEventIds(e), this.state._active && this.state._touchIds.some((r) => !this.ctrl.touchIds.has(r)) && (this.state._active = !1, this.compute(e), this.emit());
   }
-  pointerEnd(t) {
+  pointerEnd(e) {
     const r = this.state;
-    this.ctrl.setEventIds(t);
+    this.ctrl.setEventIds(e);
     try {
-      t.target.releasePointerCapture(t.pointerId);
+      e.target.releasePointerCapture(e.pointerId);
     } catch {
     }
-    r._pointerEvents.has(t.pointerId) && r._pointerEvents.delete(t.pointerId), r._active && r._pointerEvents.size < 2 && (r._active = !1, this.compute(t), this.emit());
+    r._pointerEvents.has(e.pointerId) && r._pointerEvents.delete(e.pointerId), r._active && r._pointerEvents.size < 2 && (r._active = !1, this.compute(e), this.emit());
   }
-  gestureStart(t) {
-    t.cancelable && t.preventDefault();
+  gestureStart(e) {
+    e.cancelable && e.preventDefault();
     const r = this.state;
-    r._active || (this.start(t), this.computeValues([t.scale, t.rotation]), r.origin = [t.clientX, t.clientY], this.compute(t), this.emit());
+    r._active || (this.start(e), this.computeValues([e.scale, e.rotation]), r.origin = [e.clientX, e.clientY], this.compute(e), this.emit());
   }
-  gestureMove(t) {
-    if (t.cancelable && t.preventDefault(), !this.state._active)
-      return;
+  gestureMove(e) {
+    if (e.cancelable && e.preventDefault(), !this.state._active) return;
     const r = this.state;
-    this.computeValues([t.scale, t.rotation]), r.origin = [t.clientX, t.clientY];
+    this.computeValues([e.scale, e.rotation]), r.origin = [e.clientX, e.clientY];
     const n = r._movement;
-    r._movement = [t.scale - 1, t.rotation], r._delta = J.sub(r._movement, n), this.compute(t), this.emit();
+    r._movement = [e.scale - 1, e.rotation], r._delta = J.sub(r._movement, n), this.compute(e), this.emit();
   }
-  gestureEnd(t) {
-    this.state._active && (this.state._active = !1, this.compute(t), this.emit());
+  gestureEnd(e) {
+    this.state._active && (this.state._active = !1, this.compute(e), this.emit());
   }
-  wheel(t) {
+  wheel(e) {
     const r = this.config.modifierKey;
-    r && (Array.isArray(r) ? !r.find((n) => t[n]) : !t[r]) || (this.state._active ? this.wheelChange(t) : this.wheelStart(t), this.timeoutStore.add("wheelEnd", this.wheelEnd.bind(this)));
+    r && (Array.isArray(r) ? !r.find((n) => e[n]) : !e[r]) || (this.state._active ? this.wheelChange(e) : this.wheelStart(e), this.timeoutStore.add("wheelEnd", this.wheelEnd.bind(this)));
   }
-  wheelStart(t) {
-    this.start(t), this.wheelChange(t);
+  wheelStart(e) {
+    this.start(e), this.wheelChange(e);
   }
-  wheelChange(t) {
-    "uv" in t || (t.cancelable && t.preventDefault(), process.env.NODE_ENV === "development" && !t.defaultPrevented && console.warn("[@use-gesture]: To properly support zoom on trackpads, try using the `target` option.\n\nThis message will only appear in development mode."));
+  wheelChange(e) {
+    "uv" in e || (e.cancelable && e.preventDefault(), process.env.NODE_ENV === "development" && !e.defaultPrevented && console.warn("[@use-gesture]: To properly support zoom on trackpads, try using the `target` option.\n\nThis message will only appear in development mode."));
     const n = this.state;
-    n._delta = [-Ui(t)[1] / Ia * n.offset[0], 0], J.addTo(n._movement, n._delta), Bi(n), this.state.origin = [t.clientX, t.clientY], this.compute(t), this.emit();
+    n._delta = [-Mi(e)[1] / wa * n.offset[0], 0], J.addTo(n._movement, n._delta), Ni(n), this.state.origin = [e.clientX, e.clientY], this.compute(e), this.emit();
   }
   wheelEnd() {
     this.state._active && (this.state._active = !1, this.compute(), this.emit());
   }
-  bind(t) {
+  bind(e) {
     const r = this.config.device;
-    r && (t(r, "start", this[r + "Start"].bind(this)), t(r, "change", this[r + "Move"].bind(this)), t(r, "end", this[r + "End"].bind(this)), t(r, "cancel", this[r + "End"].bind(this)), t("lostPointerCapture", "", this[r + "End"].bind(this))), this.config.pinchOnWheel && t("wheel", "", this.wheel.bind(this), {
+    r && (e(r, "start", this[r + "Start"].bind(this)), e(r, "change", this[r + "Move"].bind(this)), e(r, "end", this[r + "End"].bind(this)), e(r, "cancel", this[r + "End"].bind(this)), e("lostPointerCapture", "", this[r + "End"].bind(this))), this.config.pinchOnWheel && e("wheel", "", this.wheel.bind(this), {
       passive: !1
     });
   }
 }
-const ka = ee(ee({}, Qr), {}, {
-  device(e, t, {
+const Sa = ee(ee({}, Wr), {}, {
+  device(t, e, {
     shared: r,
     pointer: {
       touch: n = !1
     } = {}
   }) {
-    if (r.target && !Te.touch && Te.gesture)
-      return "gesture";
-    if (Te.touch && n)
-      return "touch";
+    if (r.target && !Te.touch && Te.gesture) return "gesture";
+    if (Te.touch && n) return "touch";
     if (Te.touchscreen) {
-      if (Te.pointer)
-        return "pointer";
-      if (Te.touch)
-        return "touch";
+      if (Te.pointer) return "pointer";
+      if (Te.touch) return "touch";
     }
   },
-  bounds(e, t, {
+  bounds(t, e, {
     scaleBounds: r = {},
     angleBounds: n = {}
   }) {
     const i = (a) => {
-      const c = Yn(qt(r, a), {
+      const c = Mn(zt(r, a), {
         min: -1 / 0,
         max: 1 / 0
       });
       return [c.min, c.max];
     }, s = (a) => {
-      const c = Yn(qt(n, a), {
+      const c = Mn(zt(n, a), {
         min: -1 / 0,
         max: 1 / 0
       });
@@ -3749,222 +3686,217 @@ const ka = ee(ee({}, Qr), {}, {
     };
     return typeof r != "function" && typeof n != "function" ? [i(), s()] : (a) => [i(a), s(a)];
   },
-  threshold(e, t, r) {
-    return this.lockDirection = r.axis === "lock", J.toVector(e, this.lockDirection ? [0.1, 3] : 0);
+  threshold(t, e, r) {
+    return this.lockDirection = r.axis === "lock", J.toVector(t, this.lockDirection ? [0.1, 3] : 0);
   },
-  modifierKey(e) {
-    return e === void 0 ? "ctrlKey" : e;
+  modifierKey(t) {
+    return t === void 0 ? "ctrlKey" : t;
   },
-  pinchOnWheel(e = !0) {
-    return e;
+  pinchOnWheel(t = !0) {
+    return t;
   }
 });
-class Ma extends It {
-  constructor(...t) {
-    super(...t), ae(this, "ingKey", "moving");
+class Ta extends Ct {
+  constructor(...e) {
+    super(...e), ae(this, "ingKey", "moving");
   }
-  move(t) {
-    this.config.mouseOnly && t.pointerType !== "mouse" || (this.state._active ? this.moveChange(t) : this.moveStart(t), this.timeoutStore.add("moveEnd", this.moveEnd.bind(this)));
+  move(e) {
+    this.config.mouseOnly && e.pointerType !== "mouse" || (this.state._active ? this.moveChange(e) : this.moveStart(e), this.timeoutStore.add("moveEnd", this.moveEnd.bind(this)));
   }
-  moveStart(t) {
-    this.start(t), this.computeValues(et(t)), this.compute(t), this.computeInitial(), this.emit();
+  moveStart(e) {
+    this.start(e), this.computeValues(et(e)), this.compute(e), this.computeInitial(), this.emit();
   }
-  moveChange(t) {
-    if (!this.state._active)
-      return;
-    const r = et(t), n = this.state;
-    n._delta = J.sub(r, n._values), J.addTo(n._movement, n._delta), this.computeValues(r), this.compute(t), this.emit();
+  moveChange(e) {
+    if (!this.state._active) return;
+    const r = et(e), n = this.state;
+    n._delta = J.sub(r, n._values), J.addTo(n._movement, n._delta), this.computeValues(r), this.compute(e), this.emit();
   }
-  moveEnd(t) {
-    this.state._active && (this.state._active = !1, this.compute(t), this.emit());
+  moveEnd(e) {
+    this.state._active && (this.state._active = !1, this.compute(e), this.emit());
   }
-  bind(t) {
-    t("pointer", "change", this.move.bind(this)), t("pointer", "leave", this.moveEnd.bind(this));
+  bind(e) {
+    e("pointer", "change", this.move.bind(this)), e("pointer", "leave", this.moveEnd.bind(this));
   }
 }
-const Da = ee(ee({}, qe), {}, {
-  mouseOnly: (e = !0) => e
+const Pa = ee(ee({}, qe), {}, {
+  mouseOnly: (t = !0) => t
 });
-class ja extends It {
-  constructor(...t) {
-    super(...t), ae(this, "ingKey", "scrolling");
+class xa extends Ct {
+  constructor(...e) {
+    super(...e), ae(this, "ingKey", "scrolling");
   }
-  scroll(t) {
-    this.state._active || this.start(t), this.scrollChange(t), this.timeoutStore.add("scrollEnd", this.scrollEnd.bind(this));
+  scroll(e) {
+    this.state._active || this.start(e), this.scrollChange(e), this.timeoutStore.add("scrollEnd", this.scrollEnd.bind(this));
   }
-  scrollChange(t) {
-    t.cancelable && t.preventDefault();
-    const r = this.state, n = la(t);
-    r._delta = J.sub(n, r._values), J.addTo(r._movement, r._delta), this.computeValues(n), this.compute(t), this.emit();
+  scrollChange(e) {
+    e.cancelable && e.preventDefault();
+    const r = this.state, n = ta(e);
+    r._delta = J.sub(n, r._values), J.addTo(r._movement, r._delta), this.computeValues(n), this.compute(e), this.emit();
   }
   scrollEnd() {
     this.state._active && (this.state._active = !1, this.compute(), this.emit());
   }
-  bind(t) {
-    t("scroll", "", this.scroll.bind(this));
+  bind(e) {
+    e("scroll", "", this.scroll.bind(this));
   }
 }
-const Va = qe;
-class $a extends It {
-  constructor(...t) {
-    super(...t), ae(this, "ingKey", "wheeling");
+const Ra = qe;
+class Oa extends Ct {
+  constructor(...e) {
+    super(...e), ae(this, "ingKey", "wheeling");
   }
-  wheel(t) {
-    this.state._active || this.start(t), this.wheelChange(t), this.timeoutStore.add("wheelEnd", this.wheelEnd.bind(this));
+  wheel(e) {
+    this.state._active || this.start(e), this.wheelChange(e), this.timeoutStore.add("wheelEnd", this.wheelEnd.bind(this));
   }
-  wheelChange(t) {
+  wheelChange(e) {
     const r = this.state;
-    r._delta = Ui(t), J.addTo(r._movement, r._delta), Bi(r), this.compute(t), this.emit();
+    r._delta = Mi(e), J.addTo(r._movement, r._delta), Ni(r), this.compute(e), this.emit();
   }
   wheelEnd() {
     this.state._active && (this.state._active = !1, this.compute(), this.emit());
   }
-  bind(t) {
-    t("wheel", "", this.wheel.bind(this));
+  bind(e) {
+    e("wheel", "", this.wheel.bind(this));
   }
 }
-const Fa = qe;
-class Na extends It {
-  constructor(...t) {
-    super(...t), ae(this, "ingKey", "hovering");
+const Ca = qe;
+class Aa extends Ct {
+  constructor(...e) {
+    super(...e), ae(this, "ingKey", "hovering");
   }
-  enter(t) {
-    this.config.mouseOnly && t.pointerType !== "mouse" || (this.start(t), this.computeValues(et(t)), this.compute(t), this.emit());
+  enter(e) {
+    this.config.mouseOnly && e.pointerType !== "mouse" || (this.start(e), this.computeValues(et(e)), this.compute(e), this.emit());
   }
-  leave(t) {
-    if (this.config.mouseOnly && t.pointerType !== "mouse")
-      return;
+  leave(e) {
+    if (this.config.mouseOnly && e.pointerType !== "mouse") return;
     const r = this.state;
-    if (!r._active)
-      return;
+    if (!r._active) return;
     r._active = !1;
-    const n = et(t);
-    r._movement = r._delta = J.sub(n, r._values), this.computeValues(n), this.compute(t), r.delta = r.movement, this.emit();
+    const n = et(e);
+    r._movement = r._delta = J.sub(n, r._values), this.computeValues(n), this.compute(e), r.delta = r.movement, this.emit();
   }
-  bind(t) {
-    t("pointer", "enter", this.enter.bind(this)), t("pointer", "leave", this.leave.bind(this));
+  bind(e) {
+    e("pointer", "enter", this.enter.bind(this)), e("pointer", "leave", this.leave.bind(this));
   }
 }
-const La = ee(ee({}, qe), {}, {
-  mouseOnly: (e = !0) => e
-}), Xr = /* @__PURE__ */ new Map(), kr = /* @__PURE__ */ new Map();
-function za(e) {
-  Xr.set(e.key, e.engine), kr.set(e.key, e.resolver);
+const Ia = ee(ee({}, qe), {}, {
+  mouseOnly: (t = !0) => t
+}), Yr = /* @__PURE__ */ new Map(), Pr = /* @__PURE__ */ new Map();
+function ka(t) {
+  Yr.set(t.key, t.engine), Pr.set(t.key, t.resolver);
 }
-const Ua = {
+const Da = {
   key: "drag",
-  engine: ga,
-  resolver: qi
-}, Wa = {
+  engine: ca,
+  resolver: Fi
+}, ja = {
   key: "hover",
-  engine: Na,
-  resolver: La
-}, Ya = {
+  engine: Aa,
+  resolver: Ia
+}, Ma = {
   key: "move",
-  engine: Ma,
-  resolver: Da
-}, qa = {
+  engine: Ta,
+  resolver: Pa
+}, Va = {
   key: "pinch",
-  engine: xa,
-  resolver: ka
-}, Ba = {
+  engine: Ea,
+  resolver: Sa
+}, $a = {
   key: "scroll",
-  engine: ja,
-  resolver: Va
-}, Ka = {
+  engine: xa,
+  resolver: Ra
+}, Fa = {
   key: "wheel",
-  engine: $a,
-  resolver: Fa
+  engine: Oa,
+  resolver: Ca
 };
-function Ha(e, t) {
-  if (e == null)
-    return {};
-  var r = {}, n = Object.keys(e), i, s;
+function Na(t, e) {
+  if (t == null) return {};
+  var r = {}, n = Object.keys(t), i, s;
   for (s = 0; s < n.length; s++)
-    i = n[s], !(t.indexOf(i) >= 0) && (r[i] = e[i]);
+    i = n[s], !(e.indexOf(i) >= 0) && (r[i] = t[i]);
   return r;
 }
-function Ga(e, t) {
-  if (e == null)
-    return {};
-  var r = Ha(e, t), n, i;
+function La(t, e) {
+  if (t == null) return {};
+  var r = Na(t, e), n, i;
   if (Object.getOwnPropertySymbols) {
-    var s = Object.getOwnPropertySymbols(e);
+    var s = Object.getOwnPropertySymbols(t);
     for (i = 0; i < s.length; i++)
-      n = s[i], !(t.indexOf(n) >= 0) && Object.prototype.propertyIsEnumerable.call(e, n) && (r[n] = e[n]);
+      n = s[i], !(e.indexOf(n) >= 0) && Object.prototype.propertyIsEnumerable.call(t, n) && (r[n] = t[n]);
   }
   return r;
 }
-const Qa = {
-  target(e) {
-    if (e)
-      return () => "current" in e ? e.current : e;
+const za = {
+  target(t) {
+    if (t)
+      return () => "current" in t ? t.current : t;
   },
-  enabled(e = !0) {
-    return e;
+  enabled(t = !0) {
+    return t;
   },
-  window(e = Te.isBrowser ? window : void 0) {
-    return e;
+  window(t = Te.isBrowser ? window : void 0) {
+    return t;
   },
   eventOptions({
-    passive: e = !0,
-    capture: t = !1
+    passive: t = !0,
+    capture: e = !1
   } = {}) {
     return {
-      passive: e,
-      capture: t
+      passive: t,
+      capture: e
     };
   },
-  transform(e) {
-    return e;
+  transform(t) {
+    return t;
   }
-}, Xa = ["target", "eventOptions", "window", "enabled", "transform"];
-function Nt(e = {}, t) {
+}, Ua = ["target", "eventOptions", "window", "enabled", "transform"];
+function Vt(t = {}, e) {
   const r = {};
-  for (const [n, i] of Object.entries(t))
+  for (const [n, i] of Object.entries(e))
     switch (typeof i) {
       case "function":
         if (process.env.NODE_ENV === "development") {
-          const s = i.call(r, e[n], n, e);
+          const s = i.call(r, t[n], n, t);
           Number.isNaN(s) || (r[n] = s);
         } else
-          r[n] = i.call(r, e[n], n, e);
+          r[n] = i.call(r, t[n], n, t);
         break;
       case "object":
-        r[n] = Nt(e[n], i);
+        r[n] = Vt(t[n], i);
         break;
       case "boolean":
-        i && (r[n] = e[n]);
+        i && (r[n] = t[n]);
         break;
     }
   return r;
 }
-function Za(e, t, r = {}) {
-  const n = e, {
+function Wa(t, e, r = {}) {
+  const n = t, {
     target: i,
     eventOptions: s,
     window: a,
     enabled: c,
-    transform: h
-  } = n, u = Ga(n, Xa);
-  if (r.shared = Nt({
+    transform: d
+  } = n, u = La(n, Ua);
+  if (r.shared = Vt({
     target: i,
     eventOptions: s,
     window: a,
     enabled: c,
-    transform: h
-  }, Qa), t) {
-    const l = kr.get(t);
-    r[t] = Nt(ee({
+    transform: d
+  }, za), e) {
+    const l = Pr.get(e);
+    r[e] = Vt(ee({
       shared: r.shared
     }, u), l);
   } else
     for (const l in u) {
-      const f = kr.get(l);
-      if (f)
-        r[l] = Nt(ee({
+      const h = Pr.get(l);
+      if (h)
+        r[l] = Vt(ee({
           shared: r.shared
-        }, u[l]), f);
+        }, u[l]), h);
       else if (process.env.NODE_ENV === "development" && !["drag", "pinch", "scroll", "wheel", "move", "hover"].includes(l)) {
         if (l === "domTarget")
           throw Error("[@use-gesture]: `domTarget` option has been renamed to `target`.");
@@ -3973,165 +3905,163 @@ function Za(e, t, r = {}) {
     }
   return r;
 }
-class Ki {
-  constructor(t, r) {
-    ae(this, "_listeners", /* @__PURE__ */ new Set()), this._ctrl = t, this._gestureKey = r;
+class Li {
+  constructor(e, r) {
+    ae(this, "_listeners", /* @__PURE__ */ new Set()), this._ctrl = e, this._gestureKey = r;
   }
-  add(t, r, n, i, s) {
-    const a = this._listeners, c = oa(r, n), h = this._gestureKey ? this._ctrl.config[this._gestureKey].eventOptions : {}, u = ee(ee({}, h), s);
-    t.addEventListener(c, i, u);
+  add(e, r, n, i, s) {
+    const a = this._listeners, c = Qo(r, n), d = this._gestureKey ? this._ctrl.config[this._gestureKey].eventOptions : {}, u = ee(ee({}, d), s);
+    e.addEventListener(c, i, u);
     const l = () => {
-      t.removeEventListener(c, i, u), a.delete(l);
+      e.removeEventListener(c, i, u), a.delete(l);
     };
     return a.add(l), l;
   }
   clean() {
-    this._listeners.forEach((t) => t()), this._listeners.clear();
+    this._listeners.forEach((e) => e()), this._listeners.clear();
   }
 }
-class Ja {
+class Ya {
   constructor() {
     ae(this, "_timeouts", /* @__PURE__ */ new Map());
   }
-  add(t, r, n = 140, ...i) {
-    this.remove(t), this._timeouts.set(t, window.setTimeout(r, n, ...i));
+  add(e, r, n = 140, ...i) {
+    this.remove(e), this._timeouts.set(e, window.setTimeout(r, n, ...i));
   }
-  remove(t) {
-    const r = this._timeouts.get(t);
+  remove(e) {
+    const r = this._timeouts.get(e);
     r && window.clearTimeout(r);
   }
   clean() {
-    this._timeouts.forEach((t) => void window.clearTimeout(t)), this._timeouts.clear();
+    this._timeouts.forEach((e) => void window.clearTimeout(e)), this._timeouts.clear();
   }
 }
-class ec {
-  constructor(t) {
-    ae(this, "gestures", /* @__PURE__ */ new Set()), ae(this, "_targetEventStore", new Ki(this)), ae(this, "gestureEventStores", {}), ae(this, "gestureTimeoutStores", {}), ae(this, "handlers", {}), ae(this, "config", {}), ae(this, "pointerIds", /* @__PURE__ */ new Set()), ae(this, "touchIds", /* @__PURE__ */ new Set()), ae(this, "state", {
+class qa {
+  constructor(e) {
+    ae(this, "gestures", /* @__PURE__ */ new Set()), ae(this, "_targetEventStore", new Li(this)), ae(this, "gestureEventStores", {}), ae(this, "gestureTimeoutStores", {}), ae(this, "handlers", {}), ae(this, "config", {}), ae(this, "pointerIds", /* @__PURE__ */ new Set()), ae(this, "touchIds", /* @__PURE__ */ new Set()), ae(this, "state", {
       shared: {
         shiftKey: !1,
         metaKey: !1,
         ctrlKey: !1,
         altKey: !1
       }
-    }), tc(this, t);
+    }), Ba(this, e);
   }
-  setEventIds(t) {
-    if (er(t))
-      return this.touchIds = new Set(ua(t)), this.touchIds;
-    if ("pointerId" in t)
-      return t.type === "pointerup" || t.type === "pointercancel" ? this.pointerIds.delete(t.pointerId) : t.type === "pointerdown" && this.pointerIds.add(t.pointerId), this.pointerIds;
+  setEventIds(e) {
+    if (Xt(e))
+      return this.touchIds = new Set(ea(e)), this.touchIds;
+    if ("pointerId" in e)
+      return e.type === "pointerup" || e.type === "pointercancel" ? this.pointerIds.delete(e.pointerId) : e.type === "pointerdown" && this.pointerIds.add(e.pointerId), this.pointerIds;
   }
-  applyHandlers(t, r) {
-    this.handlers = t, this.nativeHandlers = r;
+  applyHandlers(e, r) {
+    this.handlers = e, this.nativeHandlers = r;
   }
-  applyConfig(t, r) {
-    this.config = Za(t, r, this.config);
+  applyConfig(e, r) {
+    this.config = Wa(e, r, this.config);
   }
   clean() {
     this._targetEventStore.clean();
-    for (const t of this.gestures)
-      this.gestureEventStores[t].clean(), this.gestureTimeoutStores[t].clean();
+    for (const e of this.gestures)
+      this.gestureEventStores[e].clean(), this.gestureTimeoutStores[e].clean();
   }
   effect() {
     return this.config.shared.target && this.bind(), () => this._targetEventStore.clean();
   }
-  bind(...t) {
+  bind(...e) {
     const r = this.config.shared, n = {};
     let i;
     if (!(r.target && (i = r.target(), !i))) {
       if (r.enabled) {
         for (const a of this.gestures) {
-          const c = this.config[a], h = Gn(n, c.eventOptions, !!i);
+          const c = this.config[a], d = Ln(n, c.eventOptions, !!i);
           if (c.enabled) {
-            const u = Xr.get(a);
-            new u(this, t, a).bind(h);
+            const u = Yr.get(a);
+            new u(this, e, a).bind(d);
           }
         }
-        const s = Gn(n, r.eventOptions, !!i);
+        const s = Ln(n, r.eventOptions, !!i);
         for (const a in this.nativeHandlers)
           s(a, "", (c) => this.nativeHandlers[a](ee(ee({}, this.state.shared), {}, {
             event: c,
-            args: t
+            args: e
           })), void 0, !0);
       }
       for (const s in n)
-        n[s] = ha(...n[s]);
-      if (!i)
-        return n;
+        n[s] = ia(...n[s]);
+      if (!i) return n;
       for (const s in n) {
         const {
           device: a,
           capture: c,
-          passive: h
-        } = sa(s);
+          passive: d
+        } = Xo(s);
         this._targetEventStore.add(i, a, "", n[s], {
           capture: c,
-          passive: h
+          passive: d
         });
       }
     }
   }
 }
-function Ge(e, t) {
-  e.gestures.add(t), e.gestureEventStores[t] = new Ki(e, t), e.gestureTimeoutStores[t] = new Ja();
+function Ge(t, e) {
+  t.gestures.add(e), t.gestureEventStores[e] = new Li(t, e), t.gestureTimeoutStores[e] = new Ya();
 }
-function tc(e, t) {
-  t.drag && Ge(e, "drag"), t.wheel && Ge(e, "wheel"), t.scroll && Ge(e, "scroll"), t.move && Ge(e, "move"), t.pinch && Ge(e, "pinch"), t.hover && Ge(e, "hover");
+function Ba(t, e) {
+  e.drag && Ge(t, "drag"), e.wheel && Ge(t, "wheel"), e.scroll && Ge(t, "scroll"), e.move && Ge(t, "move"), e.pinch && Ge(t, "pinch"), e.hover && Ge(t, "hover");
 }
-const Gn = (e, t, r) => (n, i, s, a = {}, c = !1) => {
-  var h, u;
-  const l = (h = a.capture) !== null && h !== void 0 ? h : t.capture, f = (u = a.passive) !== null && u !== void 0 ? u : t.passive;
-  let b = c ? n : na(n, i, l);
-  r && f && (b += "Passive"), e[b] = e[b] || [], e[b].push(s);
-}, rc = /^on(Drag|Wheel|Scroll|Move|Pinch|Hover)/;
-function nc(e) {
-  const t = {}, r = {}, n = /* @__PURE__ */ new Set();
-  for (let i in e)
-    rc.test(i) ? (n.add(RegExp.lastMatch), r[i] = e[i]) : t[i] = e[i];
-  return [r, t, n];
+const Ln = (t, e, r) => (n, i, s, a = {}, c = !1) => {
+  var d, u;
+  const l = (d = a.capture) !== null && d !== void 0 ? d : e.capture, h = (u = a.passive) !== null && u !== void 0 ? u : e.passive;
+  let m = c ? n : Ho(n, i, l);
+  r && h && (m += "Passive"), t[m] = t[m] || [], t[m].push(s);
+}, Ka = /^on(Drag|Wheel|Scroll|Move|Pinch|Hover)/;
+function Ha(t) {
+  const e = {}, r = {}, n = /* @__PURE__ */ new Set();
+  for (let i in t)
+    Ka.test(i) ? (n.add(RegExp.lastMatch), r[i] = t[i]) : e[i] = t[i];
+  return [r, e, n];
 }
-function Qe(e, t, r, n, i, s) {
-  if (!e.has(r))
-    return;
-  if (!Xr.has(n)) {
+function Xe(t, e, r, n, i, s) {
+  if (!t.has(r)) return;
+  if (!Yr.has(n)) {
     process.env.NODE_ENV === "development" && console.warn(`[@use-gesture]: You've created a custom handler that that uses the \`${n}\` gesture but isn't properly configured.
 
 Please add \`${n}Action\` when creating your handler.`);
     return;
   }
-  const a = r + "Start", c = r + "End", h = (u) => {
+  const a = r + "Start", c = r + "End", d = (u) => {
     let l;
-    return u.first && a in t && t[a](u), r in t && (l = t[r](u)), u.last && c in t && t[c](u), l;
+    return u.first && a in e && e[a](u), r in e && (l = e[r](u)), u.last && c in e && e[c](u), l;
   };
-  i[n] = h, s[n] = s[n] || {};
+  i[n] = d, s[n] = s[n] || {};
 }
-function ic(e, t) {
-  const [r, n, i] = nc(e), s = {};
-  return Qe(i, r, "onDrag", "drag", s, t), Qe(i, r, "onWheel", "wheel", s, t), Qe(i, r, "onScroll", "scroll", s, t), Qe(i, r, "onPinch", "pinch", s, t), Qe(i, r, "onMove", "move", s, t), Qe(i, r, "onHover", "hover", s, t), {
+function Ga(t, e) {
+  const [r, n, i] = Ha(t), s = {};
+  return Xe(i, r, "onDrag", "drag", s, e), Xe(i, r, "onWheel", "wheel", s, e), Xe(i, r, "onScroll", "scroll", s, e), Xe(i, r, "onPinch", "pinch", s, e), Xe(i, r, "onMove", "move", s, e), Xe(i, r, "onHover", "hover", s, e), {
     handlers: s,
-    config: t,
+    config: e,
     nativeHandlers: n
   };
 }
-function sc(e, t = {}, r, n) {
-  const i = ft.useMemo(() => new ec(e), []);
-  if (i.applyHandlers(e, n), i.applyConfig(t, r), ft.useEffect(i.effect.bind(i)), ft.useEffect(() => i.clean.bind(i), []), t.target === void 0)
+function Xa(t, e = {}, r, n) {
+  const i = lt.useMemo(() => new qa(t), []);
+  if (i.applyHandlers(t, n), i.applyConfig(e, r), lt.useEffect(i.effect.bind(i)), lt.useEffect(() => i.clean.bind(i), []), e.target === void 0)
     return i.bind.bind(i);
 }
-function oc(e) {
-  return e.forEach(za), function(r, n) {
+function Qa(t) {
+  return t.forEach(ka), function(r, n) {
     const {
       handlers: i,
       nativeHandlers: s,
       config: a
-    } = ic(r, n || {});
-    return sc(i, a, void 0, s);
+    } = Ga(r, n || {});
+    return Xa(i, a, void 0, s);
   };
 }
-function Qn(e, t) {
-  return oc([Ua, qa, Ba, Ka, Ya, Wa])(e, t || {});
+function zn(t, e) {
+  return Qa([Da, Va, $a, Fa, Ma, ja])(t, e || {});
 }
-var Mr = { exports: {} }, Vt = { exports: {} }, K = {};
+var xr = { exports: {} }, Dt = { exports: {} }, B = {};
 /** @license React v16.13.1
  * react-is.production.min.js
  *
@@ -4140,74 +4070,73 @@ var Mr = { exports: {} }, Vt = { exports: {} }, K = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var Xn;
-function ac() {
-  if (Xn)
-    return K;
-  Xn = 1;
-  var e = typeof Symbol == "function" && Symbol.for, t = e ? Symbol.for("react.element") : 60103, r = e ? Symbol.for("react.portal") : 60106, n = e ? Symbol.for("react.fragment") : 60107, i = e ? Symbol.for("react.strict_mode") : 60108, s = e ? Symbol.for("react.profiler") : 60114, a = e ? Symbol.for("react.provider") : 60109, c = e ? Symbol.for("react.context") : 60110, h = e ? Symbol.for("react.async_mode") : 60111, u = e ? Symbol.for("react.concurrent_mode") : 60111, l = e ? Symbol.for("react.forward_ref") : 60112, f = e ? Symbol.for("react.suspense") : 60113, b = e ? Symbol.for("react.suspense_list") : 60120, E = e ? Symbol.for("react.memo") : 60115, P = e ? Symbol.for("react.lazy") : 60116, g = e ? Symbol.for("react.block") : 60121, R = e ? Symbol.for("react.fundamental") : 60117, w = e ? Symbol.for("react.responder") : 60118, C = e ? Symbol.for("react.scope") : 60119;
-  function O(y) {
-    if (typeof y == "object" && y !== null) {
-      var q = y.$$typeof;
-      switch (q) {
-        case t:
-          switch (y = y.type, y) {
-            case h:
+var Un;
+function Za() {
+  if (Un) return B;
+  Un = 1;
+  var t = typeof Symbol == "function" && Symbol.for, e = t ? Symbol.for("react.element") : 60103, r = t ? Symbol.for("react.portal") : 60106, n = t ? Symbol.for("react.fragment") : 60107, i = t ? Symbol.for("react.strict_mode") : 60108, s = t ? Symbol.for("react.profiler") : 60114, a = t ? Symbol.for("react.provider") : 60109, c = t ? Symbol.for("react.context") : 60110, d = t ? Symbol.for("react.async_mode") : 60111, u = t ? Symbol.for("react.concurrent_mode") : 60111, l = t ? Symbol.for("react.forward_ref") : 60112, h = t ? Symbol.for("react.suspense") : 60113, m = t ? Symbol.for("react.suspense_list") : 60120, w = t ? Symbol.for("react.memo") : 60115, T = t ? Symbol.for("react.lazy") : 60116, y = t ? Symbol.for("react.block") : 60121, R = t ? Symbol.for("react.fundamental") : 60117, E = t ? Symbol.for("react.responder") : 60118, O = t ? Symbol.for("react.scope") : 60119;
+  function P(_) {
+    if (typeof _ == "object" && _ !== null) {
+      var Y = _.$$typeof;
+      switch (Y) {
+        case e:
+          switch (_ = _.type, _) {
+            case d:
             case u:
             case n:
             case s:
             case i:
-            case f:
-              return y;
+            case h:
+              return _;
             default:
-              switch (y = y && y.$$typeof, y) {
+              switch (_ = _ && _.$$typeof, _) {
                 case c:
                 case l:
-                case P:
-                case E:
+                case T:
+                case w:
                 case a:
-                  return y;
+                  return _;
                 default:
-                  return q;
+                  return Y;
               }
           }
         case r:
-          return q;
+          return Y;
       }
     }
   }
-  function I(y) {
-    return O(y) === u;
+  function A(_) {
+    return P(_) === u;
   }
-  return K.AsyncMode = h, K.ConcurrentMode = u, K.ContextConsumer = c, K.ContextProvider = a, K.Element = t, K.ForwardRef = l, K.Fragment = n, K.Lazy = P, K.Memo = E, K.Portal = r, K.Profiler = s, K.StrictMode = i, K.Suspense = f, K.isAsyncMode = function(y) {
-    return I(y) || O(y) === h;
-  }, K.isConcurrentMode = I, K.isContextConsumer = function(y) {
-    return O(y) === c;
-  }, K.isContextProvider = function(y) {
-    return O(y) === a;
-  }, K.isElement = function(y) {
-    return typeof y == "object" && y !== null && y.$$typeof === t;
-  }, K.isForwardRef = function(y) {
-    return O(y) === l;
-  }, K.isFragment = function(y) {
-    return O(y) === n;
-  }, K.isLazy = function(y) {
-    return O(y) === P;
-  }, K.isMemo = function(y) {
-    return O(y) === E;
-  }, K.isPortal = function(y) {
-    return O(y) === r;
-  }, K.isProfiler = function(y) {
-    return O(y) === s;
-  }, K.isStrictMode = function(y) {
-    return O(y) === i;
-  }, K.isSuspense = function(y) {
-    return O(y) === f;
-  }, K.isValidElementType = function(y) {
-    return typeof y == "string" || typeof y == "function" || y === n || y === u || y === s || y === i || y === f || y === b || typeof y == "object" && y !== null && (y.$$typeof === P || y.$$typeof === E || y.$$typeof === a || y.$$typeof === c || y.$$typeof === l || y.$$typeof === R || y.$$typeof === w || y.$$typeof === C || y.$$typeof === g);
-  }, K.typeOf = O, K;
+  return B.AsyncMode = d, B.ConcurrentMode = u, B.ContextConsumer = c, B.ContextProvider = a, B.Element = e, B.ForwardRef = l, B.Fragment = n, B.Lazy = T, B.Memo = w, B.Portal = r, B.Profiler = s, B.StrictMode = i, B.Suspense = h, B.isAsyncMode = function(_) {
+    return A(_) || P(_) === d;
+  }, B.isConcurrentMode = A, B.isContextConsumer = function(_) {
+    return P(_) === c;
+  }, B.isContextProvider = function(_) {
+    return P(_) === a;
+  }, B.isElement = function(_) {
+    return typeof _ == "object" && _ !== null && _.$$typeof === e;
+  }, B.isForwardRef = function(_) {
+    return P(_) === l;
+  }, B.isFragment = function(_) {
+    return P(_) === n;
+  }, B.isLazy = function(_) {
+    return P(_) === T;
+  }, B.isMemo = function(_) {
+    return P(_) === w;
+  }, B.isPortal = function(_) {
+    return P(_) === r;
+  }, B.isProfiler = function(_) {
+    return P(_) === s;
+  }, B.isStrictMode = function(_) {
+    return P(_) === i;
+  }, B.isSuspense = function(_) {
+    return P(_) === h;
+  }, B.isValidElementType = function(_) {
+    return typeof _ == "string" || typeof _ == "function" || _ === n || _ === u || _ === s || _ === i || _ === h || _ === m || typeof _ == "object" && _ !== null && (_.$$typeof === T || _.$$typeof === w || _.$$typeof === a || _.$$typeof === c || _.$$typeof === l || _.$$typeof === R || _.$$typeof === E || _.$$typeof === O || _.$$typeof === y);
+  }, B.typeOf = P, B;
 }
-var H = {};
+var K = {};
 /** @license React v16.13.1
  * react-is.development.js
  *
@@ -4216,104 +4145,103 @@ var H = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var Zn;
-function cc() {
-  return Zn || (Zn = 1, process.env.NODE_ENV !== "production" && function() {
-    var e = typeof Symbol == "function" && Symbol.for, t = e ? Symbol.for("react.element") : 60103, r = e ? Symbol.for("react.portal") : 60106, n = e ? Symbol.for("react.fragment") : 60107, i = e ? Symbol.for("react.strict_mode") : 60108, s = e ? Symbol.for("react.profiler") : 60114, a = e ? Symbol.for("react.provider") : 60109, c = e ? Symbol.for("react.context") : 60110, h = e ? Symbol.for("react.async_mode") : 60111, u = e ? Symbol.for("react.concurrent_mode") : 60111, l = e ? Symbol.for("react.forward_ref") : 60112, f = e ? Symbol.for("react.suspense") : 60113, b = e ? Symbol.for("react.suspense_list") : 60120, E = e ? Symbol.for("react.memo") : 60115, P = e ? Symbol.for("react.lazy") : 60116, g = e ? Symbol.for("react.block") : 60121, R = e ? Symbol.for("react.fundamental") : 60117, w = e ? Symbol.for("react.responder") : 60118, C = e ? Symbol.for("react.scope") : 60119;
-    function O(p) {
+var Wn;
+function Ja() {
+  return Wn || (Wn = 1, process.env.NODE_ENV !== "production" && function() {
+    var t = typeof Symbol == "function" && Symbol.for, e = t ? Symbol.for("react.element") : 60103, r = t ? Symbol.for("react.portal") : 60106, n = t ? Symbol.for("react.fragment") : 60107, i = t ? Symbol.for("react.strict_mode") : 60108, s = t ? Symbol.for("react.profiler") : 60114, a = t ? Symbol.for("react.provider") : 60109, c = t ? Symbol.for("react.context") : 60110, d = t ? Symbol.for("react.async_mode") : 60111, u = t ? Symbol.for("react.concurrent_mode") : 60111, l = t ? Symbol.for("react.forward_ref") : 60112, h = t ? Symbol.for("react.suspense") : 60113, m = t ? Symbol.for("react.suspense_list") : 60120, w = t ? Symbol.for("react.memo") : 60115, T = t ? Symbol.for("react.lazy") : 60116, y = t ? Symbol.for("react.block") : 60121, R = t ? Symbol.for("react.fundamental") : 60117, E = t ? Symbol.for("react.responder") : 60118, O = t ? Symbol.for("react.scope") : 60119;
+    function P(p) {
       return typeof p == "string" || typeof p == "function" || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-      p === n || p === u || p === s || p === i || p === f || p === b || typeof p == "object" && p !== null && (p.$$typeof === P || p.$$typeof === E || p.$$typeof === a || p.$$typeof === c || p.$$typeof === l || p.$$typeof === R || p.$$typeof === w || p.$$typeof === C || p.$$typeof === g);
+      p === n || p === u || p === s || p === i || p === h || p === m || typeof p == "object" && p !== null && (p.$$typeof === T || p.$$typeof === w || p.$$typeof === a || p.$$typeof === c || p.$$typeof === l || p.$$typeof === R || p.$$typeof === E || p.$$typeof === O || p.$$typeof === y);
     }
-    function I(p) {
+    function A(p) {
       if (typeof p == "object" && p !== null) {
-        var Q = p.$$typeof;
-        switch (Q) {
-          case t:
+        var X = p.$$typeof;
+        switch (X) {
+          case e:
             var ce = p.type;
             switch (ce) {
-              case h:
+              case d:
               case u:
               case n:
               case s:
               case i:
-              case f:
+              case h:
                 return ce;
               default:
-                var X = ce && ce.$$typeof;
-                switch (X) {
+                var Q = ce && ce.$$typeof;
+                switch (Q) {
                   case c:
                   case l:
-                  case P:
-                  case E:
+                  case T:
+                  case w:
                   case a:
-                    return X;
-                  default:
                     return Q;
+                  default:
+                    return X;
                 }
             }
           case r:
-            return Q;
+            return X;
         }
       }
     }
-    var y = h, q = u, te = c, be = a, re = t, me = l, G = n, ue = P, Y = E, se = r, _e = s, ne = i, ve = f, fe = !1;
+    var _ = d, Y = u, te = c, _e = a, re = e, me = l, H = n, ue = T, G = w, se = r, be = s, ne = i, ve = h, fe = !1;
     function ke(p) {
-      return fe || (fe = !0, console.warn("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.")), v(p) || I(p) === h;
+      return fe || (fe = !0, console.warn("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.")), g(p) || A(p) === d;
     }
-    function v(p) {
-      return I(p) === u;
+    function g(p) {
+      return A(p) === u;
     }
-    function T(p) {
-      return I(p) === c;
-    }
-    function j(p) {
-      return I(p) === a;
+    function S(p) {
+      return A(p) === c;
     }
     function M(p) {
-      return typeof p == "object" && p !== null && p.$$typeof === t;
-    }
-    function k(p) {
-      return I(p) === l;
-    }
-    function N(p) {
-      return I(p) === n;
+      return A(p) === a;
     }
     function D(p) {
-      return I(p) === P;
+      return typeof p == "object" && p !== null && p.$$typeof === e;
+    }
+    function k(p) {
+      return A(p) === l;
+    }
+    function N(p) {
+      return A(p) === n;
+    }
+    function j(p) {
+      return A(p) === T;
     }
     function $(p) {
-      return I(p) === E;
+      return A(p) === w;
     }
     function F(p) {
-      return I(p) === r;
+      return A(p) === r;
     }
     function z(p) {
-      return I(p) === s;
+      return A(p) === s;
     }
-    function d(p) {
-      return I(p) === i;
+    function f(p) {
+      return A(p) === i;
     }
-    function A(p) {
-      return I(p) === f;
+    function C(p) {
+      return A(p) === h;
     }
-    H.AsyncMode = y, H.ConcurrentMode = q, H.ContextConsumer = te, H.ContextProvider = be, H.Element = re, H.ForwardRef = me, H.Fragment = G, H.Lazy = ue, H.Memo = Y, H.Portal = se, H.Profiler = _e, H.StrictMode = ne, H.Suspense = ve, H.isAsyncMode = ke, H.isConcurrentMode = v, H.isContextConsumer = T, H.isContextProvider = j, H.isElement = M, H.isForwardRef = k, H.isFragment = N, H.isLazy = D, H.isMemo = $, H.isPortal = F, H.isProfiler = z, H.isStrictMode = d, H.isSuspense = A, H.isValidElementType = O, H.typeOf = I;
-  }()), H;
+    K.AsyncMode = _, K.ConcurrentMode = Y, K.ContextConsumer = te, K.ContextProvider = _e, K.Element = re, K.ForwardRef = me, K.Fragment = H, K.Lazy = ue, K.Memo = G, K.Portal = se, K.Profiler = be, K.StrictMode = ne, K.Suspense = ve, K.isAsyncMode = ke, K.isConcurrentMode = g, K.isContextConsumer = S, K.isContextProvider = M, K.isElement = D, K.isForwardRef = k, K.isFragment = N, K.isLazy = j, K.isMemo = $, K.isPortal = F, K.isProfiler = z, K.isStrictMode = f, K.isSuspense = C, K.isValidElementType = P, K.typeOf = A;
+  }()), K;
 }
-var Jn;
-function Hi() {
-  return Jn || (Jn = 1, process.env.NODE_ENV === "production" ? Vt.exports = ac() : Vt.exports = cc()), Vt.exports;
+var Yn;
+function zi() {
+  return Yn || (Yn = 1, process.env.NODE_ENV === "production" ? Dt.exports = Za() : Dt.exports = Ja()), Dt.exports;
 }
 /*
 object-assign
 (c) Sindre Sorhus
 @license MIT
 */
-var pr, ei;
-function uc() {
-  if (ei)
-    return pr;
-  ei = 1;
-  var e = Object.getOwnPropertySymbols, t = Object.prototype.hasOwnProperty, r = Object.prototype.propertyIsEnumerable;
+var ur, qn;
+function ec() {
+  if (qn) return ur;
+  qn = 1;
+  var t = Object.getOwnPropertySymbols, e = Object.prototype.hasOwnProperty, r = Object.prototype.propertyIsEnumerable;
   function n(s) {
     if (s == null)
       throw new TypeError("Object.assign cannot be called with null or undefined");
@@ -4328,10 +4256,10 @@ function uc() {
         return !1;
       for (var a = {}, c = 0; c < 10; c++)
         a["_" + String.fromCharCode(c)] = c;
-      var h = Object.getOwnPropertyNames(a).map(function(l) {
+      var d = Object.getOwnPropertyNames(a).map(function(l) {
         return a[l];
       });
-      if (h.join("") !== "0123456789")
+      if (d.join("") !== "0123456789")
         return !1;
       var u = {};
       return "abcdefghijklmnopqrst".split("").forEach(function(l) {
@@ -4341,42 +4269,40 @@ function uc() {
       return !1;
     }
   }
-  return pr = i() ? Object.assign : function(s, a) {
-    for (var c, h = n(s), u, l = 1; l < arguments.length; l++) {
+  return ur = i() ? Object.assign : function(s, a) {
+    for (var c, d = n(s), u, l = 1; l < arguments.length; l++) {
       c = Object(arguments[l]);
-      for (var f in c)
-        t.call(c, f) && (h[f] = c[f]);
-      if (e) {
-        u = e(c);
-        for (var b = 0; b < u.length; b++)
-          r.call(c, u[b]) && (h[u[b]] = c[u[b]]);
+      for (var h in c)
+        e.call(c, h) && (d[h] = c[h]);
+      if (t) {
+        u = t(c);
+        for (var m = 0; m < u.length; m++)
+          r.call(c, u[m]) && (d[u[m]] = c[u[m]]);
       }
     }
-    return h;
-  }, pr;
+    return d;
+  }, ur;
 }
-var mr, ti;
-function Zr() {
-  if (ti)
-    return mr;
-  ti = 1;
-  var e = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
-  return mr = e, mr;
+var lr, Bn;
+function qr() {
+  if (Bn) return lr;
+  Bn = 1;
+  var t = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
+  return lr = t, lr;
 }
-var vr, ri;
-function Gi() {
-  return ri || (ri = 1, vr = Function.call.bind(Object.prototype.hasOwnProperty)), vr;
+var fr, Kn;
+function Ui() {
+  return Kn || (Kn = 1, fr = Function.call.bind(Object.prototype.hasOwnProperty)), fr;
 }
-var gr, ni;
-function lc() {
-  if (ni)
-    return gr;
-  ni = 1;
-  var e = function() {
+var dr, Hn;
+function tc() {
+  if (Hn) return dr;
+  Hn = 1;
+  var t = function() {
   };
   if (process.env.NODE_ENV !== "production") {
-    var t = Zr(), r = {}, n = Gi();
-    e = function(s) {
+    var e = qr(), r = {}, n = Ui();
+    t = function(s) {
       var a = "Warning: " + s;
       typeof console < "u" && console.error(a);
       try {
@@ -4385,29 +4311,29 @@ function lc() {
       }
     };
   }
-  function i(s, a, c, h, u) {
+  function i(s, a, c, d, u) {
     if (process.env.NODE_ENV !== "production") {
       for (var l in s)
         if (n(s, l)) {
-          var f;
+          var h;
           try {
             if (typeof s[l] != "function") {
-              var b = Error(
-                (h || "React class") + ": " + c + " type `" + l + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof s[l] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`."
+              var m = Error(
+                (d || "React class") + ": " + c + " type `" + l + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof s[l] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`."
               );
-              throw b.name = "Invariant Violation", b;
+              throw m.name = "Invariant Violation", m;
             }
-            f = s[l](a, l, h, c, null, t);
-          } catch (P) {
-            f = P;
+            h = s[l](a, l, d, c, null, e);
+          } catch (T) {
+            h = T;
           }
-          if (f && !(f instanceof Error) && e(
-            (h || "React class") + ": type specification of " + c + " `" + l + "` is invalid; the type checker function must return `null` or an `Error` but returned a " + typeof f + ". You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument)."
-          ), f instanceof Error && !(f.message in r)) {
-            r[f.message] = !0;
-            var E = u ? u() : "";
-            e(
-              "Failed " + c + " type: " + f.message + (E ?? "")
+          if (h && !(h instanceof Error) && t(
+            (d || "React class") + ": type specification of " + c + " `" + l + "` is invalid; the type checker function must return `null` or an `Error` but returned a " + typeof h + ". You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument)."
+          ), h instanceof Error && !(h.message in r)) {
+            r[h.message] = !0;
+            var w = u ? u() : "";
+            t(
+              "Failed " + c + " type: " + h.message + (w ?? "")
             );
           }
         }
@@ -4415,281 +4341,280 @@ function lc() {
   }
   return i.resetWarningCache = function() {
     process.env.NODE_ENV !== "production" && (r = {});
-  }, gr = i, gr;
+  }, dr = i, dr;
 }
-var yr, ii;
-function fc() {
-  if (ii)
-    return yr;
-  ii = 1;
-  var e = Hi(), t = uc(), r = Zr(), n = Gi(), i = lc(), s = function() {
+var hr, Gn;
+function rc() {
+  if (Gn) return hr;
+  Gn = 1;
+  var t = zi(), e = ec(), r = qr(), n = Ui(), i = tc(), s = function() {
   };
   process.env.NODE_ENV !== "production" && (s = function(c) {
-    var h = "Warning: " + c;
-    typeof console < "u" && console.error(h);
+    var d = "Warning: " + c;
+    typeof console < "u" && console.error(d);
     try {
-      throw new Error(h);
+      throw new Error(d);
     } catch {
     }
   });
   function a() {
     return null;
   }
-  return yr = function(c, h) {
+  return hr = function(c, d) {
     var u = typeof Symbol == "function" && Symbol.iterator, l = "@@iterator";
-    function f(v) {
-      var T = v && (u && v[u] || v[l]);
-      if (typeof T == "function")
-        return T;
+    function h(g) {
+      var S = g && (u && g[u] || g[l]);
+      if (typeof S == "function")
+        return S;
     }
-    var b = "<<anonymous>>", E = {
-      array: w("array"),
-      bigint: w("bigint"),
-      bool: w("boolean"),
-      func: w("function"),
-      number: w("number"),
-      object: w("object"),
-      string: w("string"),
-      symbol: w("symbol"),
-      any: C(),
-      arrayOf: O,
-      element: I(),
-      elementType: y(),
-      instanceOf: q,
+    var m = "<<anonymous>>", w = {
+      array: E("array"),
+      bigint: E("bigint"),
+      bool: E("boolean"),
+      func: E("function"),
+      number: E("number"),
+      object: E("object"),
+      string: E("string"),
+      symbol: E("symbol"),
+      any: O(),
+      arrayOf: P,
+      element: A(),
+      elementType: _(),
+      instanceOf: Y,
       node: me(),
-      objectOf: be,
+      objectOf: _e,
       oneOf: te,
       oneOfType: re,
       shape: ue,
-      exact: Y
+      exact: G
     };
-    function P(v, T) {
-      return v === T ? v !== 0 || 1 / v === 1 / T : v !== v && T !== T;
+    function T(g, S) {
+      return g === S ? g !== 0 || 1 / g === 1 / S : g !== g && S !== S;
     }
-    function g(v, T) {
-      this.message = v, this.data = T && typeof T == "object" ? T : {}, this.stack = "";
+    function y(g, S) {
+      this.message = g, this.data = S && typeof S == "object" ? S : {}, this.stack = "";
     }
-    g.prototype = Error.prototype;
-    function R(v) {
+    y.prototype = Error.prototype;
+    function R(g) {
       if (process.env.NODE_ENV !== "production")
-        var T = {}, j = 0;
-      function M(N, D, $, F, z, d, A) {
-        if (F = F || b, d = d || $, A !== r) {
-          if (h) {
+        var S = {}, M = 0;
+      function D(N, j, $, F, z, f, C) {
+        if (F = F || m, f = f || $, C !== r) {
+          if (d) {
             var p = new Error(
               "Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types"
             );
             throw p.name = "Invariant Violation", p;
           } else if (process.env.NODE_ENV !== "production" && typeof console < "u") {
-            var Q = F + ":" + $;
-            !T[Q] && // Avoid spamming the console because they are often not actionable except for lib authors
-            j < 3 && (s(
-              "You are manually calling a React.PropTypes validation function for the `" + d + "` prop on `" + F + "`. This is deprecated and will throw in the standalone `prop-types` package. You may be seeing this warning due to a third-party PropTypes library. See https://fb.me/react-warning-dont-call-proptypes for details."
-            ), T[Q] = !0, j++);
+            var X = F + ":" + $;
+            !S[X] && // Avoid spamming the console because they are often not actionable except for lib authors
+            M < 3 && (s(
+              "You are manually calling a React.PropTypes validation function for the `" + f + "` prop on `" + F + "`. This is deprecated and will throw in the standalone `prop-types` package. You may be seeing this warning due to a third-party PropTypes library. See https://fb.me/react-warning-dont-call-proptypes for details."
+            ), S[X] = !0, M++);
           }
         }
-        return D[$] == null ? N ? D[$] === null ? new g("The " + z + " `" + d + "` is marked as required " + ("in `" + F + "`, but its value is `null`.")) : new g("The " + z + " `" + d + "` is marked as required in " + ("`" + F + "`, but its value is `undefined`.")) : null : v(D, $, F, z, d);
+        return j[$] == null ? N ? j[$] === null ? new y("The " + z + " `" + f + "` is marked as required " + ("in `" + F + "`, but its value is `null`.")) : new y("The " + z + " `" + f + "` is marked as required in " + ("`" + F + "`, but its value is `undefined`.")) : null : g(j, $, F, z, f);
       }
-      var k = M.bind(null, !1);
-      return k.isRequired = M.bind(null, !0), k;
+      var k = D.bind(null, !1);
+      return k.isRequired = D.bind(null, !0), k;
     }
-    function w(v) {
-      function T(j, M, k, N, D, $) {
-        var F = j[M], z = ne(F);
-        if (z !== v) {
-          var d = ve(F);
-          return new g(
-            "Invalid " + N + " `" + D + "` of type " + ("`" + d + "` supplied to `" + k + "`, expected ") + ("`" + v + "`."),
-            { expectedType: v }
+    function E(g) {
+      function S(M, D, k, N, j, $) {
+        var F = M[D], z = ne(F);
+        if (z !== g) {
+          var f = ve(F);
+          return new y(
+            "Invalid " + N + " `" + j + "` of type " + ("`" + f + "` supplied to `" + k + "`, expected ") + ("`" + g + "`."),
+            { expectedType: g }
           );
         }
         return null;
       }
-      return R(T);
+      return R(S);
     }
-    function C() {
+    function O() {
       return R(a);
     }
-    function O(v) {
-      function T(j, M, k, N, D) {
-        if (typeof v != "function")
-          return new g("Property `" + D + "` of component `" + k + "` has invalid PropType notation inside arrayOf.");
-        var $ = j[M];
+    function P(g) {
+      function S(M, D, k, N, j) {
+        if (typeof g != "function")
+          return new y("Property `" + j + "` of component `" + k + "` has invalid PropType notation inside arrayOf.");
+        var $ = M[D];
         if (!Array.isArray($)) {
           var F = ne($);
-          return new g("Invalid " + N + " `" + D + "` of type " + ("`" + F + "` supplied to `" + k + "`, expected an array."));
+          return new y("Invalid " + N + " `" + j + "` of type " + ("`" + F + "` supplied to `" + k + "`, expected an array."));
         }
         for (var z = 0; z < $.length; z++) {
-          var d = v($, z, k, N, D + "[" + z + "]", r);
-          if (d instanceof Error)
-            return d;
+          var f = g($, z, k, N, j + "[" + z + "]", r);
+          if (f instanceof Error)
+            return f;
         }
         return null;
       }
-      return R(T);
+      return R(S);
     }
-    function I() {
-      function v(T, j, M, k, N) {
-        var D = T[j];
-        if (!c(D)) {
-          var $ = ne(D);
-          return new g("Invalid " + k + " `" + N + "` of type " + ("`" + $ + "` supplied to `" + M + "`, expected a single ReactElement."));
+    function A() {
+      function g(S, M, D, k, N) {
+        var j = S[M];
+        if (!c(j)) {
+          var $ = ne(j);
+          return new y("Invalid " + k + " `" + N + "` of type " + ("`" + $ + "` supplied to `" + D + "`, expected a single ReactElement."));
         }
         return null;
       }
-      return R(v);
+      return R(g);
     }
-    function y() {
-      function v(T, j, M, k, N) {
-        var D = T[j];
-        if (!e.isValidElementType(D)) {
-          var $ = ne(D);
-          return new g("Invalid " + k + " `" + N + "` of type " + ("`" + $ + "` supplied to `" + M + "`, expected a single ReactElement type."));
+    function _() {
+      function g(S, M, D, k, N) {
+        var j = S[M];
+        if (!t.isValidElementType(j)) {
+          var $ = ne(j);
+          return new y("Invalid " + k + " `" + N + "` of type " + ("`" + $ + "` supplied to `" + D + "`, expected a single ReactElement type."));
         }
         return null;
       }
-      return R(v);
+      return R(g);
     }
-    function q(v) {
-      function T(j, M, k, N, D) {
-        if (!(j[M] instanceof v)) {
-          var $ = v.name || b, F = ke(j[M]);
-          return new g("Invalid " + N + " `" + D + "` of type " + ("`" + F + "` supplied to `" + k + "`, expected ") + ("instance of `" + $ + "`."));
+    function Y(g) {
+      function S(M, D, k, N, j) {
+        if (!(M[D] instanceof g)) {
+          var $ = g.name || m, F = ke(M[D]);
+          return new y("Invalid " + N + " `" + j + "` of type " + ("`" + F + "` supplied to `" + k + "`, expected ") + ("instance of `" + $ + "`."));
         }
         return null;
       }
-      return R(T);
+      return R(S);
     }
-    function te(v) {
-      if (!Array.isArray(v))
+    function te(g) {
+      if (!Array.isArray(g))
         return process.env.NODE_ENV !== "production" && (arguments.length > 1 ? s(
           "Invalid arguments supplied to oneOf, expected an array, got " + arguments.length + " arguments. A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z])."
         ) : s("Invalid argument supplied to oneOf, expected an array.")), a;
-      function T(j, M, k, N, D) {
-        for (var $ = j[M], F = 0; F < v.length; F++)
-          if (P($, v[F]))
+      function S(M, D, k, N, j) {
+        for (var $ = M[D], F = 0; F < g.length; F++)
+          if (T($, g[F]))
             return null;
-        var z = JSON.stringify(v, function(A, p) {
-          var Q = ve(p);
-          return Q === "symbol" ? String(p) : p;
+        var z = JSON.stringify(g, function(C, p) {
+          var X = ve(p);
+          return X === "symbol" ? String(p) : p;
         });
-        return new g("Invalid " + N + " `" + D + "` of value `" + String($) + "` " + ("supplied to `" + k + "`, expected one of " + z + "."));
+        return new y("Invalid " + N + " `" + j + "` of value `" + String($) + "` " + ("supplied to `" + k + "`, expected one of " + z + "."));
       }
-      return R(T);
+      return R(S);
     }
-    function be(v) {
-      function T(j, M, k, N, D) {
-        if (typeof v != "function")
-          return new g("Property `" + D + "` of component `" + k + "` has invalid PropType notation inside objectOf.");
-        var $ = j[M], F = ne($);
+    function _e(g) {
+      function S(M, D, k, N, j) {
+        if (typeof g != "function")
+          return new y("Property `" + j + "` of component `" + k + "` has invalid PropType notation inside objectOf.");
+        var $ = M[D], F = ne($);
         if (F !== "object")
-          return new g("Invalid " + N + " `" + D + "` of type " + ("`" + F + "` supplied to `" + k + "`, expected an object."));
+          return new y("Invalid " + N + " `" + j + "` of type " + ("`" + F + "` supplied to `" + k + "`, expected an object."));
         for (var z in $)
           if (n($, z)) {
-            var d = v($, z, k, N, D + "." + z, r);
-            if (d instanceof Error)
-              return d;
+            var f = g($, z, k, N, j + "." + z, r);
+            if (f instanceof Error)
+              return f;
           }
         return null;
       }
-      return R(T);
+      return R(S);
     }
-    function re(v) {
-      if (!Array.isArray(v))
+    function re(g) {
+      if (!Array.isArray(g))
         return process.env.NODE_ENV !== "production" && s("Invalid argument supplied to oneOfType, expected an instance of array."), a;
-      for (var T = 0; T < v.length; T++) {
-        var j = v[T];
-        if (typeof j != "function")
+      for (var S = 0; S < g.length; S++) {
+        var M = g[S];
+        if (typeof M != "function")
           return s(
-            "Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + fe(j) + " at index " + T + "."
+            "Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + fe(M) + " at index " + S + "."
           ), a;
       }
-      function M(k, N, D, $, F) {
-        for (var z = [], d = 0; d < v.length; d++) {
-          var A = v[d], p = A(k, N, D, $, F, r);
+      function D(k, N, j, $, F) {
+        for (var z = [], f = 0; f < g.length; f++) {
+          var C = g[f], p = C(k, N, j, $, F, r);
           if (p == null)
             return null;
           p.data && n(p.data, "expectedType") && z.push(p.data.expectedType);
         }
-        var Q = z.length > 0 ? ", expected one of type [" + z.join(", ") + "]" : "";
-        return new g("Invalid " + $ + " `" + F + "` supplied to " + ("`" + D + "`" + Q + "."));
+        var X = z.length > 0 ? ", expected one of type [" + z.join(", ") + "]" : "";
+        return new y("Invalid " + $ + " `" + F + "` supplied to " + ("`" + j + "`" + X + "."));
       }
-      return R(M);
+      return R(D);
     }
     function me() {
-      function v(T, j, M, k, N) {
-        return se(T[j]) ? null : new g("Invalid " + k + " `" + N + "` supplied to " + ("`" + M + "`, expected a ReactNode."));
+      function g(S, M, D, k, N) {
+        return se(S[M]) ? null : new y("Invalid " + k + " `" + N + "` supplied to " + ("`" + D + "`, expected a ReactNode."));
       }
-      return R(v);
+      return R(g);
     }
-    function G(v, T, j, M, k) {
-      return new g(
-        (v || "React class") + ": " + T + " type `" + j + "." + M + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + k + "`."
+    function H(g, S, M, D, k) {
+      return new y(
+        (g || "React class") + ": " + S + " type `" + M + "." + D + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + k + "`."
       );
     }
-    function ue(v) {
-      function T(j, M, k, N, D) {
-        var $ = j[M], F = ne($);
+    function ue(g) {
+      function S(M, D, k, N, j) {
+        var $ = M[D], F = ne($);
         if (F !== "object")
-          return new g("Invalid " + N + " `" + D + "` of type `" + F + "` " + ("supplied to `" + k + "`, expected `object`."));
-        for (var z in v) {
-          var d = v[z];
-          if (typeof d != "function")
-            return G(k, N, D, z, ve(d));
-          var A = d($, z, k, N, D + "." + z, r);
-          if (A)
-            return A;
+          return new y("Invalid " + N + " `" + j + "` of type `" + F + "` " + ("supplied to `" + k + "`, expected `object`."));
+        for (var z in g) {
+          var f = g[z];
+          if (typeof f != "function")
+            return H(k, N, j, z, ve(f));
+          var C = f($, z, k, N, j + "." + z, r);
+          if (C)
+            return C;
         }
         return null;
       }
-      return R(T);
+      return R(S);
     }
-    function Y(v) {
-      function T(j, M, k, N, D) {
-        var $ = j[M], F = ne($);
+    function G(g) {
+      function S(M, D, k, N, j) {
+        var $ = M[D], F = ne($);
         if (F !== "object")
-          return new g("Invalid " + N + " `" + D + "` of type `" + F + "` " + ("supplied to `" + k + "`, expected `object`."));
-        var z = t({}, j[M], v);
-        for (var d in z) {
-          var A = v[d];
-          if (n(v, d) && typeof A != "function")
-            return G(k, N, D, d, ve(A));
-          if (!A)
-            return new g(
-              "Invalid " + N + " `" + D + "` key `" + d + "` supplied to `" + k + "`.\nBad object: " + JSON.stringify(j[M], null, "  ") + `
-Valid keys: ` + JSON.stringify(Object.keys(v), null, "  ")
+          return new y("Invalid " + N + " `" + j + "` of type `" + F + "` " + ("supplied to `" + k + "`, expected `object`."));
+        var z = e({}, M[D], g);
+        for (var f in z) {
+          var C = g[f];
+          if (n(g, f) && typeof C != "function")
+            return H(k, N, j, f, ve(C));
+          if (!C)
+            return new y(
+              "Invalid " + N + " `" + j + "` key `" + f + "` supplied to `" + k + "`.\nBad object: " + JSON.stringify(M[D], null, "  ") + `
+Valid keys: ` + JSON.stringify(Object.keys(g), null, "  ")
             );
-          var p = A($, d, k, N, D + "." + d, r);
+          var p = C($, f, k, N, j + "." + f, r);
           if (p)
             return p;
         }
         return null;
       }
-      return R(T);
+      return R(S);
     }
-    function se(v) {
-      switch (typeof v) {
+    function se(g) {
+      switch (typeof g) {
         case "number":
         case "string":
         case "undefined":
           return !0;
         case "boolean":
-          return !v;
+          return !g;
         case "object":
-          if (Array.isArray(v))
-            return v.every(se);
-          if (v === null || c(v))
+          if (Array.isArray(g))
+            return g.every(se);
+          if (g === null || c(g))
             return !0;
-          var T = f(v);
-          if (T) {
-            var j = T.call(v), M;
-            if (T !== v.entries) {
-              for (; !(M = j.next()).done; )
-                if (!se(M.value))
+          var S = h(g);
+          if (S) {
+            var M = S.call(g), D;
+            if (S !== g.entries) {
+              for (; !(D = M.next()).done; )
+                if (!se(D.value))
                   return !1;
             } else
-              for (; !(M = j.next()).done; ) {
-                var k = M.value;
+              for (; !(D = M.next()).done; ) {
+                var k = D.value;
                 if (k && !se(k[1]))
                   return !1;
               }
@@ -4700,62 +4625,61 @@ Valid keys: ` + JSON.stringify(Object.keys(v), null, "  ")
           return !1;
       }
     }
-    function _e(v, T) {
-      return v === "symbol" ? !0 : T ? T["@@toStringTag"] === "Symbol" || typeof Symbol == "function" && T instanceof Symbol : !1;
+    function be(g, S) {
+      return g === "symbol" ? !0 : S ? S["@@toStringTag"] === "Symbol" || typeof Symbol == "function" && S instanceof Symbol : !1;
     }
-    function ne(v) {
-      var T = typeof v;
-      return Array.isArray(v) ? "array" : v instanceof RegExp ? "object" : _e(T, v) ? "symbol" : T;
+    function ne(g) {
+      var S = typeof g;
+      return Array.isArray(g) ? "array" : g instanceof RegExp ? "object" : be(S, g) ? "symbol" : S;
     }
-    function ve(v) {
-      if (typeof v > "u" || v === null)
-        return "" + v;
-      var T = ne(v);
-      if (T === "object") {
-        if (v instanceof Date)
+    function ve(g) {
+      if (typeof g > "u" || g === null)
+        return "" + g;
+      var S = ne(g);
+      if (S === "object") {
+        if (g instanceof Date)
           return "date";
-        if (v instanceof RegExp)
+        if (g instanceof RegExp)
           return "regexp";
       }
-      return T;
+      return S;
     }
-    function fe(v) {
-      var T = ve(v);
-      switch (T) {
+    function fe(g) {
+      var S = ve(g);
+      switch (S) {
         case "array":
         case "object":
-          return "an " + T;
+          return "an " + S;
         case "boolean":
         case "date":
         case "regexp":
-          return "a " + T;
+          return "a " + S;
         default:
-          return T;
+          return S;
       }
     }
-    function ke(v) {
-      return !v.constructor || !v.constructor.name ? b : v.constructor.name;
+    function ke(g) {
+      return !g.constructor || !g.constructor.name ? m : g.constructor.name;
     }
-    return E.checkPropTypes = i, E.resetWarningCache = i.resetWarningCache, E.PropTypes = E, E;
-  }, yr;
+    return w.checkPropTypes = i, w.resetWarningCache = i.resetWarningCache, w.PropTypes = w, w;
+  }, hr;
 }
-var br, si;
-function dc() {
-  if (si)
-    return br;
-  si = 1;
-  var e = Zr();
-  function t() {
+var pr, Xn;
+function nc() {
+  if (Xn) return pr;
+  Xn = 1;
+  var t = qr();
+  function e() {
   }
   function r() {
   }
-  return r.resetWarningCache = t, br = function() {
-    function n(a, c, h, u, l, f) {
-      if (f !== e) {
-        var b = new Error(
+  return r.resetWarningCache = e, pr = function() {
+    function n(a, c, d, u, l, h) {
+      if (h !== t) {
+        var m = new Error(
           "Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types"
         );
-        throw b.name = "Invariant Violation", b;
+        throw m.name = "Invariant Violation", m;
       }
     }
     n.isRequired = n;
@@ -4783,54 +4707,54 @@ function dc() {
       shape: i,
       exact: i,
       checkPropTypes: r,
-      resetWarningCache: t
+      resetWarningCache: e
     };
     return s.PropTypes = s, s;
-  }, br;
+  }, pr;
 }
 if (process.env.NODE_ENV !== "production") {
-  var hc = Hi(), pc = !0;
-  Mr.exports = fc()(hc.isElement, pc);
+  var ic = zi(), sc = !0;
+  xr.exports = rc()(ic.isElement, sc);
 } else
-  Mr.exports = dc()();
-var mc = Mr.exports;
-const vt = /* @__PURE__ */ Ss(mc);
-class Ot {
-  static transformBounds(t, { pan: r, zoom: n }) {
-    const i = t.width * n, s = t.height * n, a = t.left + t.width / 2, c = t.top + t.height / 2, h = a * n - r[0], u = c * n - r[1], l = (t.width - i) / 2, f = (t.height - s) / 2, b = h - i / 2, E = u - s / 2, P = l - b, g = f - E;
+  xr.exports = nc()();
+var oc = xr.exports;
+const mt = /* @__PURE__ */ vs(oc);
+class Pt {
+  static transformBounds(e, { pan: r, zoom: n }) {
+    const i = e.width * n, s = e.height * n, a = e.left + e.width / 2, c = e.top + e.height / 2, d = a * n - r[0], u = c * n - r[1], l = (e.width - i) / 2, h = (e.height - s) / 2, m = d - i / 2, w = u - s / 2, T = l - m, y = h - w;
     return {
       width: i,
       height: s,
-      top: g,
-      left: P,
-      right: P + i,
-      bottom: g + s,
-      x: P,
-      y: g
+      top: y,
+      left: T,
+      right: T + i,
+      bottom: y + s,
+      x: T,
+      y
     };
   }
-  static getEditableRect(t) {
+  static getEditableRect(e) {
     return {
-      ...t,
-      bottom: t.bottom,
-      height: t.height,
-      left: t.left,
-      right: t.right,
-      top: t.top,
-      width: t.width,
-      x: t.x,
-      y: t.y
+      ...e,
+      bottom: e.bottom,
+      height: e.height,
+      left: e.left,
+      right: e.right,
+      top: e.top,
+      width: e.width,
+      x: e.x,
+      y: e.y
     };
   }
-  static mergeDeep(t, r) {
+  static mergeDeep(e, r) {
     const n = (i) => i && typeof i == "object";
     return Object.keys(r).forEach((i) => {
-      const s = t[i], a = r[i];
-      Array.isArray(s) && Array.isArray(a) ? t[i] = a : n(s) && n(a) ? t[i] = Ot.mergeDeep({ ...s }, a) : t[i] = a;
-    }), t;
+      const s = e[i], a = r[i];
+      Array.isArray(s) && Array.isArray(a) ? e[i] = a : n(s) && n(a) ? e[i] = Pt.mergeDeep({ ...s }, a) : e[i] = a;
+    }), e;
   }
 }
-const Qi = ws(), $e = {
+const Wi = ps(), $e = {
   "viewer-main": "_viewer-main_1mddk_1",
   "viewer-main-fill-height": "_viewer-main-fill-height_1mddk_10",
   "viewer-viewport": "_viewer-viewport_1mddk_14",
@@ -4839,21 +4763,21 @@ const Qi = ws(), $e = {
   "viewer-minimap": "_viewer-minimap_1mddk_19",
   "viewer-minimap-viewport-area": "_viewer-minimap-viewport-area_1mddk_38",
   "viewer-viewport-center-guide": "_viewer-viewport-center-guide_1mddk_59"
-}, vc = ({ className: e = "", viewportContent: t, minimapContent: r }) => {
+}, ac = ({ className: t = "", viewportContent: e, minimapContent: r }) => {
   const {
     crop: n,
     setCrop: i,
     settings: s,
     setZoomIn: a,
     setZoomOut: c,
-    setResetView: h,
+    setResetView: d,
     setCenterView: u,
     setToggleMinimap: l
-  } = jr(Qi), f = he(n), b = 0.75, E = 100, P = he(), g = he(), R = he(), w = he(), C = he(s.minimap.width), O = he(160), [I, y] = Ie(s.minimap.enabled), [q, te] = Ie({
-    width: C.current,
-    height: O.current,
+  } = Or(Wi), h = he(n), m = 0.75, w = 100, T = he(), y = he(), R = he(), E = he(), O = he(s.minimap.width), P = he(160), [A, _] = Ae(s.minimap.enabled), [Y, te] = Ae({
+    width: O.current,
+    height: P.current,
     scale: 1
-  }), [be, re] = Vo(() => ({
+  }), [_e, re] = Ro(() => ({
     transform: `scale(${n.zoom}) translate(${n.pan[0] / n.zoom}px, ${n.pan[1] / n.zoom}px)`,
     onRest: () => {
     },
@@ -4865,142 +4789,139 @@ const Qi = ws(), $e = {
     }
   }));
   Ee(() => {
-    n !== f.current && (f.current = n, re.start({ transform: `scale(${n.zoom}) translate(${n.pan[0] / n.zoom}px, ${n.pan[1] / n.zoom}px)` }));
+    n !== h.current && (h.current = n, re.start({ transform: `scale(${n.zoom}) translate(${n.pan[0] / n.zoom}px, ${n.pan[1] / n.zoom}px)` }));
   }, [n, re]);
-  const me = (d, A, p) => {
-    const Q = (p.width - A.width) / 2, ce = (p.height - A.height) / 2;
-    return p.width < A.width ? d.pan[0] = 0 : p.left > A.left ? d.pan[0] = Math.min(d.pan[0], Q) : p.right < A.right && (d.pan[0] = Math.max(d.pan[0], A.width - p.width + Q)), p.height < A.height ? d.pan[1] = 0 : p.top > A.top ? d.pan[1] = Math.min(d.pan[1], ce) : p.bottom < A.bottom && (d.pan[1] = Math.max(d.pan[1], A.height - p.height + ce)), d;
-  }, G = ge((d) => {
-    const A = Ot.getEditableRect(ue(g.current)), p = Ot.transformBounds(A, d);
-    return me(d, A, p);
-  }, []), ue = (d) => {
-    const A = P.current.getBoundingClientRect(), p = d.getBoundingClientRect();
+  const me = (f, C, p) => {
+    const X = (p.width - C.width) / 2, ce = (p.height - C.height) / 2;
+    return p.width < C.width ? f.pan[0] = 0 : p.left > C.left ? f.pan[0] = Math.min(f.pan[0], X) : p.right < C.right && (f.pan[0] = Math.max(f.pan[0], C.width - p.width + X)), p.height < C.height ? f.pan[1] = 0 : p.top > C.top ? f.pan[1] = Math.min(f.pan[1], ce) : p.bottom < C.bottom && (f.pan[1] = Math.max(f.pan[1], C.height - p.height + ce)), f;
+  }, H = ge((f) => {
+    const C = Pt.getEditableRect(ue(y.current)), p = Pt.transformBounds(C, f);
+    return me(f, C, p);
+  }, []), ue = (f) => {
+    const C = T.current.getBoundingClientRect(), p = f.getBoundingClientRect();
     return {
-      top: p.top - A.top,
-      left: p.left - A.left,
-      width: d.offsetWidth,
-      height: d.offsetHeight,
-      bottom: p.top - A.top + d.offsetHeight,
-      right: p.left - A.left + d.offsetWidth
+      top: p.top - C.top,
+      left: p.left - C.left,
+      width: f.offsetWidth,
+      height: f.offsetHeight,
+      bottom: p.top - C.top + f.offsetHeight,
+      right: p.left - C.left + f.offsetWidth
     };
-  }, Y = ge(() => {
-    const d = w.current.offsetWidth, A = g.current.offsetWidth / g.current.offsetHeight;
-    O.current = d / A;
-    const p = d / g.current.offsetWidth;
+  }, G = ge(() => {
+    const f = E.current.offsetWidth, C = y.current.offsetWidth / y.current.offsetHeight;
+    P.current = f / C;
+    const p = f / y.current.offsetWidth;
     te((ce) => ({
       ...ce,
-      width: C.current,
-      height: O.current,
+      width: O.current,
+      height: P.current,
       scale: p
     }));
-    let Q = {
-      ...f.current
+    let X = {
+      ...h.current
     };
-    Q = G(Q), i(Q);
-  }, [G, i]);
+    X = H(X), i(X);
+  }, [H, i]);
   Ee(() => {
     if (R.current) {
-      const d = R.current.querySelector("img");
-      d && (d.complete ? Y() : d.onload = Y);
-      const A = R.current.querySelector("video");
-      A && (A.readyState >= 4 ? Y() : A.onloadeddata = Y);
+      const f = R.current.querySelector("img");
+      f && (f.complete ? G() : f.onload = G);
+      const C = R.current.querySelector("video");
+      C && (C.readyState >= 4 ? G() : C.onloadeddata = G);
     }
     return () => {
     };
-  }, [t, Y]), Ee(() => {
-    Y();
-  }, [I, Y]);
+  }, [e, G]), Ee(() => {
+    G();
+  }, [A, G]);
   const se = ge(() => {
-    Y();
-  }, [Y]);
+    G();
+  }, [G]);
   Ee(() => (window.addEventListener("resize", se), () => {
     window.removeEventListener("resize", se);
   }), [se]);
-  const _e = ge((d) => {
-    const A = { pan: { ...d.pan }, zoom: d.zoom }, p = G({ pan: { ...d.pan }, zoom: d.zoom });
-    return A.pan[0] = Math.max(A.pan[0], p.pan[0] - s.spring.rubberbandDistance), A.pan[0] = Math.min(A.pan[0], p.pan[0] + s.spring.rubberbandDistance), A.pan[1] = Math.max(A.pan[1], p.pan[1] - s.spring.rubberbandDistance), A.pan[1] = Math.min(A.pan[1], p.pan[1] + s.spring.rubberbandDistance), A;
-  }, [s, G]), ne = ge((d, A, p) => {
-    if (!s.zoom.enabled || d.last)
-      return p;
-    p ?? (p = f.current);
-    const Q = ue(g.current);
-    let ce = 0, X = [0, 0];
-    if (d.type === "click")
-      ce = Number(d.zoomChange) * s.zoom.zoomButtonStep;
-    else if (d.type === "pointermove" && d.pinching)
-      ce = d.delta[0], X[0] = d.origin[0] - Q.width / 2, X[1] = d.origin[1] - Q.height / 2;
-    else if (d.type === "wheel")
-      if (d.ctrlKey && d.pinching === !0) {
-        switch (d.axis) {
+  const be = ge((f) => {
+    const C = { pan: { ...f.pan }, zoom: f.zoom }, p = H({ pan: { ...f.pan }, zoom: f.zoom });
+    return C.pan[0] = Math.max(C.pan[0], p.pan[0] - s.spring.rubberbandDistance), C.pan[0] = Math.min(C.pan[0], p.pan[0] + s.spring.rubberbandDistance), C.pan[1] = Math.max(C.pan[1], p.pan[1] - s.spring.rubberbandDistance), C.pan[1] = Math.min(C.pan[1], p.pan[1] + s.spring.rubberbandDistance), C;
+  }, [s, H]), ne = ge((f, C, p) => {
+    if (!s.zoom.enabled || f.last) return p;
+    p ?? (p = h.current);
+    const X = ue(y.current);
+    let ce = 0, Q = [0, 0];
+    if (f.type === "click")
+      ce = Number(f.zoomChange) * s.zoom.zoomButtonStep;
+    else if (f.type === "pointermove" && f.pinching)
+      ce = f.delta[0], Q[0] = f.origin[0] - X.width / 2, Q[1] = f.origin[1] - X.height / 2;
+    else if (f.type === "wheel")
+      if (f.ctrlKey && f.pinching === !0) {
+        switch (f.axis) {
           case "scale":
-            ce = d.delta[0];
+            ce = f.delta[0];
             break;
         }
-        X[0] = d.event.clientX - Q.width / 2, X[1] = d.event.clientY - Q.height / 2;
-      } else
-        d.axis === "y" && (!("pinching" in d) || d.pinching === !1) && (ce = -d.delta[1] / E * s.zoom.mouseWheelStep, X[0] = d.event.clientX - Q.width / 2, X[1] = d.event.clientY - Q.height / 2);
-    A == "minimap" && (X[0] = 0, X[1] = 0);
-    const je = Math.min(Math.max(p.zoom + ce, s.zoom.min), s.zoom.max), rt = je / f.current.zoom, kt = [
-      X[0] + (f.current.pan[0] - X[0]) * rt,
-      X[1] + (f.current.pan[1] - X[1]) * rt
+        Q[0] = f.event.clientX - X.width / 2, Q[1] = f.event.clientY - X.height / 2;
+      } else f.axis === "y" && (!("pinching" in f) || f.pinching === !1) && (ce = -f.delta[1] / w * s.zoom.mouseWheelStep, Q[0] = f.event.clientX - X.width / 2, Q[1] = f.event.clientY - X.height / 2);
+    C == "minimap" && (Q[0] = 0, Q[1] = 0);
+    const Me = Math.min(Math.max(p.zoom + ce, s.zoom.min), s.zoom.max), rt = Me / h.current.zoom, It = [
+      Q[0] + (h.current.pan[0] - Q[0]) * rt,
+      Q[1] + (h.current.pan[1] - Q[1]) * rt
     ];
-    let Me = {
-      ...f.current,
-      zoom: je,
-      pan: kt
+    let De = {
+      ...h.current,
+      zoom: Me,
+      pan: It
     };
-    return Me = G(Me), i(Me), Me;
-  }, [s, i, G]), ve = ge((d, A, p) => {
-    if (!s.pan.enabled || d.last)
-      return p;
-    p ?? (p = f.current);
-    const Q = A == "viewport" ? 1 : -f.current.zoom / q.scale, ce = [
-      p.pan[0] + d.delta[0] * Q,
-      p.pan[1] + d.delta[1] * Q
+    return De = H(De), i(De), De;
+  }, [s, i, H]), ve = ge((f, C, p) => {
+    if (!s.pan.enabled || f.last) return p;
+    p ?? (p = h.current);
+    const X = C == "viewport" ? 1 : -h.current.zoom / Y.scale, ce = [
+      p.pan[0] + f.delta[0] * X,
+      p.pan[1] + f.delta[1] * X
     ];
-    let X = {
-      ...f.current,
+    let Q = {
+      ...h.current,
       pan: ce
     };
-    return s.spring.rubberband ? X = _e(X) : X = G(X), i(X), X;
-  }, [s, i, G, _e, q.scale]), fe = ge(() => {
-    let d = {
-      ...f.current
+    return s.spring.rubberband ? Q = be(Q) : Q = H(Q), i(Q), Q;
+  }, [s, i, H, be, Y.scale]), fe = ge(() => {
+    let f = {
+      ...h.current
     };
-    d = G(d), i(d);
-  }, [i, G]), ke = ge(() => {
-    ne({ type: "click", zoomChange: -1 }, "minimap", f.current);
-  }, [ne]), v = ge(() => {
-    ne({ type: "click", zoomChange: 1 }, "minimap", f.current);
-  }, [ne]), T = ge(() => {
-    const d = {
+    f = H(f), i(f);
+  }, [i, H]), ke = ge(() => {
+    ne({ type: "click", zoomChange: -1 }, "minimap", h.current);
+  }, [ne]), g = ge(() => {
+    ne({ type: "click", zoomChange: 1 }, "minimap", h.current);
+  }, [ne]), S = ge(() => {
+    const f = {
       pan: [0, 0],
       zoom: s.zoom.default
     };
-    i(d);
-  }, [s, i]), j = ge(() => {
-    const d = {
+    i(f);
+  }, [s, i]), M = ge(() => {
+    const f = {
       pan: [0, 0],
-      zoom: f.current.zoom
+      zoom: h.current.zoom
     };
-    i(d);
-  }, [i]), M = ge(() => {
-    y((d) => !d);
+    i(f);
+  }, [i]), D = ge(() => {
+    _((f) => !f);
   }, []);
-  Ee(() => (c(() => ke), a(() => v), h(() => T), u(() => j), l(() => M), () => {
-  }), [ke, c, v, a, T, h, j, u, M, l]), Ee(() => {
-    const d = (A) => {
-      const p = A.key.toLowerCase();
-      s.resetView.enabled && p === s.resetView.keyboardShortcut && T(), s.centerView.enabled && p === s.centerView.keyboardShortcut && j(), s.minimap.enabled && p === s.minimap.keyboardShortcut && M();
+  Ee(() => (c(() => ke), a(() => g), d(() => S), u(() => M), l(() => D), () => {
+  }), [ke, c, g, a, S, d, M, u, D, l]), Ee(() => {
+    const f = (C) => {
+      const p = C.key.toLowerCase();
+      s.resetView.enabled && p === s.resetView.keyboardShortcut && S(), s.centerView.enabled && p === s.centerView.keyboardShortcut && M(), s.minimap.enabled && p === s.minimap.keyboardShortcut && D();
     };
-    return window.addEventListener("keydown", d), () => {
-      window.removeEventListener("keydown", d);
+    return window.addEventListener("keydown", f), () => {
+      window.removeEventListener("keydown", f);
     };
-  }, [s, T, j, M]);
+  }, [s, S, M, D]);
   const k = {
     drag: {
       enabled: s.pan.enabled,
-      from: () => f.current.pan,
+      from: () => h.current.pan,
       preventScroll: !1
       // Ignores vertical scrolling on touch devices
     },
@@ -5009,88 +4930,88 @@ const Qi = ws(), $e = {
       preventDefault: !0,
       pinchOnWheel: !0,
       angleBounds: { min: 0, max: 0 },
-      from: () => [f.current.zoom * b, 0]
+      from: () => [h.current.zoom * m, 0]
     },
     wheel: {
       enabled: s.zoom.enabled,
       preventDefault: !0,
-      from: () => [0, -f.current.zoom * E]
+      from: () => [0, -h.current.zoom * w]
     },
     eventOptions: {
       passive: !1
     }
   };
-  Qn(
+  zn(
     {
-      onDrag: (d) => ve(d, "viewport", d.memo),
+      onDrag: (f) => ve(f, "viewport", f.memo),
       onDragEnd: fe,
-      onPinch: (d) => ne(d, "viewport", d.memo),
+      onPinch: (f) => ne(f, "viewport", f.memo),
       onPinchEnd: fe,
-      onWheel: (d) => ne(d, "viewport", d.memo),
+      onWheel: (f) => ne(f, "viewport", f.memo),
       onWheelEnd: fe
     },
     {
       ...k,
-      target: g
+      target: y
     }
-  ), Qn({
-    onDrag: (d) => ve(d, "minimap", d.memo),
+  ), zn({
+    onDrag: (f) => ve(f, "minimap", f.memo),
     onDragEnd: fe,
-    onPinch: (d) => ne(d, "minimap", d.memo),
+    onPinch: (f) => ne(f, "minimap", f.memo),
     onPinchEnd: fe,
-    onWheel: (d) => ne(d, "minimap", d.memo),
+    onWheel: (f) => ne(f, "minimap", f.memo),
     onWheelEnd: fe
   }, {
     ...k,
-    target: w
+    target: E
   });
   const N = {
-    width: C.current,
-    height: O.current,
-    display: I && r ? "block" : "none",
+    width: O.current,
+    height: P.current,
+    display: A && r ? "block" : "none",
     outline: s.minimap.outlineStyle
   };
-  let D = {};
-  if (g.current) {
-    const d = q.scale;
-    D = {
+  let j = {};
+  if (y.current) {
+    const f = Y.scale;
+    j = {
       // The order of transform matters! Scale first, then translate
-      transform: `scale(${1 / Math.max(n.zoom, 1)}) translate(${-n.pan[0] * d}px, ${-n.pan[1] * d}px)`,
-      width: `${g.current.offsetWidth * d}px`,
-      height: `${g.current.offsetHeight * d}px`,
+      transform: `scale(${1 / Math.max(n.zoom, 1)}) translate(${-n.pan[0] * f}px, ${-n.pan[1] * f}px)`,
+      width: `${y.current.offsetWidth * f}px`,
+      height: `${y.current.offsetHeight * f}px`,
       outline: s.minimap.viewportAreaOutlineStyle
     };
   }
-  const $ = s.spring.enabled === !0 ? be : { transform: `scale(${n.zoom}) translate(${n.pan[0] / n.zoom}px, ${n.pan[1] / n.zoom}px)` };
+  const $ = s.spring.enabled === !0 ? _e : { transform: `scale(${n.zoom}) translate(${n.pan[0] / n.zoom}px, ${n.pan[1] / n.zoom}px)` };
   let F = {};
-  g.current && (F = {
+  y.current && (F = {
     transformOrigin: "0% 0%",
-    transform: `scale(${q.scale})`,
-    width: `${g.current.offsetWidth}px`,
-    height: `${g.current.offsetHeight}px`
+    transform: `scale(${Y.scale})`,
+    width: `${y.current.offsetWidth}px`,
+    height: `${y.current.offsetHeight}px`
   });
   const z = [
-    e,
+    t,
     $e["viewer-main"],
     s.fillHeight && $e["viewer-main-fill-height"]
   ].filter(Boolean).join(" ");
-  return /* @__PURE__ */ Fe.jsxs("div", { className: z, ref: P, children: [
-    /* @__PURE__ */ Fe.jsxs("div", { className: $e["viewer-minimap"], ref: w, style: N, children: [
+  return /* @__PURE__ */ Fe.jsxs("div", { className: z, ref: T, children: [
+    /* @__PURE__ */ Fe.jsxs("div", { className: $e["viewer-minimap"], ref: E, style: N, children: [
       /* @__PURE__ */ Fe.jsx("div", { className: $e["viewer-minimap-content"], style: F, children: r }),
-      /* @__PURE__ */ Fe.jsx("div", { className: $e["viewer-minimap-viewport-area"], style: D })
+      /* @__PURE__ */ Fe.jsx("div", { className: $e["viewer-minimap-viewport-area"], style: j })
     ] }),
-    /* @__PURE__ */ Fe.jsxs("div", { className: $e["viewer-viewport"], ref: g, children: [
+    /* @__PURE__ */ Fe.jsxs("div", { className: $e["viewer-viewport"], ref: y, children: [
       s.guides.enabled && /* @__PURE__ */ Fe.jsx("div", { className: $e["viewer-viewport-center-guide"] }),
-      /* @__PURE__ */ Fe.jsx(Qo.div, { className: $e["viewer-viewport-content"], ref: R, style: $, children: t })
+      /* @__PURE__ */ Fe.jsx(zo.div, { className: $e["viewer-viewport-content"], ref: R, style: $, children: e })
     ] })
   ] });
 };
-vc.propTypes = {
-  className: vt.string,
-  viewportContent: vt.node,
-  minimapContent: vt.node
+ac.propTypes = {
+  className: mt.string,
+  viewportContent: mt.node,
+  minimapContent: mt.node
 };
-const gc = {
+const cc = {
   pan: { enabled: !0 },
   zoom: { enabled: !0, default: 1, min: 1, max: 4, mouseWheelStep: 0.5, zoomButtonStep: 0.5 },
   resetView: { enabled: !0, keyboardShortcut: "r" },
@@ -5099,36 +5020,36 @@ const gc = {
   spring: { enabled: !0, rubberband: !0, rubberbandDistance: 100 },
   guides: { enabled: !1 },
   fillHeight: !0
-}, oi = {
+}, Qn = {
   pan: [0, 0],
   zoom: 1
-}, yc = ({ children: e, settings: t = {} }) => {
-  const r = ut(() => Ot.mergeDeep({ ...gc }, t), [t]), [n, i] = Ie(oi), [s, a] = Ie(null), [c, h] = Ie(null), [u, l] = Ie(null), [f, b] = Ie(null), [E, P] = Ie(null);
+}, uc = ({ children: t, settings: e = {} }) => {
+  const r = ct(() => Pt.mergeDeep({ ...cc }, e), [e]), [n, i] = Ae(Qn), [s, a] = Ae(null), [c, d] = Ae(null), [u, l] = Ae(null), [h, m] = Ae(null), [w, T] = Ae(null);
   return Ee(() => {
-    i({ pan: oi.pan, zoom: r.zoom.default });
-  }, [r.zoom.default]), /* @__PURE__ */ Fe.jsx(Qi.Provider, { value: {
+    i({ pan: Qn.pan, zoom: r.zoom.default });
+  }, [r.zoom.default]), /* @__PURE__ */ Fe.jsx(Wi.Provider, { value: {
     crop: n,
     setCrop: i,
     settings: r,
     zoomOut: s,
     setZoomOut: a,
     zoomIn: c,
-    setZoomIn: h,
+    setZoomIn: d,
     resetView: u,
     setResetView: l,
-    centerView: f,
-    setCenterView: b,
-    toggleMinimap: E,
-    setToggleMinimap: P
-  }, children: e });
+    centerView: h,
+    setCenterView: m,
+    toggleMinimap: w,
+    setToggleMinimap: T
+  }, children: t });
 };
-yc.propTypes = {
-  children: vt.node,
-  settings: vt.object
+uc.propTypes = {
+  children: mt.node,
+  settings: mt.object
 };
 export {
-  vc as Viewer,
-  Qi as ViewerContext,
-  yc as ViewerProvider,
-  Ot as ViewerUtils
+  ac as Viewer,
+  Wi as ViewerContext,
+  uc as ViewerProvider,
+  Pt as ViewerUtils
 };
