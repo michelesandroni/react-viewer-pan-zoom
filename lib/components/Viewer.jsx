@@ -506,8 +506,14 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
     }
   }
 
+  const viewerClasses = [
+    className,
+    styles['viewer-main'],
+    settings.fillHeight && styles['viewer-main-fill-height']
+  ].filter(Boolean).join(' ')
+
   return (
-    <div className={`${className} ${styles['viewer-main']}`} ref={viewerRef}>
+    <div className={viewerClasses} ref={viewerRef}>
       <div className={styles['viewer-minimap']} ref={minimapRef} style={minimapStyle}>
         <div className={styles['viewer-minimap-content']} style={minimapContentStyle} >
           {minimapContent}

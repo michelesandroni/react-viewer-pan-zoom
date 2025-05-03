@@ -1,10 +1,3 @@
-html,
-body,
-#root {
-  margin: 0;
-  padding: 0;
-}
-
 :root {
   font-family: sans-serif;
   line-height: 1.0;
@@ -13,4 +6,28 @@ body,
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+html body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+nav {
+  text-align: center;
+  touch-action: none;
+}
+
+nav {
+  padding: 1rem 0rem;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 0.25rem 0.5rem;
+  margin: 0rem 0.5rem;
 }

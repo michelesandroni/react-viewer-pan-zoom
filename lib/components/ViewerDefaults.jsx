@@ -6,6 +6,7 @@ export const defaultSettings = {
   minimap: { enabled: true, width: '160px', keyboardShortcut: 'm', outlineStyle: '1px solid #ccc', viewportAreaOutlineStyle: '2px solid #333', },
   spring: { enabled: true, rubberband: true, rubberbandDistance: 100, },
   guides: { enabled: false, },
+  fillHeight: true,
 }
 
 export const defaultCrop = {

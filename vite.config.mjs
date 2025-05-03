@@ -10,7 +10,7 @@ export default defineConfig({
   build: {
     emptyOutDir: true,
     lib: {
-      entry: './src/index.js',
+      entry: './lib/index.js',
       name: 'ReactViewerPanZoom',
       formats: ['es'], // 'es', 'umd'
     },

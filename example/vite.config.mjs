@@ -13,7 +13,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      'react-viewer-pan-zoom': path.resolve(__dirname, '../src'),
+      'react-viewer-pan-zoom': path.resolve(__dirname, '../lib'),
     },
   },
   root: __dirname,

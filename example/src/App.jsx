@@ -3,9 +3,26 @@ import SVG from 'react-inlinesvg'
 
 import { Viewer, ViewerContext, ViewerProvider } from 'react-viewer-pan-zoom'
 
-import './App.css'
-
 const App = () => {
+
+  // Example Layout #1: Full-window viewer
+  const layoutStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    userSelect: 'none',
+    height: '100vh',
+    // ⚠️ IMPORTANT: make sure that the main CSS file contains the following:
+    // html, html body, #root { height: 100%; margin: 0; padding: 0; }
+  }
+
+  // // Example Layout #2: Fixed-size viewer
+  // const layoutStyle = {
+  //   display: 'flex',
+  //   flexDirection: 'column',
+  //   userSelect: 'none',
+  //   width: '800px',
+  //   height: '600px'
+  // }
 
   const contentStyle = {
     width: '100%',
@@ -49,8 +66,8 @@ const App = () => {
   const [selected, setSelected] = useState(0)
 
   return (
-    <div className="app">
-      <h1 className="center">react-viewer-pan-zoom | example</h1>
+    <div style={layoutStyle}>
+      <h1 style={{}}>react-viewer-pan-zoom | example</h1>
       <ViewerProvider
         settings={{
           // pan: { enabled: true },
@@ -60,12 +77,12 @@ const App = () => {
           // minimap: { enabled: true, width: '160px', keyboardShortcut: 'm', outlineStyle: '1px solid #ccc', viewportAreaOutlineStyle: '2px solid #333' },
           // spring: { enabled: true, rubberband: true, rubberbandDistance: 100, },
           // guides: { enabled: false, },
-        }}
-      >
-        <Viewer className="viewer" viewportContent={contents[selected]} minimapContent={contents[selected]} />
-        <div className="viewer-toolbar center">
+          // fillHeight: true,
+        }} >
+        <Viewer viewportContent={contents[selected]} minimapContent={contents[selected]} />
+        <nav>
           <Toolbar contents={contents} selected={selected} setSelected={setSelected} />
-        </div>
+        </nav>
       </ViewerProvider>
     </div>
   )
@@ -179,7 +196,7 @@ const ExampleHtmlElement = ({ children, style }) => {
   )
 }
 
-// WARNING: For demonstration purposes only.
+// ⚠️ WARNING - For demonstration purposes only.
 // Do not use this component in production.
 // This is a proof of concept SVG importer to inline animated, interactive SVGs.
 // Use 'react-inlinesvg' instead.
