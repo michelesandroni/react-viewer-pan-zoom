@@ -15,13 +15,14 @@ export default defineConfig({
       formats: ['es'], // 'es', 'umd'
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
         entryFileNames: '[name].js', // [name].[format].js'
         // assetFileNames: '[name][extname]',
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
+          'react/jsx-runtime': 'jsxRuntime'
         }
       }
     }
