@@ -10,7 +10,7 @@
 
 * 💡 Designed to pan and zoom `<svg>` elements via `react-inlinesvg`, `<img>`, `<svg>`, `<canvas>` and other html elements.
 * 🧭 Supports minimap, spring animation, rubberband, responsive design, etc.
-* 🛠️ Written in Typescript. Built on top of [use-gesture](https://github.com/pmndrs/use-gesture) and [react-spring](https://www.react-spring.dev).
+* 🛠️ Written in Typescript. Built on top of [use-gesture](https://github.com/pmndrs/use-gesture) and CSS transitions.
 * 🚀 Using fast build tools (Vite / Rollup).
 
 ## Installation
@@ -151,6 +151,7 @@ Default settings:
     enabled: true,         // Enable or disable spring animations for smooth transitions.
     rubberband: true,      // Enable or disable rubberband effect when zooming or panning.
     rubberbandDistance: 100, // Distance to trigger the rubberband effect.
+    transition: 'transform 0.25s ease-out',  // Spring CSS Transition
   },
   
   guides: { 
@@ -158,6 +159,15 @@ Default settings:
   },
   
   fillHeight: true,         // Set to `true` to make the viewer fill all available height in the parent container.
+}
+```
+
+For a snappier spring CSS transition try using a cubic ease curve.
+
+```jsx
+spring {
+  // ...
+  transition: 'transform 0.25s cubic-bezier(0.33, 1, 0.68, 1)',
 }
 ```
 

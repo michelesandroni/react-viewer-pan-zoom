@@ -43,7 +43,7 @@ export declare enum ContentType {
     Viewport = "viewport"
 }
 export interface ViewerProps {
-    className: string;
+    className?: string;
     viewportContent: ReactNode;
     minimapContent: ReactNode;
 }
@@ -95,6 +95,7 @@ export interface Settings {
         enabled: boolean;
         rubberband: boolean;
         rubberbandDistance: number;
+        transition: string;
     };
     guides: {
         enabled: boolean;

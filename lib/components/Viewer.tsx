@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef, useCallback, useContext } from 'react'
-import { useSpring, animated } from 'react-spring'
 import { useGesture, Vector2 } from '@use-gesture/react'
 
 import {
@@ -22,8 +21,6 @@ const Viewer = ({
     setZoomIn, setZoomOut, setResetView, setCenterView, setToggleMinimap
   } = useContext<ViewerContextType>(ViewerContext)
 
-  // console.log('Viewer')
-
   const cropRef = useRef(crop)
 
   // Adjust pinch-zoom
@@ -35,8 +32,6 @@ const Viewer = ({
   const minimapRef = useRef<HTMLDivElement>(null)
   const viewportContentRef = useRef<HTMLDivElement>(null) // animated.div
 
-  const AnimatedDivViewportContent = animated("div")
-
   const minimapWidthRef = useRef(settings.minimap.width)
   const minimapHeightRef = useRef(160) // This will be re-calculated based on the aspect ratio
   const [minimapVisible, setMinimapVisible] = useState(settings.minimap.enabled)
@@ -46,25 +41,12 @@ const Viewer = ({
     scale: 1,
   })
 
-  // React spring transform
-  const [springProps, springApi] = useSpring(() => {
-    return {
-      transform: `scale(${crop.zoom}) translate(${crop.pan[0] / crop.zoom}px, ${crop.pan[1] / crop.zoom}px)`,
-      onRest: () => { },
-      config: {
-        tension: 170, // 170
-        friction: 26, // 26
-      },
-    }
-  })
-
   // Update 'cropRef' whenever the crop is updated
   useEffect(() => {
     if (crop !== cropRef.current) {
       cropRef.current = crop
-      springApi.start({ transform: `scale(${crop.zoom}) translate(${crop.pan[0] / crop.zoom}px, ${crop.pan[1] / crop.zoom}px)` })
     }
-  }, [crop, springApi])
+  }, [crop])
 
   const adjustCrop = (cropToAdjust: Crop, viewportBounds: Bounds, newBounds: Bounds) => {
     const widthOverhang = (newBounds.width - viewportBounds.width) / 2
@@ -559,9 +541,10 @@ const Viewer = ({
   }
 
   // The content styles
-  const viewportContentStyle = (settings.spring.enabled === true)
-    ? springProps
-    : { transform: `scale(${crop.zoom}) translate(${crop.pan[0] / crop.zoom}px, ${crop.pan[1] / crop.zoom}px)`, }
+  const viewportContentStyle = {
+    transform: `scale(${crop.zoom}) translate(${crop.pan[0] / crop.zoom}px, ${crop.pan[1] / crop.zoom}px)`,
+    transition: (settings.spring.enabled === true) ? settings.spring.transition : 'none',
+  }
 
   let minimapContentStyle = {}
   if (viewportRef.current) {
@@ -591,9 +574,9 @@ const Viewer = ({
         {settings.guides.enabled &&
           <div className={styles['viewer-viewport-center-guide']}></div>
         }
-        <AnimatedDivViewportContent className={styles['viewer-viewport-content']} ref={viewportContentRef} style={viewportContentStyle}>
+        <div className={styles['viewer-viewport-content']} ref={viewportContentRef} style={viewportContentStyle}>
           {viewportContent}
-        </AnimatedDivViewportContent>
+        </div>
       </div>
     </div>
   )

@@ -9,7 +9,7 @@ export const defaultSettings: Settings = {
   resetView: { enabled: true, keyboardShortcut: 'r', },
   centerView: { enabled: false, keyboardShortcut: 'c', },
   minimap: { enabled: true, width: '160px', keyboardShortcut: 'm', outlineStyle: '1px solid #ccc', viewportAreaOutlineStyle: '2px solid #333', },
-  spring: { enabled: true, rubberband: true, rubberbandDistance: 100, },
+  spring: { enabled: true, rubberband: true, rubberbandDistance: 100, transition: 'transform 0.25s ease-out', },
   guides: { enabled: false, },
   fillHeight: true,
 }
