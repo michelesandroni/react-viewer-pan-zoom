@@ -1,4 +1,9 @@
-export const defaultSettings = {
+import {
+  Settings,
+  Crop
+} from "./types"
+
+export const defaultSettings: Settings = {
   pan: { enabled: true, },
   zoom: { enabled: true, default: 1, min: 1, max: 4, mouseWheelStep: 0.5, zoomButtonStep: 0.5, },
   resetView: { enabled: true, keyboardShortcut: 'r', },
@@ -9,7 +14,7 @@ export const defaultSettings = {
   fillHeight: true,
 }
 
-export const defaultCrop = {
+export const defaultCrop: Crop = {
   pan: [0, 0],
   zoom: 1,
 }

@@ -1,20 +1,26 @@
 import { useState, useEffect, useRef, useCallback, useContext } from 'react'
-import { useSpring, animated } from '@react-spring/web'
-import { useGesture } from '@use-gesture/react'
-import PropTypes from 'prop-types'
+import { useSpring, animated } from 'react-spring'
+import { useGesture, Vector2 } from '@use-gesture/react'
 
-import { ViewerUtils } from './ViewerUtils'
+import {
+  ViewerContextType, ContentType, Crop, Bounds, ViewerProps,
+  WheelState, PinchState, DragState, ClickGestureState
+} from './types'
 import { ViewerContext } from './ViewerContext'
 
 import styles from './Viewer.module.css'
 
 const debugLogEvents = false
 
-const Viewer = ({ className = '', viewportContent, minimapContent }) => {
+const Viewer = ({
+  className = '',
+  viewportContent,
+  minimapContent,
+}: ViewerProps) => {
   const {
     crop, setCrop, settings,
     setZoomIn, setZoomOut, setResetView, setCenterView, setToggleMinimap
-  } = useContext(ViewerContext)
+  } = useContext<ViewerContextType>(ViewerContext)
 
   // console.log('Viewer')
 
@@ -24,10 +30,12 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
   const pinchSensitivity = 0.75
   const mouseWheelUnits = 100
 
-  const viewerRef = useRef()
-  const viewportRef = useRef()
-  const viewportContentRef = useRef()
-  const minimapRef = useRef()
+  const viewerRef = useRef<HTMLDivElement>(null)
+  const viewportRef = useRef<HTMLDivElement>(null)
+  const minimapRef = useRef<HTMLDivElement>(null)
+  const viewportContentRef = useRef<HTMLDivElement>(null) // animated.div
+
+  const AnimatedDivViewportContent = animated("div")
 
   const minimapWidthRef = useRef(settings.minimap.width)
   const minimapHeightRef = useRef(160) // This will be re-calculated based on the aspect ratio
@@ -42,11 +50,7 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
   const [springProps, springApi] = useSpring(() => {
     return {
       transform: `scale(${crop.zoom}) translate(${crop.pan[0] / crop.zoom}px, ${crop.pan[1] / crop.zoom}px)`,
-      onRest: () => {
-        // setTimeout(() => {
-        //   console.log('After transformation (real values):', getBounds(viewportContentRef.current)
-        // }, 0)
-      },
+      onRest: () => { },
       config: {
         tension: 170, // 170
         friction: 26, // 26
@@ -62,45 +66,90 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
     }
   }, [crop, springApi])
 
-  const adjustCrop = (cropToAdjust, viewportBounds, futureBounds) => {
-    const widthOverhang = (futureBounds.width - viewportBounds.width) / 2
-    const heightOverhang = (futureBounds.height - viewportBounds.height) / 2
+  const adjustCrop = (cropToAdjust: Crop, viewportBounds: Bounds, newBounds: Bounds) => {
+    const widthOverhang = (newBounds.width - viewportBounds.width) / 2
+    const heightOverhang = (newBounds.height - viewportBounds.height) / 2
 
-    if (futureBounds.width < viewportBounds.width) {
+    if (newBounds.width < viewportBounds.width) {
       cropToAdjust.pan[0] = 0 // Center horizontally if content is smaller than the viewport
-    } else if (futureBounds.left > viewportBounds.left) {
+    } else if (newBounds.left > viewportBounds.left) {
       cropToAdjust.pan[0] = Math.min(cropToAdjust.pan[0], widthOverhang) // Clamp to the left edge
-    } else if (futureBounds.right < viewportBounds.right) {
-      cropToAdjust.pan[0] = Math.max(cropToAdjust.pan[0], viewportBounds.width - futureBounds.width + widthOverhang) // Clamp to the right edge
+    } else if (newBounds.right < viewportBounds.right) {
+      cropToAdjust.pan[0] = Math.max(cropToAdjust.pan[0], viewportBounds.width - newBounds.width + widthOverhang) // Clamp to the right edge
     }
 
-    if (futureBounds.height < viewportBounds.height) {
+    if (newBounds.height < viewportBounds.height) {
       cropToAdjust.pan[1] = 0 // Center vertically if content is smaller than the viewport
-    } else if (futureBounds.top > viewportBounds.top) {
+    } else if (newBounds.top > viewportBounds.top) {
       cropToAdjust.pan[1] = Math.min(cropToAdjust.pan[1], heightOverhang) // Clamp to the top edge
-    } else if (futureBounds.bottom < viewportBounds.bottom) {
-      cropToAdjust.pan[1] = Math.max(cropToAdjust.pan[1], viewportBounds.height - futureBounds.height + heightOverhang) // Clamp to the bottom edge
+    } else if (newBounds.bottom < viewportBounds.bottom) {
+      cropToAdjust.pan[1] = Math.max(cropToAdjust.pan[1], viewportBounds.height - newBounds.height + heightOverhang) // Clamp to the bottom edge
     }
 
     return cropToAdjust
   }
 
-  const enforceCrop = useCallback((cropToAdjust) => {
-    const viewportBounds = ViewerUtils.getEditableRect(getBounds(viewportRef.current))
+  const transformBounds = useCallback((oldBounds: Bounds, cropToAdjust: Crop) => {
+    // Calculate the new width and height by applying the zoom factor
+    const width = oldBounds.width * cropToAdjust.zoom
+    const height = oldBounds.height * cropToAdjust.zoom
 
-    // Predict the transformed bounds
-    const futureBounds = ViewerUtils.transformBounds(viewportBounds, cropToAdjust)
+    // Calculate the center of the element before any transformation
+    const centerX = oldBounds.left + oldBounds.width / 2
+    const centerY = oldBounds.top + oldBounds.height / 2
 
-    // console.log(`From: ${JSON.stringify(cropRef.current)}\nTo:   ${JSON.stringify(cropToAdjust)}`)
-    // console.log('Current (real values):', getBounds(viewportContentRef.current))
-    // console.log('Predicted (without crop adjust):', futureBounds)
+    // Apply the scaling to the center coordinates and then adjust by the pan
+    const scaledCenterX = centerX * cropToAdjust.zoom - cropToAdjust.pan[0]
+    const scaledCenterY = centerY * cropToAdjust.zoom - cropToAdjust.pan[1]
 
-    return adjustCrop(cropToAdjust, viewportBounds, futureBounds)
+    // Calculate the amount of space that should be left on each side of the old bounds to center the zoomed element
+    const horizontalPadding = (oldBounds.width - width) / 2
+    const verticalPadding = (oldBounds.height - height) / 2
+
+    // Calculate the distance from the scaled center to the new edge of the bounds (after zooming)
+    const horizontalShift = scaledCenterX - width / 2
+    const verticalShift = scaledCenterY - height / 2
+
+    // Determine the new top-left corner based on the scaled center
+    const left = horizontalPadding - horizontalShift
+    const top = verticalPadding - verticalShift
+
+    return {
+      width: width,
+      height: height,
+      left: left,
+      right: left + width,
+      top: top,
+      bottom: top + height,
+    }
+  }, [])
+
+  const enforceCrop = useCallback((cropToAdjust: Crop) => {
+    if (viewportRef.current == null || viewerRef.current == null) return cropToAdjust
+
+    const viewportBounds = getBounds(viewportRef.current, viewerRef.current)
+
+    // Get the bounds of the viewport
+    const oldBounds: Bounds = {
+      ...viewportBounds,
+      width: viewportBounds.width,
+      height: viewportBounds.height,
+      left: viewportBounds.left,
+      right: viewportBounds.right,
+      top: viewportBounds.top,
+      bottom: viewportBounds.bottom,
+    }
+
+    // Transform the bounds based on the current crop    
+    const newBounds = transformBounds(oldBounds, cropToAdjust)
+
+    // Adjust the crop to fit within the bounds of the viewport
+    return adjustCrop(cropToAdjust, oldBounds, newBounds)
   }, [])
 
   // Get the bounds of an element based on its offset from the parent element (Viewer)
-  const getBounds = (element) => {
-    const parentRect = viewerRef.current.getBoundingClientRect()
+  const getBounds = (element: HTMLDivElement, parentElement: HTMLDivElement) => {
+    const parentRect = parentElement.getBoundingClientRect()
     const rect = element.getBoundingClientRect()
     return {
       top: rect.top - parentRect.top,
@@ -116,6 +165,10 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
   const updateMinimapSize = useCallback(() => {
     if (debugLogEvents) {
       // console.log('updateMinimapSize')
+    }
+
+    if (minimapRef.current == null || viewportRef.current == null) {
+      return
     }
 
     // Width of the minimap
@@ -136,7 +189,7 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
     }))
 
     // Adjust the crop when window is resized
-    let newCrop = {
+    let newCrop: Crop = {
       ...cropRef.current
     }
     newCrop = enforceCrop(newCrop)
@@ -204,7 +257,7 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
   }, [onWindowResize])
 
   // Rubberband
-  const rubberband = useCallback((newCrop) => {
+  const rubberband = useCallback((newCrop: Crop) => {
     const rubberbandedCrop = { pan: { ...newCrop.pan }, zoom: newCrop.zoom }
     const enforcedCrop = enforceCrop({ pan: { ...newCrop.pan }, zoom: newCrop.zoom })
 
@@ -217,58 +270,58 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
     return rubberbandedCrop
   }, [settings, enforceCrop])
 
-  const handleZoom = useCallback((gestureState, viewportOrMinimap, memo) => {
-    if (!settings.zoom.enabled) return memo
-    if (gestureState.last) return memo
+  const handleZoom = useCallback((
+    gestureState: PinchState | WheelState | ClickGestureState,
+    contentType: ContentType,
+    memo: Crop | undefined
+  ): Crop => {
+    if (!settings.zoom.enabled) return memo || cropRef.current
+    if (gestureState.last) return memo || cropRef.current
+    if (!viewportRef.current || !viewerRef.current) return memo || cropRef.current
 
     memo ??= cropRef.current
 
-    // console.log('Current (real values):', getBounds(viewportContentRef.current)
-    const viewportBounds = getBounds(viewportRef.current)
+    const viewportBounds = getBounds(viewportRef.current, viewerRef.current)
 
     let deltaZoom = 0
-    let origin = [0, 0]
-
-    // let gestureSignal = 'IGNORED'
+    const origin = [0, 0]
 
     if (gestureState.type === 'click') {
       // Button click
-      deltaZoom = Number(gestureState.zoomChange) * settings.zoom.zoomButtonStep
-      // gestureSignal = 'CLICK'
+      const clickState = gestureState as ClickGestureState
+      deltaZoom = Number(clickState.zoomChange) * settings.zoom.zoomButtonStep
     } else if (gestureState.type === 'pointermove' && gestureState.pinching) {
       // Touchscreen (mobile) pinch-zoom
-      deltaZoom = gestureState.delta[0]
-      origin[0] = gestureState.origin[0] - viewportBounds.width / 2
-      origin[1] = gestureState.origin[1] - viewportBounds.height / 2
-      // gestureSignal = 'MOBILE PINCH'
+      const pinchState = gestureState as PinchState
+      deltaZoom = pinchState.delta[0]
+      origin[0] = pinchState.origin[0] - viewportBounds.width / 2
+      origin[1] = pinchState.origin[1] - viewportBounds.height / 2
     } else if (gestureState.type === 'wheel') {
-      if (gestureState.ctrlKey && gestureState.pinching === true) {
+      const wheelState = gestureState as WheelState
+      const pinchState = gestureState as PinchState
+      if (wheelState.ctrlKey && wheelState.pinching === true) {
         // Touchpad (laptop) pinch-zoom
-        switch (gestureState.axis) {
-          case 'scale':
-            deltaZoom = gestureState.delta[0]
-            // gestureSignal = 'TOUCHPAD PINCH'
-            break
-          case 'x':
-            // ignore x
-            break
-          case 'y':
-            // ignore y
-            break
+        // This is a mess between pinchState and wheelState
+        if (pinchState.axis === 'scale') {
+          deltaZoom = pinchState.delta[0]
+        } else if (wheelState.axis === 'x') {
+          // ignore x
+        } else if (wheelState.axis === 'y') {
+          // ignore y
         }
-        origin[0] = gestureState.event.clientX - viewportBounds.width / 2
-        origin[1] = gestureState.event.clientY - viewportBounds.height / 2
-      } else if (gestureState.axis === 'y' && (!('pinching' in gestureState) || gestureState.pinching === false)) {
+
+        origin[0] = wheelState.event.clientX - viewportBounds.width / 2
+        origin[1] = wheelState.event.clientY - viewportBounds.height / 2
+      } else if (wheelState.axis === 'y' && (!('pinching' in wheelState) || wheelState.pinching === false)) {
         // Mouse wheel
         // The 'pinching' state must be either absent or set to false (which happens after a pinch on a touch laptop, for example)
-        deltaZoom = -gestureState.delta[1] / mouseWheelUnits * settings.zoom.mouseWheelStep
-        origin[0] = gestureState.event.clientX - viewportBounds.width / 2
-        origin[1] = gestureState.event.clientY - viewportBounds.height / 2
-        // gestureSignal = 'WHEEL'
+        deltaZoom = -wheelState.delta[1] / mouseWheelUnits * settings.zoom.mouseWheelStep
+        origin[0] = wheelState.event.clientX - viewportBounds.width / 2
+        origin[1] = wheelState.event.clientY - viewportBounds.height / 2
       }
     }
 
-    if (viewportOrMinimap == 'minimap') {
+    if (contentType == ContentType.Minimap) {
       origin[0] = 0
       origin[1] = 0
     }
@@ -276,18 +329,18 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
     // Find new zoom and clamp
     const newZoom = Math.min(Math.max((memo.zoom + deltaZoom), settings.zoom.min), settings.zoom.max)
 
-    // console.log(`gestureSignal: ${gestureSignal}, type: ${gestureState.type}`, '\ndelta:', gestureState.delta, '\ndeltaZoom:', deltaZoom, '\nnewZoom:', newZoom, gestureState)
+    // console.log(`type: ${gestureState.type}`, '\ndelta:', gestureState.delta, '\ndeltaZoom:', deltaZoom, '\nnewZoom:', newZoom, gestureState)
 
     // Correct the pan around the gesture's transform origin
     // Calculate the pan correction needed to keep the point under the cursor in the same place
     // For example, during a wheel gesture, the zoom uses the pointer position as the origin
     const zoomScaleRatio = newZoom / cropRef.current.zoom
-    const newPan = [
+    const newPan: [number, number] = [
       origin[0] + (cropRef.current.pan[0] - origin[0]) * zoomScaleRatio,
       origin[1] + (cropRef.current.pan[1] - origin[1]) * zoomScaleRatio,
     ]
 
-    let newCrop = {
+    let newCrop: Crop = {
       ...cropRef.current,
       zoom: newZoom,
       pan: newPan,
@@ -298,20 +351,24 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
     return newCrop
   }, [settings, setCrop, enforceCrop])
 
-  const handleDrag = useCallback((gestureState, viewportOrMinimap, memo) => {
-    if (!settings.pan.enabled) return memo
-    if (gestureState.last) return memo
+  const handleDrag = useCallback((
+    gestureState: DragState,
+    contentType: ContentType,
+    memo: Crop | undefined
+  ): Crop => {
+    if (!settings.pan.enabled) return memo || cropRef.current
+    if (gestureState.last) return memo || cropRef.current
 
     memo ??= cropRef.current
 
-    const deltaScale = (viewportOrMinimap == 'viewport') ? 1 : -cropRef.current.zoom / minimapSize.scale
+    const deltaScale = (contentType == ContentType.Viewport) ? 1 : -cropRef.current.zoom / minimapSize.scale
 
-    const newPan = [
+    const newPan: [number, number] = [
       memo.pan[0] + gestureState.delta[0] * deltaScale,
       memo.pan[1] + gestureState.delta[1] * deltaScale,
     ]
 
-    let newCrop = {
+    let newCrop: Crop = {
       ...cropRef.current,
       pan: newPan,
     }
@@ -326,7 +383,7 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
   }, [settings, setCrop, enforceCrop, rubberband, minimapSize.scale])
 
   const onGestureEnd = useCallback(() => {
-    let newCrop = {
+    let newCrop: Crop = {
       ...cropRef.current,
     }
     newCrop = enforceCrop(newCrop)
@@ -335,17 +392,27 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
 
   // Viewer controls
   const zoomOut = useCallback(() => {
-    const event = { type: 'click', zoomChange: -1, }
-    handleZoom(event, 'minimap', cropRef.current)
+    const event: ClickGestureState = {
+      type: 'click',
+      zoomChange: -1,
+      delta: [0, 0],
+      last: false
+    }
+    handleZoom(event, ContentType.Minimap, cropRef.current)
   }, [handleZoom])
 
   const zoomIn = useCallback(() => {
-    const event = { type: 'click', zoomChange: 1, }
-    handleZoom(event, 'minimap', cropRef.current)
+    const event: ClickGestureState = {
+      type: 'click',
+      zoomChange: 1,
+      delta: [0, 0],
+      last: false
+    }
+    handleZoom(event, ContentType.Minimap, cropRef.current)
   }, [handleZoom])
 
   const resetView = useCallback(() => {
-    const newCrop = {
+    const newCrop: Crop = {
       pan: [0, 0],
       zoom: settings.zoom.default,
     }
@@ -353,7 +420,7 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
   }, [settings, setCrop])
 
   const centerView = useCallback(() => {
-    const newCrop = {
+    const newCrop: Crop = {
       pan: [0, 0],
       zoom: cropRef.current.zoom,
     }
@@ -361,7 +428,7 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
   }, [setCrop])
 
   const toggleMinimap = useCallback(() => {
-    setMinimapVisible(v => !v)
+    setMinimapVisible((v: boolean) => !v)
   }, [])
 
   useEffect(() => {
@@ -385,7 +452,7 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
 
   // Keyboard input
   useEffect(() => {
-    const handleKeyDown = (event) => {
+    const handleKeyDown = (event: KeyboardEvent) => {
       const key = event.key.toLowerCase()
       if (settings.resetView.enabled) {
         if (key === settings.resetView.keyboardShortcut) {
@@ -421,7 +488,7 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
   const useGestureConfiguration = {
     drag: {
       enabled: settings.pan.enabled,
-      from: () => cropRef.current.pan,
+      from: (): Vector2 => cropRef.current.pan,
       preventScroll: false, // Ignores vertical scrolling on touch devices
     },
     pinch: {
@@ -429,12 +496,12 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
       preventDefault: true,
       pinchOnWheel: true,
       angleBounds: { min: 0, max: 0, },
-      from: () => [cropRef.current.zoom * pinchSensitivity, 0],
+      from: (): Vector2 => [cropRef.current.zoom * pinchSensitivity, 0],
     },
     wheel: {
       enabled: settings.zoom.enabled,
       preventDefault: true,
-      from: () => [0, -cropRef.current.zoom * mouseWheelUnits],
+      from: (): Vector2 => [0, -cropRef.current.zoom * mouseWheelUnits],
     },
     eventOptions: {
       passive: false,
@@ -443,11 +510,11 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
 
   // Viewport gestures
   useGesture({
-    onDrag: (state) => handleDrag(state, 'viewport', state.memo),
+    onDrag: (state) => handleDrag(state, ContentType.Viewport, state.memo),
     onDragEnd: onGestureEnd,
-    onPinch: (state) => handleZoom(state, 'viewport', state.memo),
+    onPinch: (state) => handleZoom(state, ContentType.Viewport, state.memo),
     onPinchEnd: onGestureEnd,
-    onWheel: (state) => handleZoom(state, 'viewport', state.memo),
+    onWheel: (state) => handleZoom(state, ContentType.Viewport, state.memo),
     onWheelEnd: onGestureEnd,
   },
     {
@@ -457,11 +524,11 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
 
   // Minimap gestures
   useGesture({
-    onDrag: (state) => handleDrag(state, 'minimap', state.memo),
+    onDrag: (state) => handleDrag(state, ContentType.Minimap, state.memo),
     onDragEnd: onGestureEnd,
-    onPinch: (state) => handleZoom(state, 'minimap', state.memo),
+    onPinch: (state) => handleZoom(state, ContentType.Minimap, state.memo),
     onPinchEnd: onGestureEnd,
-    onWheel: (state) => handleZoom(state, 'minimap', state.memo),
+    onWheel: (state) => handleZoom(state, ContentType.Minimap, state.memo),
     onWheelEnd: onGestureEnd,
   }, {
     ...useGestureConfiguration,
@@ -524,18 +591,12 @@ const Viewer = ({ className = '', viewportContent, minimapContent }) => {
         {settings.guides.enabled &&
           <div className={styles['viewer-viewport-center-guide']}></div>
         }
-        <animated.div className={styles['viewer-viewport-content']} ref={viewportContentRef} style={viewportContentStyle}>
+        <AnimatedDivViewportContent className={styles['viewer-viewport-content']} ref={viewportContentRef} style={viewportContentStyle}>
           {viewportContent}
-        </animated.div>
+        </AnimatedDivViewportContent>
       </div>
     </div>
   )
-}
-
-Viewer.propTypes = {
-  className: PropTypes.string,
-  viewportContent: PropTypes.node,
-  minimapContent: PropTypes.node,
 }
 
 export { Viewer }

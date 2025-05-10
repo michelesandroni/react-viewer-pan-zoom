@@ -10,7 +10,7 @@
 
 * 💡 Designed to pan and zoom `<svg>` elements via `react-inlinesvg`, `<img>`, `<svg>`, `<canvas>` and other html elements.
 * 🧭 Supports minimap, spring animation, rubberband, responsive design, etc.
-* 🛠️ Built on top of [use-gesture](https://github.com/pmndrs/use-gesture) and [react-spring](https://www.react-spring.dev).
+* 🛠️ Written in Typescript. Built on top of [use-gesture](https://github.com/pmndrs/use-gesture) and [react-spring](https://www.react-spring.dev).
 * 🚀 Using fast build tools (Vite / Rollup).
 
 ## Installation
@@ -26,7 +26,7 @@ npm install react-viewer-pan-zoom
 Check out this live **[example](https://michelesandroni.github.io/react-viewer-pan-zoom)**.
 
 **The layout size of the viewer must be specified via CSS**!  
-Two variants of the viewer (full-window and fixed-size) are shown in `example`/`src`/`App.jsx`.
+Two variants of the viewer (full-window and fixed-size) are shown in `example`/`src`/`App.tsx`.
 
 ⚠️ IMPORTANT: For the full-window viewer, make sure that the main CSS file contains the following:
 
