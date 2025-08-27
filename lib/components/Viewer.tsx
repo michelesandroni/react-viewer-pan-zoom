@@ -221,20 +221,41 @@ const Viewer = ({
     updateMinimapSize()
   }, [updateMinimapSize])
 
-  // Add window resize listener
+  // Add window resize listener and ResizeObserver for parent container changes
   useEffect(() => {
     if (debugLogEvents) {
-      console.log('Resize event listener mounted')
+      console.log('Resize observers mounted')
     }
+
     // Add event listener for window resize
     window.addEventListener('resize', onWindowResize)
 
-    // Remove event listener on component unmount
+    // ResizeObserver for parent container size changes
+    let resizeObserver: ResizeObserver | null = null
+
+    if (viewerRef.current) {
+      resizeObserver = new ResizeObserver((entries) => {
+        // Only trigger if the viewer container itself changed size
+        for (const entry of entries) {
+          if (entry.target === viewerRef.current) {
+            onWindowResize() // Reuse the same resize logic
+            break
+          }
+        }
+      })
+
+      resizeObserver.observe(viewerRef.current)
+    }
+
+    // Remove event listener and disconnect observer on component unmount
     return () => {
       if (debugLogEvents) {
-        console.log('Resize event listener unmounted')
+        console.log('Resize observers unmounted')
       }
       window.removeEventListener('resize', onWindowResize)
+      if (resizeObserver) {
+        resizeObserver.disconnect()
+      }
     }
   }, [onWindowResize])
 
