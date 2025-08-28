@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback, useContext } from 'react'
+import { useState, useEffect, useRef, useCallback, useContext, useMemo, memo } from 'react'
 import { useGesture, Vector2 } from '@use-gesture/react'
 
 import {
@@ -6,22 +6,26 @@ import {
   WheelState, PinchState, DragState, ClickGestureState
 } from './types'
 import { ViewerContext } from './ViewerContext'
+import { ViewportContent } from './ViewportContent'
+import { Minimap } from './Minimap'
+import { useOptimizedCrop } from './useOptimizedCrop'
 
 import styles from './Viewer.module.css'
 
 const debugLogEvents = false
 
-const Viewer = ({
+const Viewer = memo(({
   className = '',
   viewportContent,
   minimapContent,
 }: ViewerProps) => {
+  // Use optimized crop hook for better performance
+  const { setCrop, cropRef } = useOptimizedCrop()
+
   const {
-    crop, setCrop, settings,
+    settings,
     setZoomIn, setZoomOut, setResetView, setCenterView, setToggleMinimap
   } = useContext<ViewerContextType>(ViewerContext)
-
-  const cropRef = useRef(crop)
 
   // Adjust pinch-zoom
   const pinchSensitivity = 0.75
@@ -40,13 +44,6 @@ const Viewer = ({
     height: minimapHeightRef.current,
     scale: 1,
   })
-
-  // Update 'cropRef' whenever the crop is updated
-  useEffect(() => {
-    if (crop !== cropRef.current) {
-      cropRef.current = crop
-    }
-  }, [crop])
 
   const adjustCrop = (cropToAdjust: Crop, viewportBounds: Bounds, newBounds: Bounds) => {
     const widthOverhang = (newBounds.width - viewportBounds.width) / 2
@@ -175,7 +172,7 @@ const Viewer = ({
       ...cropRef.current
     }
     newCrop = enforceCrop(newCrop)
-    setCrop(newCrop)
+    setCrop(newCrop, true) // Immediate update for viewport changes
   }, [enforceCrop, setCrop])
 
   // Update the minimap size when viewport content changes
@@ -349,7 +346,7 @@ const Viewer = ({
       pan: newPan,
     }
     newCrop = enforceCrop(newCrop)
-    setCrop(newCrop)
+    setCrop(newCrop, false) // Use batched updates during gestures
 
     return newCrop
   }, [settings, setCrop, enforceCrop])
@@ -380,7 +377,7 @@ const Viewer = ({
     } else {
       newCrop = enforceCrop(newCrop)
     }
-    setCrop(newCrop)
+    setCrop(newCrop, false) // Use batched updates during gestures
 
     return newCrop
   }, [settings, setCrop, enforceCrop, rubberband, minimapSize.scale])
@@ -390,7 +387,7 @@ const Viewer = ({
       ...cropRef.current,
     }
     newCrop = enforceCrop(newCrop)
-    setCrop(newCrop)
+    setCrop(newCrop, true) // Use immediate update on gesture end
   }, [setCrop, enforceCrop])
 
   // Viewer controls
@@ -419,7 +416,7 @@ const Viewer = ({
       pan: [0, 0],
       zoom: settings.zoom.default,
     }
-    setCrop(newCrop)
+    setCrop(newCrop, true) // Immediate update for programmatic changes
   }, [settings, setCrop])
 
   const centerView = useCallback(() => {
@@ -427,7 +424,7 @@ const Viewer = ({
       pan: [0, 0],
       zoom: cropRef.current.zoom,
     }
-    setCrop(newCrop)
+    setCrop(newCrop, true) // Immediate update for programmatic changes
   }, [setCrop])
 
   const toggleMinimap = useCallback(() => {
@@ -488,7 +485,7 @@ const Viewer = ({
   }, [settings, resetView, centerView, toggleMinimap])
 
   // use-gesture configuration
-  const useGestureConfiguration = {
+  const useGestureConfiguration = useMemo(() => ({
     drag: {
       enabled: settings.pan.enabled,
       from: (): Vector2 => cropRef.current.pan,
@@ -509,7 +506,7 @@ const Viewer = ({
     eventOptions: {
       passive: false,
     },
-  }
+  }), [settings.pan.enabled, settings.zoom.enabled])
 
   // Viewport gestures
   useGesture({
@@ -538,69 +535,30 @@ const Viewer = ({
     target: minimapRef,
   })
 
-  // The minimap style
-  const minimapStyle = {
-    width: minimapWidthRef.current,
-    height: minimapHeightRef.current,
-    display: (minimapVisible && minimapContent) ? 'block' : 'none',
-    outline: settings.minimap.outlineStyle,
-  }
-
-  // The minimap viewport area matches the area visible in the viewport
-  let minimapViewportAreaStyle = {}
-
-  if (viewportRef.current) {
-    const scale = minimapSize.scale
-    const minimapZoom = Math.max(crop.zoom, 1)
-    minimapViewportAreaStyle = {
-      // The order of transform matters! Scale first, then translate
-      transform: `scale(${1 / minimapZoom}) translate(${-crop.pan[0] * scale}px, ${-crop.pan[1] * scale}px)`,
-      width: `${viewportRef.current.offsetWidth * scale}px`,
-      height: `${viewportRef.current.offsetHeight * scale}px`,
-      outline: settings.minimap.viewportAreaOutlineStyle,
-    }
-  }
-
-  // The content styles
-  const viewportContentStyle = {
-    transform: `scale(${crop.zoom}) translate(${crop.pan[0] / crop.zoom}px, ${crop.pan[1] / crop.zoom}px)`,
-    transition: (settings.spring.enabled === true) ? settings.spring.transition : 'none',
-  }
-
-  let minimapContentStyle = {}
-  if (viewportRef.current) {
-    minimapContentStyle = {
-      transformOrigin: '0% 0%',
-      transform: `scale(${minimapSize.scale})`,
-      width: `${viewportRef.current.offsetWidth}px`,
-      height: `${viewportRef.current.offsetHeight}px`,
-    }
-  }
-
-  const viewerClasses = [
+  const viewerClasses = useMemo(() => [
     className,
     styles['viewer-main'],
     settings.fillHeight && styles['viewer-main-fill-height']
-  ].filter(Boolean).join(' ')
+  ].filter(Boolean).join(' '), [className, settings.fillHeight])
 
   return (
     <div className={viewerClasses} ref={viewerRef}>
-      <div className={styles['viewer-minimap']} ref={minimapRef} style={minimapStyle}>
-        <div className={styles['viewer-minimap-content']} style={minimapContentStyle} >
-          {minimapContent}
-        </div>
-        <div className={styles['viewer-minimap-viewport-area']} style={minimapViewportAreaStyle}></div>
-      </div>
-      <div className={styles['viewer-viewport']} ref={viewportRef}>
-        {settings.guides.enabled &&
-          <div className={styles['viewer-viewport-center-guide']}></div>
-        }
-        <div className={styles['viewer-viewport-content']} ref={viewportContentRef} style={viewportContentStyle}>
-          {viewportContent}
-        </div>
-      </div>
+      <Minimap
+        minimapContent={minimapContent}
+        minimapRef={minimapRef}
+        minimapVisible={minimapVisible}
+        minimapSize={minimapSize}
+        viewportRef={viewportRef}
+      />
+      <ViewportContent
+        viewportContent={viewportContent}
+        viewportContentRef={viewportContentRef}
+        viewportRef={viewportRef}
+      />
     </div>
   )
-}
+})
+
+Viewer.displayName = 'Viewer'
 
 export { Viewer }

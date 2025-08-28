@@ -11,6 +11,9 @@ export default defineConfig({
   plugins: [
     react(),
   ],
+  server: {
+    open: true
+  },
   resolve: {
     alias: {
       // Ensure the example uses the library from ../lib
