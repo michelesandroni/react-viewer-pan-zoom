@@ -65,27 +65,26 @@ const App = () => {
 
   const [selected, setSelected] = useState(0)
 
-  return (
-    <div style={layoutStyle}>
-      <h1 style={{}}>react-viewer-pan-zoom | example</h1>
-      <ViewerProvider
-        settings={{
-          // pan: { enabled: true },
-          // zoom: { enabled: true, default: 1, min: 1, max: 4, mouseWheelStep: 0.5, zoomButtonStep: 0.5, },
-          // resetView: { enabled: true, keyboardShortcut: 'r', },
-          // centerView: { enabled: false, keyboardShortcut: 'c', },
-          // minimap: { enabled: true, width: '160px', keyboardShortcut: 'm', outlineStyle: '1px solid #ccc', viewportAreaOutlineStyle: '2px solid #333' },
-          // spring: { enabled: true, rubberband: true, rubberbandDistance: 100, transition: 'transform 0.1s ease-out', },
-          // guides: { enabled: false, },
-          // fillHeight: true,
-        }} >
-        <Viewer viewportContent={contents[selected]} minimapContent={contents[selected]} />
-        <nav>
-          <Toolbar contents={contents} selected={selected} setSelected={setSelected} />
-        </nav>
-      </ViewerProvider>
-    </div>
-  )
+  const viewerSettings = {
+    // pan: { enabled: true },
+    // zoom: { enabled: true, default: 1, min: 1, max: 4, mouseWheelStep: 0.5, zoomButtonStep: 0.5, },
+    // resetView: { enabled: true, keyboardShortcut: 'r', },
+    // centerView: { enabled: false, keyboardShortcut: 'c', },
+    // minimap: { enabled: true, width: '160px', keyboardShortcut: 'm', outlineStyle: '1px solid #ccc', viewportAreaOutlineStyle: '2px solid #333' },
+    // spring: { enabled: true, rubberband: true, rubberbandDistance: 100, transition: 'transform 0.1s ease-out', },
+    // guides: { enabled: false, },
+    // fillHeight: true,
+  }
+
+  return <div style={layoutStyle}>
+    <h1>react-viewer-pan-zoom | example</h1>
+    <ViewerProvider settings={viewerSettings} >
+      <Viewer viewportContent={contents[selected]} minimapContent={contents[selected]} />
+      <nav>
+        <Toolbar contents={contents} selected={selected} setSelected={setSelected} />
+      </nav>
+    </ViewerProvider>
+  </div>
 }
 
 const Toolbar = ({ contents, selected, setSelected }) => {

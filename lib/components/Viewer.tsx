@@ -310,14 +310,23 @@ const Viewer = memo(({
           // ignore y
         }
 
-        origin[0] = wheelState.event.clientX - viewportBounds.width / 2
-        origin[1] = wheelState.event.clientY - viewportBounds.height / 2
+        // Get viewport's position relative to the page
+        const viewportRect = viewportRef.current?.getBoundingClientRect()
+        if (viewportRect) {
+          origin[0] = wheelState.event.clientX - (viewportRect.left + viewportRect.width / 2)
+          origin[1] = wheelState.event.clientY - (viewportRect.top + viewportRect.height / 2)
+        }
       } else if (wheelState.axis === 'y' && (!('pinching' in wheelState) || wheelState.pinching === false)) {
         // Mouse wheel
         // The 'pinching' state must be either absent or set to false (which happens after a pinch on a touch laptop, for example)
         deltaZoom = -wheelState.delta[1] / mouseWheelUnits * settings.zoom.mouseWheelStep
-        origin[0] = wheelState.event.clientX - viewportBounds.width / 2
-        origin[1] = wheelState.event.clientY - viewportBounds.height / 2
+
+        // Get viewport's position relative to the page
+        const viewportRect = viewportRef.current?.getBoundingClientRect()
+        if (viewportRect) {
+          origin[0] = wheelState.event.clientX - (viewportRect.left + viewportRect.width / 2)
+          origin[1] = wheelState.event.clientY - (viewportRect.top + viewportRect.height / 2)
+        }
       }
     }
 
